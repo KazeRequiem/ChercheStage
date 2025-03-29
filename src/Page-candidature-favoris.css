@@ -8,12 +8,12 @@
     box-sizing: border-box;
 }
 
-.candidatures-envoyees, .candidatures-recues {
+.candidatures-favoris, .recherches-enregistrees {
     flex: 1;
     padding: 20px;
 }
 
-.candidatures-envoyees h2, .candidatures-recues h2 {
+.candidatures-favoris h2, .recherches-enregistrees h2 {
     text-align: center;
     background-color: #DBEAFE;
     padding: 10px;
@@ -34,49 +34,18 @@
 
 .candidature-item p {
     margin: 5px 0;
-    font-size: 14px;
 }
 
-.status-buttons {
+.candidature-actions {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin: 0;    
 }
 
-.status {
-    padding: 5px 10px;
+.company-logo {
+    height: auto;
     border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.status.en-attente {
-    background-color: #FFFBEB;
-    color: #F59E0B;
-    border: 1px solid #F59E0B;
-}
-
-.status.accepte {
-    background-color: #ECFDF5;
-    color: #10B981;
-    border: 1px solid #10B981;
-}
-
-.status.refuse {
-    background-color: #FEF2F2;
-    color: #EF4444;
-    border: 1px solid #EF4444;
-}
-
-.voir-candidature {
-    background-color: #DBEAFE;
-    border: none;
-    color: #1D4ED8;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
 }
 
 .supprimer {
@@ -87,4 +56,10 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.supprimer:hover {
+    background-color: #FCA5A5;
 }

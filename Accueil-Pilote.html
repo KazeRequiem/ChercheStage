@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/Accueil-pilote.css">
         <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-recherche.css">
     </head>
 
     <body>
@@ -35,25 +36,115 @@
 
             <section class="stats-container">
                 <div class="stat-card">
+                    <img src="assets/User.png" alt="Icon" class="stat-icon">
                     <h2>26</h2>
-                    <p>Taux de réponse entreprises</p>
+                    <p>Vues sur votre profil</p>
                     <span class="stat-change positive">+4 <small>+jsp% cette semaine</small></span>
-                    <img src="assets/User.png" alt="Icon">
                 </div>
                 <div class="stat-card">
+                    <img src="assets/Fichier.png" alt="Icon" class="stat-icon">
                     <h2>4</h2>
-                    <p>Nombres d'offres sur le site</p>
-                    <span class="stat-change neutral">-4 <small>0% cette semaine</small></span>
-                    <img src="assets/Fichier.png" alt="Icon">
+                    <p>Réponses à vos candidatures</p>
+                    <span class="stat-change neutral">- <small>0% cette semaine</small></span>
                 </div>
                 <div class="stat-card">
+                    <img src="assets/Enveloppe.png" alt="Icon" class="stat-icon">
                     <h2>36</h2>
-                    <p>Nombre d'étudiants placés</p>
+                    <p>Candidatures envoyées</p>
                     <span class="stat-change negative">-23 <small>-jsp% cette semaine</small></span>
-                    <img src="assets/Enveloppe.png" alt="Icon">
                 </div>
             </section>
             
+            <section class="activity">
+                <h2>Activité de la semaine</h2>
+                <div class="chart">
+                    <img src="assets/chart-placeholder.png" alt="Graphique d'activité">
+                </div>
+                <div class="activity-sidebar">
+                    <a href="Profil-etudiant.html" class="sidebar-button">Mon profil étudiant</a>
+                    <a href="Page-candidature-envoyer.html" class="sidebar-button">Mes demandes</a>
+                    <a href="Page-candidature-favoris.html" class="sidebar-button">Mes favoris</a>
+                </div>
+            </section>
+
+            <section class="offres-suggestions">
+                <h2>Voici des offres qui pourraient vous intéresser</h2>
+                <div class="offres">
+                    <div class="offre-item">
+                        <div class="offre-info">
+                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
+                            <p>🏢 Thalès</p>
+                            <p>📄 CDI</p>
+                            <p>💰 ~35k</p>
+                            <p>📍 Hénin-Beaumont</p>
+                        </div>
+                        <div class="offre-logo">
+                            <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
+                        </div>
+                    </div>
+                    <div class="offre-item">
+                        <div class="offre-info">
+                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
+                            <p>🏢 Thalès</p>
+                            <p>📄 CDI</p>
+                            <p>💰 ~35k</p>
+                            <p>📍 Hénin-Beaumont</p>
+                        </div>
+                        <div class="offre-logo">
+                            <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
+                        </div>
+                    </div>
+                    <div class="offre-item">
+                        <div class="offre-info">
+                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
+                            <p>🏢 Thalès</p>
+                            <p>📄 CDI</p>
+                            <p>💰 ~35k</p>
+                            <p>📍 Hénin-Beaumont</p>
+                        </div>
+                        <div class="offre-logo">
+                            <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+
+        <footer>
+            <ul class="navbar-footer">
+                <li>
+                    <p>A propos</p>
+                    <ul>
+                        <li><a href="#link1">Qui sommes-nous ?</a></li><br>
+                        <li><a href="#link2">Notre mission</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Liens utiles</p>
+                    <ul>
+                        <li><a href="#link4">Chercher une offre</a></li><br>
+                        <li><a href="#link5">Recruter</a></li><br>
+                        <li><a href="#link6">FAQ</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Mentions légales</p>
+                    <ul>
+                        <li><a href="#link7">Politique de confidentialité</a></li><br>
+                        <li><a href="#link8">Politique d'utilisation</a></li><br>
+                        <li><a href="#link9">Gestion des cookies</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <p>Nous contacter</p>
+                    <ul>
+                        <li><a href="#link7"><img src="assets/Linkedin.png">&nbsp;<img src="assets/localisation.png">&nbsp;<img src="assets/mail.png"> </a></li><br>
+                        <li><a href="#link8">Devenir partenaire</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="footer-separator">
+            <p class="footer-copyright">Copyright © 2025 Web4All. Tous droits réservés </p>
+        </footer>
     </body>
 </html>

@@ -1,0 +1,68 @@
+.offre-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.offre-description {
+    flex: 2;
+    background-color: #EFF6FF;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.offre-description ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.offre-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profil-recherche {
+    background-color: #DBEAFE;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.profil-recherche ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.postuler-button {
+    display: block;
+    width: 100%;
+    background-color: #1D4ED8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.postuler-button:hover {
+    background-color: #375BFF;
+}
+
+.entreprise-presentation {
+    background-color: #EFF6FF;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Étudiant</title>
-    <link rel="stylesheet" href="src/Page-candidature-envoyer.css">
+    <link rel="stylesheet" href="src/Page-recherche.css">
     <link rel="stylesheet" href="src/header-footer.css">
 </head>
 <body>
@@ -22,35 +22,55 @@
     </header>
 
     <main>
-        <section class="candidatures">
-            <div class="candidatures-envoyees">
-                <h2>Candidatures envoyées</h2>
-                <div class="candidature-item">
-                    <div>
-                        <p><strong>Dassault</strong></p>
-                        <p>📍 Maubeuge</p>
-                        <p>📅 22/11/24</p>
-                    </div>
-                    <div class="status-buttons">
-                        <span class="status en-attente">En attente</span>
-                        <button class="voir-candidature">Voir ma candidature</button>
-                        <button class="supprimer">Supprimer</button>
-                    </div>
-                </div>
+        <section class="recherche">
+            <div class="filter">
+                <span>Trier</span>
+                <select id="filter-select">
+                    <option value="default">Par défaut</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                    <option value="location">Localisation</option>
+                </select>
             </div>
-            <div class="candidatures-recues">
-                <h2>Candidatures reçues</h2>
-                <div class="candidature-item">
-                    <div>
-                        <p><strong>Dassault</strong></p>
-                        <p>📍 Maubeuge</p>
-                        <p>📅 22/11/24</p>
+    
+            <div class="offres">
+                <div class="offre-item">
+                    <div class="offre-info">
+                        <p><strong>Administrateur Systèmes & Réseaux</strong></p>
+                        <p>🏢 Thalès</p>
+                        <p>📄 CDI</p>
+                        <p>💰 ~35k</p>
+                        <p>📍 Hénin-Beaumont</p>
                     </div>
-                    <div class="status-buttons">
-                        <button class="voir-candidature">Voir ma candidature</button>
-                        <button class="supprimer">Supprimer</button>
+                    <div class="offre-logo">
+                        <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                     </div>
                 </div>
+                <div class="offre-item">
+                    <div class="offre-info">
+                        <p><strong>Développeur Web</strong></p>
+                        <p>🏢 Google</p>
+                        <p>📄 CDI</p>
+                        <p>💰 ~50k</p>
+                        <p>📍 Paris</p>
+                    </div>
+                    <div class="offre-logo">
+                        <img src="assets/thales-logo.png" alt="Google Logo" class="company-logo">
+                    </div>
+                </div>
+                <div class="offre-item">
+                    <div class="offre-info">
+                        <p><strong>Développeur Web</strong></p>
+                        <p>🏢 Google</p>
+                        <p>📄 CDI</p>
+                        <p>💰 ~50k</p>
+                        <p>📍 Paris</p>
+                    </div>
+                    <div class="offre-logo">
+                        <img src="assets/thales-logo.png" alt="Google Logo" class="company-logo">
+                    </div>
+                </div>
+                
             </div>
         </section>
     </main>

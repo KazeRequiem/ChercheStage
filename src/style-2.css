@@ -88,12 +88,12 @@ header {
     grid-template-areas: 
     "box-1 box-2"
     "box-3 box-2";
-    justify-content: center; /* Centrer horizontalement */
-    align-content: center; /* Centrer verticalement */
+    justify-content: center;
+    align-content: center;
 }
 
 .box{
-    background-color: rgba(142, 197, 255, 0.3); /* Utilisation de rgba pour définir l'opacité de la couleur de fond */
+    background-color: rgba(142, 197, 255, 0.3);
     display: flex;
     flex-direction: column;
     padding: 1em;
