@@ -63,10 +63,13 @@ header {
 
 .titre h1 {
     font-size: 46px;
+    margin-bottom: 1em;
 }
 
-.titre button {
+.button {
     background-color: #2b7fff;
+    text-align: center;
+    text-decoration: none;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -74,20 +77,6 @@ header {
     border-radius: 25px;
     cursor: pointer;
     margin-top: 1rem;
-}
-
-.titre p {
-    margin-top: 10px;
-    font-size: 24px;
-}
-
-.titre a {
-    background: linear-gradient(to right,#51A2FF,#155DFC);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .grid-container{
