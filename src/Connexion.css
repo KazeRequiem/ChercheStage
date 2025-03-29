@@ -49,7 +49,6 @@ height: 100vh;
     margin-left: auto;
     overflow-y: auto;
     background: white;
-    z-index: 2;
 
         h1 {
             font-family: Poppins;
@@ -121,7 +120,6 @@ button[type="submit"] {
     height: 100vh;
     position: fixed;
     left: 0;
-    overflow: hidden;
 
     img {
         width: 100%;
@@ -129,9 +127,9 @@ button[type="submit"] {
         object-fit: cover;
         pointer-events: none;
         user-select: none;
+        box-shadow: 0 0 300px 1px rgb(81, 162, 255, 0.5);
     }
 }
-
 
 .navbar-footer {
     list-style: none;
