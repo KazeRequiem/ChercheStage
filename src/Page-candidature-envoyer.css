@@ -1,0 +1,91 @@
+.candidatures {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.candidatures-envoyees, .candidatures-recues {
+    flex: 1;
+    padding: 20px;
+}
+
+.candidatures-envoyees h2, .candidatures-recues h2 {
+    text-align: center;
+    background-color: #DBEAFE;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.candidature-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFF6FF;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.candidature-item p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Boutons et statut */
+.status-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;    
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.en-attente {
+    background-color: #FFFBEB;
+    color: #F59E0B;
+    border: 1px solid #F59E0B;
+}
+
+.status.accepte {
+    background-color: #ECFDF5;
+    color: #10B981;
+    border: 1px solid #10B981;
+}
+
+.status.refuse {
+    background-color: #FEF2F2;
+    color: #EF4444;
+    border: 1px solid #EF4444;
+}
+
+.voir-candidature {
+    background-color: #DBEAFE;
+    border: none;
+    color: #1D4ED8;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.supprimer {
+    background-color: #FEE2E2;
+    border: none;
+    color: #B91C1C;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}

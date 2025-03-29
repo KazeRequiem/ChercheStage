@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Étudiant</title>
-    <link rel="stylesheet" href="src/Profil-etudiant.css">
+    <link rel="stylesheet" href="src/Page-candidature-favoris.css">
     <link rel="stylesheet" href="src/header-footer.css">
 </head>
 <body>
@@ -22,26 +22,35 @@
     </header>
 
     <main>
-        <h2>Votre profil étudiant</h2>
-        <section class="contenu">
-            <div class="info-section">
-                <h3>Vos informations:</h3>
-                <p><strong>Nom</strong><br>Castagnette</p>
-                <p><strong>Prénom</strong><br>Bob</p>
-                <p><strong>Email</strong><br>bob.castagnette@viacesi.fr</p>
-                <p><strong>Établissement</strong><br>Arras</p>
-                <p><strong>Promotion</strong><br>CPA2 Informatique</p>
-                <button class="bouton">Demander une modification</button>
+        <section class="candidatures">
+            <div class="candidatures-envoyees">
+                <h2>Candidatures envoyées</h2>
+                <div class="candidature-item">
+                    <div class="candidature-info">
+                        <p><strong>Dassault</strong></p>
+                        <p>📍 Maubeuge</p>
+                        <p>📅 22/11/24</p>
+                    </div>
+                    <div class="status-buttons">
+                        <span class="status en-attente">En attente</span>
+                        <button class="voir-candidature">Voir ma candidature</button>
+                        <button class="supprimer">Supprimer</button>
+                    </div>
+                </div>
             </div>
-            <div class="help-section">
-                <h3>Besoin d’aide? écrivez-nous!</h3>
-                <form>
-                    <label for="objet">Objet</label>
-                    <input type="text" id="objet" name="objet" placeholder="Objet" required>
-                    <label for="corp">Corp</label>
-                    <textarea id="corp" name="corp" placeholder="Votre message" required></textarea>
-                    <button type="submit" class="bouton">Envoyer le ticket</button>
-                </form>
+            <div class="candidatures-recues">
+                <h2>Candidatures reçues</h2>
+                <div class="candidature-item">
+                    <div class="candidature-info">
+                        <p><strong>Dassault</strong></p>
+                        <p>📍 Maubeuge</p>
+                        <p>📅 22/11/24</p>
+                    </div>
+                    <div class="status-buttons">
+                        <button class="voir-candidature">Voir ma candidature</button>
+                        <button class="supprimer">Supprimer</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
