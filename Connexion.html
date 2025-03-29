@@ -12,20 +12,24 @@
     <main>
         <div class="split-inscription">
         <div class="image-section">
-            <img src="assets/Image_inscription.png" alt="Image décorative">
+            <img src="assets/Image_inscription.png" alt="Image décorative" id="image-decorative">
         </div>
         <section class="formulaire">
             <h1>Se connecter</h1>
             <form>
+                <div class="input-container">
                 <label class="mail" for="Adresse-Mail">Adresse E-Mail<br>
+                    <img class="logo-mail" src="assets/mailconnexion.svg">
                     <input type="email" name="Adresse-Mail" id="Adresse-Mail" placeholder="exemple@gmail.com" required><br>
                 </label> 
+            </div>
                 <label class="mdp" for="MDP">
                     Mot de passe<br>
-                    <input  type="password" name="MDP" id="MDP" placeholder="........" required><br>
-                    <p>Le mot de passe doit comporter au moins 8 caractères incluant un chiffre et une lettre minuscule.</p>
+                    <input  type="password" name="MDP" id="MDP" placeholder="" required><br>
+                    <p class="petit-texte">Le mot de passe doit comporter au moins 8 caractères incluant un chiffre et une lettre minuscule.</p>
                 </label>
                 <button type="submit">Se connecter ></button>
+                <p >En appuyant sur "Connexion", vous acceptez nos Conditions Générales d'Utilisation (CGU) et notre Politique de Confidentialité.</p>
             </form>
         </section>
     </div>
