@@ -9,8 +9,29 @@ body {
     background-color: white;
 }
 
-.bleu{
-    color: blue;
+.bleu {
+    background: linear-gradient(180deg, var(--Bleu---700, #1447E6) 0%, var(--Bleu---400, #51A2FF) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 5rem;
+    display: inline-block;
+    transition: transform 0.5s, opacity 0.5s;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+.appear {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.bleu-container {
+    display: inline-block;
+    transition: width 0.5s ease;
+    margin-right: 10px;
 }
 
 .logo {
@@ -58,14 +79,15 @@ header {
 .titre {
     text-align: center;
     margin: 40px 0;
-}
+    h1 {
+            font-family: "Poppins", sans-serif;
+            font-size: 5rem;
+            margin-bottom: 1em;
+            padding-left: 15vw;
+            padding-right: 15vw;
 
-.titre h1 {
-    font-size: 5rem;
-    margin-bottom: 1em;
-    padding-left: 20vw;
-    padding-right: 20vw;
-}
+    }
+    }
 
 .button {
     border-radius: 200px;
