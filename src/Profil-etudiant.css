@@ -38,6 +38,7 @@ h3 {
     cursor: pointer;
     font-weight: bold;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .help-section {

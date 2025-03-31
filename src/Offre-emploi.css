@@ -54,6 +54,7 @@
     cursor: pointer;
     text-align: center;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .postuler-button:hover {

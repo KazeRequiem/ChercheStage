@@ -1,18 +1,15 @@
-body {
-    background-color: #8BA1BB;
-    font-family: Arial;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .contenu{
     background-color: white;
     padding: 20px 30px;
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
 .titre{
     text-align: center;
@@ -34,7 +31,6 @@ body {
     padding: 5px;
     border-radius: 5px;
 }
-
 
 label {
     display: block;

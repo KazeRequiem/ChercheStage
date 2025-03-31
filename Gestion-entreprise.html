@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/header-footer.css">
-        <link rel="stylesheet" href="src/Gestion-offre.css">
+        <link rel="stylesheet" href="src/Gestion-entreprise.css">
     </head>
 
     <body>
@@ -20,49 +20,63 @@
                 <div class="divider"></div>
                 <input type="text" placeholder="Valenciennes (59) 50km">
             </div>
-            <button type="submit" class="search-button">Rechercher</button>
+            <a href="Page-recherche.html" class="search-button">Rechercher</a>
         </header>
         
         <main>
             <section class="candidatures">
-                <h2>Vos offres publiées</h2>
+                <section class="candidats-header">
+                    <div class="candidats-header-content">
+                        <h2>Liste des entreprise</h2>
+                        <div class="candidats-header-actions">
+                            <div class="search-bar">
+                                <input type="text" placeholder="Rechercher une entreprise">
+                                <button class="search-icon">🔍</button>
+                            </div>
+                            <select id="filter-select" class="trier-button">
+                                <option value="default">Trier ▼</option>
+                                <option value="Nom">Nom</option>
+                                <option value="numero">Numéro</option>
+                                <option value="location">Localisation</option>
+                            </select>
+                            <a href="Ajouter-entreprise.html" class="create-button">+ Ajouter un compte étudiant</a>
+                        </div>
+                    </div>
+                </section>
                 <div class="candidatures-publiées">
                     <div class="candidature-item">
                         <div>
-                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
-                            <p>🏢 Thalès</p>
-                            <p>📄 CDI</p>
-                            <p>💰 ~35k</p>
+                            <h1>Thales</h1>
                             <p>📍 Hénin-Beaumont</p>
+                            <p>✉️ thales@gmail.com</p>
+                            <p>☎️ 07 43 54 32 43</p>
                         </div>
                         <div class="candidature-actions">
-                            <a href="Ajouter-entreprise.html" class="modifier">Modifier</a>
+                            <a href="Modifier-entreprise.html" class="modifier">Modifier</a>
                             <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                         </div>
                     </div>
                     <div class="candidature-item">
                         <div>
-                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
-                            <p>🏢 Thalès</p>
-                            <p>📄 CDI</p>
-                            <p>💰 ~35k</p>
+                            <h1>Thales</h1>
                             <p>📍 Hénin-Beaumont</p>
+                            <p>✉️ thales@gmail.com</p>
+                            <p>☎️ 07 43 54 32 43</p>
                         </div>
                         <div class="candidature-actions">
-                            <a href="Ajouter-entreprise.html" class="modifier">Modifier</a>
+                            <a href="Modifier-entreprise.html" class="modifier">Modifier</a>
                             <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                         </div>
                     </div>
                     <div class="candidature-item">
                         <div>
-                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
-                            <p>🏢 Thalès</p>
-                            <p>📄 CDI</p>
-                            <p>💰 ~35k</p>
+                            <h1>Thales</h1>
                             <p>📍 Hénin-Beaumont</p>
+                            <p>✉️ thales@gmail.com</p>
+                            <p>☎️ 07 43 54 32 43</p>
                         </div>
                         <div class="candidature-actions">
-                            <a href="Ajouter-entreprise.html" class="modifier">Modifier</a>
+                            <a href="Modifier-entreprise.html" class="modifier">Modifier</a>
                             <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                         </div>
                     </div>

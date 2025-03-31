@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter offre</title>
-    <link rel="stylesheet" href="src/Offre-emploi.css">
+    <title>Modifier entreprise</title>
+    <link rel="stylesheet" href="src/Profil-etudiant.css">
     <link rel="stylesheet" href="src/header-footer.css">
 </head>
 <body>
@@ -22,31 +22,33 @@
     </header>
 
     <main>
-        <section class="offre-details">
-            <!-- Détails de l'offre à gauche -->
-            <div class="offre-description">
-                <h2><img src="assets/thales-logo.png"> Nom de l'offre</h2>
-                <p><strong>Entreprise :</strong> CESI</p>
-                <p><strong>Localisation :</strong> Arras</p>
-                <p><strong>Type de contrat :</strong> CDI</p>
-                <p><strong>Salaire :</strong> ~35k</p>
-                <p><strong>Date de début / fin : </strong></p>
-
-                <h3>Détail du poste</h3>
-                <p>Décrivez l’offre de stage ici</p>
-                <a class="postuler-button">Ajouter l'offre</a>
-
+        <h2>Modifier une entreprise</h2>
+        <section class="contenu">
+            <div class="info-section">
+                <h4>Nom de l'entreprise</h4>
+                <p>Thales</p>
+                <input type="text" placeholder="Modifier le nom">
+                <h4>Localisation</h4>
+                <p>Maubeuge</p>
+                <input type="text" placeholder="Modifier la localisation">
+                <h4>Email</h4>
+                <P>poulet@maillot.com</P>
+                <input type="text" placeholder="Modifier le mail">
+                <h4>Logo</h4>
+                <input type="file">
+                <p>le logo doit respecter un ratio de 1:1 et faire moins de 2mo</p>
+                <button class="bouton">Ajouter l'entreprise</button>
             </div>
-    
-            <!-- Profil recherché et entreprise à droite -->
-            <div class="offre-sidebar">
-                <div class="profil-recherche">
-                    <h3>Profil recherché</h3>
-                    <ul>
-                        <li>Décrivez le profil recherché ici</li>
-                    </ul>
-                    <button class="postuler-button">Selectionner une entreprise</button>
-                </div>
+            <div class="help-section">
+                <form>
+                    <label for="Telephone">Telephone</label>
+                    <input type="text">
+                    <label for="Descritption">Description</label>
+                    <textarea id="corp" name="corp" placeholder="Descritption" required></textarea>
+                    <label for="photos">Photos</label>
+                    <input type="image">
+                    <p>Taille du fichier limité à 2mo</p>
+                </form>
             </div>
         </section>
     </main>

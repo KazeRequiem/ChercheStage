@@ -5,60 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Postuler à une offre</title>
   <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/header-footer.css">
 </head>
 <body>
-    <section class="contenu">
-        <div class="titre">
-            <h4>Concepteur Développeur d'Application</h2>
-            <p>Postuler à cette offre</p>
+    <header class="header">
+        <div class="logo">
+            <a href="Accueil-Pilote.html"><img src="assets/logo.png" alt="logo"></a>
         </div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Intitulé de poste, mots-clés...">
+            <div class="divider"></div>
+            <input type="text" placeholder="Valenciennes (59) 50km">
+        </div>
+        <a href="Page-recherche.html" class="search-button">Rechercher</a>
+    </header>
+    <main>
+        <section class="contenu">
+            <div class="titre">
+                <h4>Concepteur Développeur d'Application</h2>
+                <p>Postuler à cette offre</p>
+            </div>
+        
+            <div class="identity">
+            <label for="votre-nom">
+                Nom<br>
+                <input type="text" name="votre-nom" id="votre-nom" placeholder="Votre nom" required><br>
+            </label>
+            <label for="votre-prenom">
+                Prénom<br>
+                <input type="text" name="votre-prenom" id="votre-prenom" placeholder="Votre prenom" required><br>
+            </label>
+            </div>
+            <div class="formulaire">
+            <label for="votre-email">
+                Email<br>
+                <input type="email" name="votre-email" id="votre-email" placeholder="Votre email" required> <br>
+            </label>
+            <label for="votre-numero">
+                Numéro de téléphone<br>
+                <input type="text" name="votre-numero" id="votre-numero" placeholder="Votre numero" required><br>
+            </label>
+            <label for="votre-linkedin">
+                Lien Profil Linkedin (optionnel)<br>
+                <input type="text" name="votre-linkedin" id="votre-linkedin" placeholder="Votre lien linkedin"><br>
+            </label>
     
-        <div class="identity">
-        <label for="votre-nom">
-            Nom<br>
-            <input type="text" name="votre-nom" id="votre-nom" placeholder="Votre nom" required><br>
-        </label>
-        <label for="votre-prenom">
-            Prénom<br>
-            <input type="text" name="votre-prenom" id="votre-prenom" placeholder="Votre prenom" required><br>
-        </label>
+            <div class="upload-zone">
+                <label class="upload-box">
+                    <input type="file" name="votre-CV" id="votre-CV" accept=".pdf, .docx, .png, .jpg" hidden required><br>
+                    <img src="assets/upload-icon.png" alt="upload" width="40">
+                    <p>Importer un CV</p>
+                    <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
+                    <small>Taille maximale : 5 Mo</small>
+                </label>
+    
+                <label class="upload-box">
+                    <input type="file" name="votre-lettre" id="votre-lettre" accept=".pdf, .docx, .png, .jpg" hidden required><br>
+                    <img src="assets/upload-icon.png" alt="upload" width="40">
+                    <p>Importer une lettre de motivation</p>
+                    <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
+                    <small>Taille maximale : 5 Mo</small>
+                </label>
+            </div>
         </div>
-    <div class="formulaire">
-        <label for="votre-email">
-            Email<br>
-            <input type="email" name="votre-email" id="votre-email" placeholder="Votre email" required> <br>
-        </label>
-        <label for="votre-numero">
-            Numéro de téléphone<br>
-            <input type="text" name="votre-numero" id="votre-numero" placeholder="Votre numero" required><br>
-        </label>
-        <label for="votre-linkedin">
-            Lien Profil Linkedin (optionnel)<br>
-            <input type="text" name="votre-linkedin" id="votre-linkedin" placeholder="Votre lien linkedin"><br>
-        </label>
-
-        <div class="upload-zone">
-            <label class="upload-box">
-                <input type="file" name="votre-CV" id="votre-CV" accept=".pdf, .docx, .png, .jpg" hidden required><br>
-                <img src="assets/upload-icon.png" alt="upload" width="40">
-                <p>Importer un fichier</p>
-                <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
-                <small>Taille maximale : 5 Mo</small>
+            <label>
+                <p><input type="checkbox">J'ai lu et j'accepte les conditions d'utilisation</p>
+                <center><input type="submit" value="Envoyer ma candidature"></center> 
             </label>
-
-            <label class="upload-box">
-                <input type="file" name="votre-lettre" id="votre-lettre" accept=".pdf, .docx, .png, .jpg" hidden required><br>
-                <img src="assets/upload-icon.png" alt="upload" width="40">
-                <p>Importer un fichier</p>
-                <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
-                <small>Taille maximale : 5 Mo</small>
-            </label>
-        </div>
-    </div>
-        <label>
-            <p><input type="checkbox">J'ai lu et j'accepte les conditions d'utilisation</p>
-            <center><input type="submit" value="Envoyer ma candidature"></center> 
-        </label>
-    </section>
+        </section>
+    </main>
+    <footer>
+        <ul class="navbar-footer">
+            <li>
+                <p>A propos</p>
+                <ul>
+                    <li><a href="#link1">Qui sommes-nous ?</a></li><br>
+                    <li><a href="#link2">Notre mission</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>Liens utiles</p>
+                <ul>
+                    <li><a href="#link4">Chercher une offre</a></li><br>
+                    <li><a href="#link5">Recruter</a></li><br>
+                    <li><a href="#link6">FAQ</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>Mentions légales</p>
+                <ul>
+                    <li><a href="#link7">Politique de confidentialité</a></li><br>
+                    <li><a href="#link8">Politique d'utilisation</a></li><br>
+                    <li><a href="#link9">Gestion des cookies</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>Nous contacter</p>
+                <ul>
+                    <li><a href="#link7"><img src="assets/Linkedin.png">&nbsp;<img src="assets/localisation.png">&nbsp;<img src="assets/mail.png"> </a></li><br>
+                    <li><a href="#link8">Devenir partenaire</a></li>
+                </ul>
+            </li>
+        </ul>
+        <hr class="footer-separator">
+        <p class="footer-copyright">Copyright © 2025 Web4All. Tous droits réservés </p>
+    </footer>
 </body>
 </html>
