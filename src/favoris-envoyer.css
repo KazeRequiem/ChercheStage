@@ -13,6 +13,12 @@
     padding: 20px;
 }
 
+.candidatures-favoris h1, .recherches-enregistrees h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    line-height: 0px;
+}
+
 .candidatures-favoris h2, .recherches-enregistrees h2 {
     text-align: center;
     background-color: #DBEAFE;
@@ -49,17 +55,56 @@
 }
 
 .supprimer {
-    background-color: #FEE2E2;
-    border: none;
-    color: #B91C1C;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid var(--Rouge, #FF3B30);
+    font-size: 0.875rem;
+    font-weight: 400;
     padding: 5px 10px;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 12px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+
 }
 
 .supprimer:hover {
     background-color: #FCA5A5;
+}
+
+.statut-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;    
+}
+
+.statut {
+    font-family: "Poppins", sans-serif;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.statut.en-attente {
+    border: 1px solid var(--Orange, #FF9500);
+}
+
+.statut.accepte {
+    border: 1px solid var(--Vert, #34C759);
+}
+
+.statut.refuse {
+    border: 1px solid var(--Rouge, #FF3B30);
+}
+
+.voir-candidature {
+    background: none;
+    border-radius: 15px;
+    border: 1px solid var(--Vert, #34C759);
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.voir-candidature:hover {
+    background-color: #A7F3D0;
 }
