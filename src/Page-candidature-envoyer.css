@@ -3,7 +3,7 @@
     justify-content: space-between;
     gap: 20px;
     padding: 20px;
-    width: 90%;
+    width: 70vw;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -11,6 +11,8 @@
 .candidatures-envoyees, .candidatures-recues {
     flex: 1;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .candidatures-envoyees h2, .candidatures-recues h2 {
@@ -26,10 +28,10 @@
     justify-content: space-between;
     align-items: center;
     background-color: #EFF6FF;
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 15px;
     margin-bottom: 15px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30vw;
 }
 
 .candidature-item p {

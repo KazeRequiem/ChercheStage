@@ -154,6 +154,8 @@ header {
     flex-shrink: 0;
     margin-left: 1em;
     width: 30%;
+    pointer-events: none;
+    user-select: none;
 }
 
 .box-2 .box-content {
@@ -207,6 +209,8 @@ header {
 
 .logo-container img {
     height: auto;
+    pointer-events: none;
+    user-select: none;
 }
 
 .confiance-entreprises {
