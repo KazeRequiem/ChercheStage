@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recherche offre</title>
-    <link rel="stylesheet" href="src/Page-recherche.css">
     <link rel="stylesheet" href="src/header-footer.css">
+    <link rel="stylesheet" href="src/Page-gestion.css">
+
 </head>
 <body>
     <header class="header">
@@ -22,94 +23,54 @@
     </header>
 
     <main>
-        <section class="recherche">
-            <div class="filter">
-                <span>Trier</span>
-                <select id="filter-select">
-                    <option value="default">Par défaut</option>
+        <section class="candidatures">
+            <div class="candidats-header-content">
+                <select id="filter-select" class="trier-recherche">
+                    <option value="default">Trier ▼</option>
+                    <option value="nom">Nom</option>
                     <option value="price-asc">Prix croissant</option>
                     <option value="price-desc">Prix décroissant</option>
                     <option value="location">Localisation</option>
                 </select>
             </div>
-    
-            <div class="offres">
-                <div class="offre-item">
-                    <div class="offre-info">
-                        <div class="info-line">
-                            <p class="titre-item">Administrateur Systèmes & Réseaux</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/company-icon.svg" alt="entreprise" class="info-icon">
-                            <p>Thalès</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/contract-icon.svg" alt="contrat" class="info-icon">
-                            <p>CDI</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/salary-icon.svg" alt="salaire" class="info-icon">
-                            <p>~35k</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/map-black.svg" alt="localisation" class="info-icon">
-                            <p>Hénin-Beaumont</p>
-                        </div>
+            <div class="candidatures-publiées">
+                <div class="candidature-item">
+                    <div>
+                        <h4>Administrateur Systèmes & Réseaux</h4>
+                        <p>🏢 Thalès</p>
+                        <p>📄 CDI</p>
+                        <p>💰 ~35k</p>
+                        <p>📍 Hénin-Beaumont</p>
                     </div>
-                    <div class="offre-logo">
+                    <div class="candidature-actions">
+                        <a href="Modifier-offre.html"class="modifier">Modifier</a>
                         <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                     </div>
                 </div>
-                <div class="offre-item">
-                    <div class="offre-info">
-                        <div class="info-line">
-                            <p class="titre-item">Développeur Web</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/company-icon.svg" alt="entreprise" class="info-icon">
-                            <p>Google</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/contract-icon.svg" alt="contrat" class="info-icon">
-                            <p>CDI</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/salary-icon.svg" alt="salaire" class="info-icon">
-                            <p>~50k</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/map-black.svg" alt="localisation" class="info-icon">
-                            <p>Paris</p>
-                        </div>
+                <div class="candidature-item">
+                    <div>
+                        <h4>Administrateur Systèmes & Réseaux</h4>
+                        <p>🏢 Thalès</p>
+                        <p>📄 CDI</p>
+                        <p>💰 ~35k</p>
+                        <p>📍 Hénin-Beaumont</p>
                     </div>
-                    <div class="offre-logo">
-                        <img src="assets/google-logo.png" alt="Google Logo" class="company-logo">
+                    <div class="candidature-actions">
+                        <a href="Modifier-offre.html"class="modifier">Modifier</a>
+                        <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                     </div>
                 </div>
-                <div class="offre-item">
-                    <div class="offre-info">
-                        <div class="info-line">
-                            <p class="titre-item">Développeur Web</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/company-icon.svg" alt="entreprise" class="info-icon">
-                            <p>Google</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/contract-icon.svg" alt="contrat" class="info-icon">
-                            <p>CDI</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/salary-icon.svg" alt="salaire" class="info-icon">
-                            <p>~50k</p>
-                        </div>
-                        <div class="info-line">
-                            <img src="assets/map-black.svg" alt="localisation" class="info-icon">
-                            <p>Paris</p>
-                        </div>
+                <div class="candidature-item">
+                    <div>
+                        <h4>Administrateur Systèmes & Réseaux</h4>
+                        <p>🏢 Thalès</p>
+                        <p>📄 CDI</p>
+                        <p>💰 ~35k</p>
+                        <p>📍 Hénin-Beaumont</p>
                     </div>
-                    <div class="offre-logo">
-                        <img src="assets/google-logo.png" alt="Google Logo" class="company-logo">
+                    <div class="candidature-actions">
+                        <a href="Modifier-offre.html"class="modifier">Modifier</a>
+                        <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
                     </div>
                 </div>
             </div>

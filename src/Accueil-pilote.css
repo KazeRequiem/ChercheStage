@@ -37,6 +37,8 @@
 }
 
 .stat-icon {
+    margin-top: 1em;
+    margin-right: 0.5em;
     width: 20%;
     position: absolute;
     top: 2%;
@@ -125,16 +127,15 @@
     background: var(--Bleu---200, #BEDBFF);
 }
 
-.sidebar-button.sidebar-button.bleu-clair {
+.sidebar-button.bleu-clair {
     background: var(--Bleu---100, #DBEAFE);
 
 }
 
-.sidebar-button.sidebar-button.bleu-tres-clair {
+.sidebar-button.bleu-tres-clair {
     background: var(--Bleu---50, #EFF6FF);
 
 }
-
 
 .button-section {
     display: grid;

@@ -39,6 +39,19 @@
     cursor: pointer;
 }
 
+.trier-recherche{
+    background-color: #DBEAFE;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+
 .trier-button, .create-button {
     background-color: #DBEAFE;
     border: none;
@@ -48,6 +61,7 @@
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+    color: inherit;
 }
 
 .trier-button:hover, .create-button:hover, .modifier:hover {
@@ -59,6 +73,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.candidatures-publiées a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .candidature-item {
