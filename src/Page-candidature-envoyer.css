@@ -23,6 +23,12 @@
     margin-bottom: 20px;
 }
 
+.candidatures-envoyees h1, .candidatures-recues h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    line-height: 0px;
+}
+
 .candidature-item {
     display: flex;
     justify-content: space-between;
@@ -36,43 +42,8 @@
 
 .candidature-item p {
     margin: 5px 0;
-    color: var(--gris, #7F7979);
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: 14px;
 }
-
-.nom-entreprise-item {
-    margin: 5px 0;
-    color: #000;
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-}
-
-.statut-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 5px;
-}
-
-.statut-icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 0.5vw;
-}
-
 
 .statut-buttons {
     display: flex;
@@ -87,8 +58,6 @@
     border-radius: 15px;
     font-size: 0.875rem;
     font-weight: 400;
-    display: flex;
-    align-items: center;
 }
 
 .statut.en-attente {
