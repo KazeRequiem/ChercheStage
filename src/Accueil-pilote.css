@@ -130,6 +130,12 @@
 
 }
 
+.sidebar-button.sidebar-button.bleu-tres-clair {
+    background: var(--Bleu---50, #EFF6FF);
+
+}
+
+
 .button-section {
     display: grid;
     flex-direction: column;
