@@ -25,7 +25,14 @@
         <section class="offre-details">
             <!-- Détails de l'offre à gauche -->
             <div class="offre-description">
-                <h2><img src="assets/thales-logo.png"> Développeur Full Stack H/F</h2>
+                <h2>
+                    <img src="assets/thales-logo.png"> Développeur Full Stack H/F
+                    <span class="favorite-icon" onclick="toggleFavorite(this)">
+                        <img src="assets/coeur.png" alt="Ajouter aux favoris" class="favorite-icon-img">
+                        <span class="explosion"></span>
+                    </span>
+                </h2>
+                
                 <p><strong>Entreprise :</strong> CESI</p>
                 <p><strong>Localisation :</strong> Arras</p>
                 <p><strong>Type de contrat :</strong> CDI</p>
@@ -130,5 +137,6 @@
         <hr class="footer-separator">
         <p class="footer-copyright">Copyright © 2025 Web4All. Tous droits réservés </p>
     </footer>
+    <script src="Coeur.js"></script>
 </body>
 </html>
