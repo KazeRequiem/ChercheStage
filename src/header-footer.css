@@ -103,7 +103,7 @@ footer {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    width: 100vw;
+    width: 100%;
     background-color: #23354D;
     color: #fff;
     margin-top: auto;

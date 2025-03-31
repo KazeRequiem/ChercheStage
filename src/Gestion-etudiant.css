@@ -1,19 +1,39 @@
+.candidatures {
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.candidatures h2{
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
 .candidats-header {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
+.candidats-header-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.candidats-header-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
 .candidats-header-actions {
     display: flex;
     align-items: center;
-    gap: 5rem;
-}
-
-.candidats-header-content {
-    display: flex;
-    gap: 10%;
-    align-items: center;
+    gap: 15px;
 }
 
 .search-bar {
@@ -48,21 +68,41 @@
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    min-width: 150px;
+    text-decoration: none;
 }
 
-.trier-button:hover, .create-button:hover {
+.trier-button:hover, .create-button:hover, .modifier:hover {
     background-color: #375BFF;
     color: white;
 }
 
-.candidats {
-    padding: 20px;
-    width: 90%;
-    margin: 0 auto;
-    box-sizing: border-box;
+.candidatures-publiées{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
+
+.candidature-item {
+    background-color: #EFF6FF;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.candidature-item p {
+    margin: 5px 0;
+}
+
+.candidature-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
 
 .candidats-placés{
     display: grid;

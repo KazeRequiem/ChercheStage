@@ -35,29 +35,28 @@ body {
 }
 
 .logo {
+    width: auto;
+    margin: 0;
     font-size: 24px;
     font-weight: bold;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     padding: 20px 40px;
+    gap: 20px;
 }
 
 .navbar {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
     flex: 1;
-    text-align: center;
+    justify-content: center;
 }
 
-.logo{
-    width: 5%;
-}
 
 .navbar li {
     display: inline;
@@ -69,13 +68,6 @@ header {
     color: black;
     font-weight: bold;
 }
-
-.nightmode {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 .titre {
     text-align: center;
     margin: 40px 0;
@@ -127,6 +119,8 @@ header {
     flex-direction: column;
     padding: 1em;
     border-radius: 30px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .box-title{
@@ -147,6 +141,8 @@ header {
     flex: 1;
     margin-right: 1em;
     font-size: 1.5rem;
+    text-align: justify;
+    line-height: 1.5;
     font-family: "Poppins", sans-serif;
 }
 
@@ -156,6 +152,7 @@ header {
     width: 30%;
     pointer-events: none;
     user-select: none;
+    max-width: 100%;
 }
 
 .box-2 .box-content {
