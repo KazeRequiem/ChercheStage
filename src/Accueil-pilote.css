@@ -76,17 +76,16 @@
     color: #EF4444;
 }
 
-.activity {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.activity-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
 }
 
-.activity-sidebar {
-    flex: 1;
+.chart-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .sidebar-button {
@@ -100,13 +99,30 @@
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-section {
+    display: grid;
+    flex-direction: column;
+    gap: 15px;
+    justify-items: center;
+    height: 100%;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar-button:hover {
     background-color: #375BFF;
     color: white;
-}
-
-.chart {
-    flex: 3;
 }

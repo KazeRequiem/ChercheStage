@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter entreprise</title>
+    <link rel="stylesheet" href="src/Profil-etudiant.css">
+    <link rel="stylesheet" href="src/header-footer.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="Accueil-Candidat.html"><img src="assets/logo.png" alt="logo"></a>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Intitulé de poste, mots-clés..." required>
+            <div class="divider"></div>
+            <input type="text" placeholder="Valenciennes (59) 50km" required>
+        </div>
+        <button type="submit" class="search-button">Rechercher</button>
+    </header>
+
+    <main>
+        <h2>Ajouter une entreprise</h2>
+        <section class="contenu">
+            <div class="info-section">
+                <h4>Nom de l'entreprise</h4>
+                <input type="text">
+                <h4>Localisation</h4>
+                <input type="text">
+                <h4>Email</h4>
+                <input type="text">
+                <h4>Logo</h4>
+                <input type="file">
+                <p>le logo doit respecter un ratio de 1:1 et faire moins de 2mo</p>
+                <button class="bouton">Ajouter l'entreprise</button>
+            </div>
+            <div class="help-section">
+                <form>
+                    <label for="Descritption">Descritption</label>
+                    <textarea id="corp" name="corp" placeholder="Descritption" required></textarea>
+                    <label for="photos">Photos</label>
+                    <input type="image">
+                    <p>Taille du fichier limité à 2mo</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul class="navbar-footer">
+            <li>
+                <p>A propos</p>
+                <ul>
+                    <li><a href="#link1">Qui sommes-nous ?</a></li><br>
+                    <li><a href="#link2">Notre mission</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>Liens utiles</p>
+                <ul>
+                    <li><a href="#link4">Chercher une offre</a></li><br>
+                    <li><a href="#link5">Recruter</a></li><br>
+                    <li><a href="#link6">FAQ</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>Mentions légales</p>
+                <ul>
+                    <li><a href="#link7">Politique de confidentialité</a></li><br>
+                    <li><a href="#link8">Politique d'utilisation</a></li><br>
+                    <li><a href="#link9">Gestion des cookies</a></li>
+                </ul>
+            </li>
+            <li>
+                <p>Nous contacter</p>
+                <ul>
+                    <li><a href="#link7"><img src="assets/Linkedin.png">&nbsp;<img src="assets/localisation.png">&nbsp;<img src="assets/mail.png"> </a></li><br>
+                    <li><a href="#link8">Devenir partenaire</a></li>
+                </ul>
+            </li>
+        </ul>
+        <hr class="footer-separator">
+        <p class="footer-copyright">Copyright © 2025 Web4All. Tous droits réservés </p>
+    </footer>
+</body>
+</html>

@@ -38,73 +38,38 @@
                 <div class="stat-card">
                     <img src="assets/User.png" alt="Icon" class="stat-icon">
                     <h2>26</h2>
-                    <p>Vues sur votre profil</p>
+                    <p>Taux de réponse entreprises</p>
                     <span class="stat-change positive">+4 <small>+jsp% cette semaine</small></span>
                 </div>
                 <div class="stat-card">
                     <img src="assets/Fichier.png" alt="Icon" class="stat-icon">
                     <h2>4</h2>
-                    <p>Réponses à vos candidatures</p>
+                    <p>Nombres d'offres sur le site</p>
                     <span class="stat-change neutral">- <small>0% cette semaine</small></span>
                 </div>
                 <div class="stat-card">
                     <img src="assets/Enveloppe.png" alt="Icon" class="stat-icon">
                     <h2>36</h2>
-                    <p>Candidatures envoyées</p>
+                    <p>Nombre d'étudiants placés</p>
                     <span class="stat-change negative">-23 <small>-jsp% cette semaine</small></span>
                 </div>
             </section>
             
             <section class="activity">
-                <h2>Activité de la semaine</h2>
-                <div class="chart">
-                    <img src="assets/chart-placeholder.png" alt="Graphique d'activité">
-                </div>
-                <div class="activity-sidebar">
-                    <a href="Profil-etudiant.html" class="sidebar-button">Mon profil étudiant</a>
-                    <a href="Page-candidature-envoyer.html" class="sidebar-button">Mes demandes</a>
-                    <a href="Page-candidature-favoris.html" class="sidebar-button">Mes favoris</a>
-                </div>
-            </section>
+                <div class="activity-grid">
 
-            <section class="offres-suggestions">
-                <h2>Voici des offres qui pourraient vous intéresser</h2>
-                <div class="offres">
-                    <div class="offre-item">
-                        <div class="offre-info">
-                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
-                            <p>🏢 Thalès</p>
-                            <p>📄 CDI</p>
-                            <p>💰 ~35k</p>
-                            <p>📍 Hénin-Beaumont</p>
-                        </div>
-                        <div class="offre-logo">
-                            <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
+                    <div class="chart-section">
+                        <h2>Statistiques des candidats</h2>
+                        <div class="chart-container">
+                            <canvas id="barCanvas" aria-label="chart" role="img"></canvas>
                         </div>
                     </div>
-                    <div class="offre-item">
-                        <div class="offre-info">
-                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
-                            <p>🏢 Thalès</p>
-                            <p>📄 CDI</p>
-                            <p>💰 ~35k</p>
-                            <p>📍 Hénin-Beaumont</p>
-                        </div>
-                        <div class="offre-logo">
-                            <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
-                        </div>
-                    </div>
-                    <div class="offre-item">
-                        <div class="offre-info">
-                            <p><strong>Administrateur Systèmes & Réseaux</strong></p>
-                            <p>🏢 Thalès</p>
-                            <p>📄 CDI</p>
-                            <p>💰 ~35k</p>
-                            <p>📍 Hénin-Beaumont</p>
-                        </div>
-                        <div class="offre-logo">
-                            <img src="assets/thales-logo.png" alt="Thalès Logo" class="company-logo">
-                        </div>
+            
+                    <div class="button-section">
+                        <a href="Profil-pilote.html" class="sidebar-button">Mon profil pilote</a>
+                        <a href="Gestion-offre.html" class="sidebar-button">Gestion-offre</a>
+                        <a href="Gestion-entreprise.html" class="sidebar-button">Gestion-entreprise</a>
+                        <a href="Gestion-etudiant.html" class="sidebar-button">Gestion-etudiant</a>
                     </div>
                 </div>
             </section>
@@ -146,5 +111,8 @@
             <hr class="footer-separator">
             <p class="footer-copyright">Copyright © 2025 Web4All. Tous droits réservés </p>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
