@@ -4,7 +4,6 @@
     padding: 20px;
     box-sizing: border-box;
 }
-
 .filter {
     display: flex;
     justify-content: flex-end;
@@ -13,7 +12,6 @@
     font-size: 16px;
     font-weight: bold;
 }
-
 .filter select {
     margin-left: 10px;
     padding: 5px 10px;
@@ -21,14 +19,13 @@
     border: 1px solid #ccc;
     font-size: 14px;
 }
-
 .offres {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
 .offre-item {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,17 +37,46 @@
     text-decoration: none;
     color: inherit;
 }
-
-.offre-item:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
 .offre-logo {
     display: flex;
     align-items: center;
 }
-
 .company-logo {
-    height: auto;
-    border-radius: 4px;
+    position: absolute; /* Permet de positionner l'élément par rapport à .offre-item */
+    bottom: 10px; /* Distance par rapport au bas */
+    right: 10px; /* Distance par rapport à la droite */
+    width: 5vw; /* Ajustez la taille selon vos besoins */
+    height: auto; /* Conserve les proportions de l'image */
+    border-radius: 4px; /* Facultatif : ajoute des coins arrondis */
+}
+
+/* Nouveaux styles pour les lignes d'information */
+.info-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2vh;
+}
+
+.info-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.offre-info p {
+    margin: 0;
+}
+
+.offre-logo {
+    width: 10vw;
+    height: 10vw;
+}
+
+.titre-item {
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }

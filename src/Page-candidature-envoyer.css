@@ -36,57 +36,98 @@
 
 .candidature-item p {
     margin: 5px 0;
-    font-size: 14px;
+    color: var(--gris, #7F7979);
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
-.status-buttons {
+.nom-entreprise-item {
+    margin: 5px 0;
+    color: #000;
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
+.statut-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.statut-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5vw;
+}
+
+
+.statut-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 0;    
 }
 
-.status {
+.statut {
+    font-family: "Poppins", sans-serif;
     padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
 }
 
-.status.en-attente {
-    background-color: #FFFBEB;
-    color: #F59E0B;
-    border: 1px solid #F59E0B;
+.statut.en-attente {
+    border: 1px solid var(--Orange, #FF9500);
 }
 
-.status.accepte {
-    background-color: #ECFDF5;
-    color: #10B981;
-    border: 1px solid #10B981;
+.statut.accepte {
+    border: 1px solid var(--Vert, #34C759);
 }
 
-.status.refuse {
-    background-color: #FEF2F2;
-    color: #EF4444;
-    border: 1px solid #EF4444;
+.statut.refuse {
+    border: 1px solid var(--Rouge, #FF3B30);
 }
 
 .voir-candidature {
-    background-color: #DBEAFE;
-    border: none;
-    color: #1D4ED8;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid var(--Vert, #34C759);
+    font-size: 0.875rem;
+    font-weight: 400;
     padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
 }
 
 .supprimer {
-    background-color: #FEE2E2;
-    border: none;
-    color: #B91C1C;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid var(--Rouge, #FF3B30);
+    font-size: 0.875rem;
+    font-weight: 400;
     padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 12px;
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-line img {
+    width: 1.5vw;
+    height: auto;
 }
