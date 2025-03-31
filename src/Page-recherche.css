@@ -42,15 +42,14 @@
     align-items: center;
 }
 .company-logo {
-    position: absolute; /* Permet de positionner l'élément par rapport à .offre-item */
-    bottom: 10px; /* Distance par rapport au bas */
-    right: 10px; /* Distance par rapport à la droite */
-    width: 5vw; /* Ajustez la taille selon vos besoins */
-    height: auto; /* Conserve les proportions de l'image */
-    border-radius: 4px; /* Facultatif : ajoute des coins arrondis */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 5vw;
+    height: auto;
+    border-radius: 4px;
 }
 
-/* Nouveaux styles pour les lignes d'information */
 .info-line {
     display: flex;
     align-items: center;
