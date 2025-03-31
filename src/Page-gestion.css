@@ -5,29 +5,11 @@
     box-sizing: border-box;
 }
 
-.candidatures h2{
-    text-align: center;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-}
-
-.candidats-header {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
 .candidats-header-content {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-}
-
-.candidats-header-content h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 .candidats-header-actions {
@@ -37,8 +19,6 @@
 }
 
 .search-bar {
-    display: flex;
-    align-items: center;
     background-color: #DBEAFE;
     border-radius: 6px;
     padding: 5px 10px;
@@ -62,7 +42,6 @@
 .trier-button, .create-button {
     background-color: #DBEAFE;
     border: none;
-    color: black;
     padding: 10px 15px;
     border-radius: 6px;
     font-size: 14px;
@@ -82,7 +61,6 @@
     gap: 20px;
 }
 
-
 .candidature-item {
     background-color: #EFF6FF;
     border-radius: 6px;
@@ -93,7 +71,7 @@
     align-items: center;
 }
 
-.candidature-item p {
+.candidature-item p , h4{
     margin: 5px 0;
 }
 
@@ -121,3 +99,4 @@
     text-align: center;
     text-decoration: none;
 }
+

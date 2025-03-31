@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/header-footer.css">
-        <link rel="stylesheet" href="src/Gestion-etudiant.css">
+        <link rel="stylesheet" href="src/Page-gestion.css">
     </head>
 
     <body>
@@ -25,125 +25,100 @@
         
         <main>
             <section class="candidatures">
-                <section class="candidats-header">
-                    <div class="candidats-header-content">
-                        <h2>Liste des étudiants</h2>
-                        <div class="candidats-header-actions">
-                            <div class="search-bar">
-                                <input type="text" placeholder="Rechercher un étudiant">
-                                <button class="search-icon">🔍</button>
-                            </div>
-                            <select id="filter-select" class="trier-button">
-                                <option value="default">Trier ▼</option>
-                                <option value="price-asc">Prix croissant</option>
-                                <option value="price-desc">Prix décroissant</option>
-                                <option value="location">Localisation</option>
-                            </select>
-                            <a class="create-button">+ Ajouter un compte étudiant</a>
+                <div class="candidats-header-content">
+                    <h2>Liste des étudiants</h2>
+                    <div class="candidats-header-actions">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Rechercher un étudiant">
+                            <button class="search-icon">🔍</button>
                         </div>
-                    </div>
-                </section>
-                <div class="candidats-placés">
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
-                    </div>
-                    <div class="candidats-item">
-                        <div>
-                            <h3>Castagnette bob</h3>
-                            <p>🧑‍🎓 Baptiste</p>
-                            <p>📄 AR4JPO1</p>
-                            <p>📍 Arras</p>
-                        </div>
-                        <div class="candidats-actions">
-                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
-                        </div>
+                        <select id="filter-select" class="trier-button">
+                            <option value="default">Trier ▼</option>
+                            <option value="price-asc">Nom</option>
+                            <option value="price-desc">Promotion</option>
+                            <option value="location">Localisation</option>
+                        </select>
+                        <a class="create-button">+ Ajouter un compte étudiant</a>
                     </div>
                 </div>
+                <div class="candidatures-publiées">
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
+                    <div class="candidature-item">
+                        <div>
+                            <h4>Castagnette bob</h4>
+                            <p>🧑‍🎓 Baptiste</p>
+                            <p>📄 AR4JPO1</p>
+                            <p>📍 Arras</p>
+                        </div>
+                        <div>
+                            <a href="Ajouter-etudiant.html" class="modifier">Modifier</a>
+                        </div>
+                    </div>
             </section>
         </main>
 
