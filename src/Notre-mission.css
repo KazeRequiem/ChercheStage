@@ -1,0 +1,142 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+/* Sections */
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-content {
+    padding: 0 300px;
+}
+
+.bg-light {
+    background-color: #ecf0f1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.approach-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 28%;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+.values-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.value-item h3 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.value-item p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        padding: 0 20px;
+    }
+
+    .approach-cards,
+    .values-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card, .value-item {
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p, h3 {
+        font-size: 1.1em;
+    }
+}
