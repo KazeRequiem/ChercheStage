@@ -7,10 +7,19 @@
         <title>Qui sommes-nous</title>
         <link rel="stylesheet" href="src/header-footer.css">
         <link rel="stylesheet" href="src/Qui-sommes-nous.css">
+        <link rel="stylesheet" href="src/style-2.css">
     </head>
     <body>
-        {# Inclure le header réutilisable #}
-        {% include 'partials/header.html.twig' %}
+        <header>
+            <img src="assets/logo.png" alt="logo" class="logo">
+            <nav>
+                <ul class="navbar">
+                    <li><a href="qui_sommes_nous.php">A propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">CGU</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <main>
             <h1>Qui sommes-nous</h1>

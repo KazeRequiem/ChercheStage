@@ -1,0 +1,43 @@
+{# filepath: templates/faq.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Web4All</title>
+    <meta name="description" content="Foire aux questions de Web4All">
+    <link rel="stylesheet" href="src/header-footer.css">
+    <link rel="stylesheet" href="src/faq.css">
+    <script src="src/faq.js" defer></script>
+</head>
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main>
+        <h1 class="faq-title">Foire aux Questions</h1>
+        <p class="faq-intro">Comment pouvons-nous vous aider ?</p>
+        <div class="faq-search">
+            <input type="text" placeholder="Recherchez une question...">
+            <button class="search-btn">Rechercher</button>
+        </div>
+        <section class="faq-container">
+            {% for item in questions %}
+                <article class="faq-item">
+                    <h3>{{ item.question }}</h3>
+                    <p>{{ item.answer }}</p>
+                </article>
+            {% endfor %}
+        </section>
+        <section class="faq-recommended">
+            <h2>Sujets recommandés</h2>
+            <ul>
+                {% for topic in recommended %}
+                    <li><a href="#">{{ topic }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+</body>
+</html>
