@@ -52,7 +52,7 @@ main {
     height: auto;
 }
 
-.search-button {
+.search-button{
     background: linear-gradient(135deg, #4a7cff, #375bff);
     border: none;
     color: white;
@@ -62,6 +62,17 @@ main {
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
+}
+
+.deconnexion-button{
+    border: none;
+    color: black;
+    font-size: 14px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 1em;
 }
 
 .navbar-footer {
