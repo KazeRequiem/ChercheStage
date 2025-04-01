@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Tickets</title>
-    <link rel="stylesheet" href="src/Gestion-tickets.css">
+    <title>Profil Pilote</title>
+    <link rel="stylesheet" href="src/Profil-etudiant.css">
     <link rel="stylesheet" href="src/header-footer.css">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <a href="Accueil-Candidat.html"><img src="assets/logo.png" alt="logo"></a>
+            <a href="Accueil-Pilote.html"><img src="assets/logo.png" alt="logo"></a>
         </div>
         
         <div class="search-container">
@@ -22,38 +22,26 @@
     </header>
 
     <main>
-        <section class="tickets">
-            <h2>Gestion des Tickets</h2>
-            <table class="tickets-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Demandeur</th>
-                        <th>Titre</th>
-                        <th>Date de création</th>
-                        <th>État</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Jean Dupont</td>
-                        <td>Problème de connexion</td>
-                        <td>2025-03-30</td>
-                        <td class="etat">Non résolu</td>
-                        <td><button class="resolve-button">Marquer comme résolu</button></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Marie Curie</td>
-                        <td>Erreur sur le profil</td>
-                        <td>2025-03-29</td>
-                        <td class="etat">Résolu</td>
-                        <td><button class="resolve-button">Marquer comme non résolu</button></td>
-                    </tr>
-                </tbody>
-            </table>
+        <h2>Votre profil pilote</h2>
+        <section class="contenu">
+            <div class="info-section">
+                <h3>Vos informations:</h3>
+                <p><strong>Nom</strong><br>Castagnette</p>
+                <p><strong>Prénom</strong><br>Bob</p>
+                <p><strong>Email</strong><br>bob.castagnette@viacesi.fr</p>
+                <p><strong>Établissement</strong><br>Arras</p>
+                <p><strong>Vos promotions</strong><br>CPA2 Informatique / CPA1 Informatique / CPA3 Informatique</p>
+            </div>
+            <div class="help-section">
+                <h3>Besoin d’aide? écrivez-nous!</h3>
+                <form>
+                    <label for="objet">Objet</label>
+                    <input type="text" id="objet" name="objet" placeholder="Objet" required>
+                    <label for="corp">Corp</label>
+                    <textarea id="corp" name="corp" placeholder="Votre message" required></textarea>
+                    <button type="submit" class="bouton">Envoyer le ticket</button>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -91,6 +79,5 @@
         <hr class="footer-separator">
         <p class="footer-copyright">Copyright © 2025 Web4All. Tous droits réservés </p>
     </footer>
-    <script src="Gestion-tickets.js"></script>
 </body>
 </html>
