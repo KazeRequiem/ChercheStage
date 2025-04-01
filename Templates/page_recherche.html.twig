@@ -1,0 +1,37 @@
+{# filepath: templates/page_recherche.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recherche offre</title>
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-gestion.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="candidatures">
+                <div class="candidats-header-content">
+                    <select id="filter-select" class="trier-recherche">
+                        <option value="default">Trier ▼</option>
+                        <option value="nom">Nom</option>
+                        <option value="price-asc">Prix croissant</option>
+                        <option value="price-desc">Prix décroissant</option>
+                        <option value="location">Localisation</option>
+                    </select>
+                </div>
+                <div class="candidatures-publiées">
+                    {% for offer in offers %}
+                        {% include 'partials/offer_card.html.twig' with { offer: offer } %}
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

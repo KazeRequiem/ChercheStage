@@ -1,0 +1,74 @@
+{# filepath: templates/accueil_pilote.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil Pilote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/Accueil-pilote.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-recherche.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h1>Bienvenue dans votre espace, {{ user.firstName }}.</h1>
+                <div class="notifications">
+                    <span>Mes Notifications</span>
+                    <img src="assets/Ring.png" alt="Notifications">
+                </div>
+            </div>
+
+            <section class="stats-container">
+                <div class="stat-card">
+                    <img src="assets/User.png" alt="Icon" class="stat-icon orange">
+                    <h2>26</h2>
+                    <p>Taux de réponse entreprises</p>
+                    <span class="stat-change positive">+4 <small>+jsp% cette semaine</small></span>
+                </div>
+                <div class="stat-card">
+                    <img src="assets/Fichier.png" alt="Icon" class="stat-icon vert">
+                    <h2>4</h2>
+                    <p>Nombres d'offres sur le site</p>
+                    <span class="stat-change neutral">- <small>0% cette semaine</small></span>
+                </div>
+                <div class="stat-card">
+                    <img src="assets/Enveloppe.png" alt="Icon" class="stat-icon rouge">
+                    <h2>36</h2>
+                    <p>Nombre d'étudiants placés</p>
+                    <span class="stat-change negative">-23 <small>-jsp% cette semaine</small></span>
+                </div>
+            </section>
+
+            <section class="activity">
+                <div class="activity-grid">
+                    <div class="chart-section">
+                        <h2>Statistiques des pilotes</h2>
+                        {% include 'partials/chart.html.twig' with {
+                            canvasId: 'barCanvasPilote',
+                            type: 'doughnut',
+                            data: chartDataPilote,
+                            options: chartOptions
+                        } %}
+                    </div>
+            
+                    <div class="button-section">
+                        <a href="profil_pilote.php" class="sidebar-button bleu-fonce">Mon profil pilote</a>
+                        <a href="gestion_offre.php" class="sidebar-button bleu-normal">Gestion-offre</a>
+                        <a href="gestion_entreprise.php" class="sidebar-button bleu-clair">Gestion-entreprise</a>
+                        <a href="gestion_etudiant.php" class="sidebar-button bleu-tres-clair">Gestion-etudiant</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

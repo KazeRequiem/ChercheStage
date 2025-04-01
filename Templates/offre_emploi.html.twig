@@ -1,0 +1,64 @@
+{# filepath: templates/offre_emploi.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Offre d'emploi</title>
+        <link rel="stylesheet" href="src/Offre-emploi.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="offre-details">
+                <div class="offre-description">
+                    <h2><img src="assets/{{ offer.logo }}" alt="{{ offer.company }} Logo"> {{ offer.title }}</h2>
+                    <p><strong>Entreprise :</strong> {{ offer.company }}</p>
+                    <p><strong>Localisation :</strong> {{ offer.location }}</p>
+                    <p><strong>Type de contrat :</strong> {{ offer.contractType }}</p>
+                    <p><strong>Salaire :</strong> {{ offer.salary }}</p>
+                    <p><strong>Date de début / fin :</strong> {{ offer.startDate }} / {{ offer.endDate }}</p>
+
+                    <h3>Détail du poste</h3>
+                    <p>{{ offer.details }}</p>
+                    <h3>Objectifs de la mission :</h3>
+                    <ul>
+                        {% for objective in offer.objectives %}
+                            <li>{{ objective }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h3>Pourquoi nous rejoindre ?</h3>
+                    <ul>
+                        {% for reason in offer.reasons %}
+                            <li>{{ reason }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="offre-sidebar">
+                    <div class="profil-recherche">
+                        <h3>Profil recherché</h3>
+                        <ul>
+                            {% for skill in offer.skills %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                        <a href="postuler.php" class="postuler-button">Postuler</a>
+                    </div>
+
+                    <div class="entreprise-presentation">
+                        <img src="assets/{{ offer.logo }}" alt="{{ offer.company }}">
+                        <p>Note : ★★★★☆ (4.5/5)</p>
+                        <p>{{ offer.companyDescription }}</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

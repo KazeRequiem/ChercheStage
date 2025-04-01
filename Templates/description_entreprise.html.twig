@@ -1,0 +1,62 @@
+{# filepath: templates/description_entreprise.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description entreprise</title>
+    <link rel="stylesheet" href="src/Offre-emploi.css">
+    <link rel="stylesheet" href="src/header-footer.css">
+</head>
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main>
+        <section class="offre-details">
+            <div class="offre-description">
+                <h2><img src="{{ entreprise.logo }}" alt="Logo"> {{ entreprise.name }}</h2>
+                <p>📧 {{ entreprise.email }}</p>
+                <p>⭐ {{ entreprise.rating }}/5</p>
+                <p>☎️ {{ entreprise.phone }}</p>
+                <p>👨‍🎓 {{ entreprise.candidates }} candidats ont déjà postulé</p>
+                <p>📍 {{ entreprise.location }}</p>
+                <h3>Description de l'entreprise</h3>
+                <p>{{ entreprise.description }}</p>
+                <h3>Pourquoi nous rejoindre ?</h3>
+                <ul>
+                    {% for reason in entreprise.reasons %}
+                        <li>{{ reason }}</li>
+                    {% endfor %}
+                </ul>
+                <h3>Noter notre entreprise</h3>
+                <div class="rating">
+                    {% for i in 5..1 %}
+                        <span data-value="{{ i }}">★</span>
+                    {% endfor %}
+                </div>
+                <p id="rating-value">Votre note : 0/5</p>
+            </div>
+    
+            <div class="offre-sidebar">
+                <div class="profil-recherche">
+                    <h3>Profil recherché</h3>
+                    <ul>
+                        {% for skill in entreprise.skills %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="postuler.html" class="postuler-button">Voir les offres</a>
+                </div>
+                <div class="entreprise-presentation">
+                    <h2>Stats de l'entreprise</h2>
+                    <canvas id="barCanvasEntreprise" aria-label="chart" role="img"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart-entreprise.js"></script>
+</body>
+</html>

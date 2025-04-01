@@ -1,0 +1,48 @@
+{# filepath: templates/statistique_global.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Statistiques Globales</title>
+        <link rel="stylesheet" href="src/Gestion-tickets.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <div class="chart-section">
+                <h2>Statistiques globales</h2>
+                <div class="chart-grid">
+                    {% include 'partials/chart.html.twig' with {
+                        title: 'Statistiques des candidats',
+                        canvasId: 'barCanvasCandidat',
+                        type: 'doughnut',
+                        data: chartDataCandidat,
+                        options: chartOptions
+                    } %}
+
+                    {% include 'partials/chart.html.twig' with {
+                        title: 'Statistiques des entreprises',
+                        canvasId: 'barCanvasEntreprise',
+                        type: 'doughnut',
+                        data: chartDataEntreprise,
+                        options: chartOptions
+                    } %}
+
+                    {% include 'partials/chart.html.twig' with {
+                        title: 'Statistiques des pilotes',
+                        canvasId: 'barCanvasPilote',
+                        type: 'doughnut',
+                        data: chartDataPilote,
+                        options: chartOptions
+                    } %}
+                </div>
+            </div>
+        </main>
+
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

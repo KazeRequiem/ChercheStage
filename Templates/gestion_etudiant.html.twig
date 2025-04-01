@@ -1,0 +1,53 @@
+{# filepath: templates/gestion_etudiant.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Gestion Étudiant</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-gestion.css">
+    </head>
+
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="candidatures">
+                {# Inclure la barre de recherche et les actions dynamiques #}
+                {% include 'partials/header_actions.html.twig' with {
+                    title: 'Liste des étudiants',
+                    searchPlaceholder: 'Rechercher un étudiant',
+                    filterOptions: [
+                        { value: 'name', label: 'Nom' },
+                        { value: 'promotion', label: 'Promotion' },
+                        { value: 'location', label: 'Localisation' }
+                    ],
+                    addLink: 'ajouter_etudiant.php',
+                    addButtonText: 'Ajouter un compte étudiant'
+                } %}
+
+                <div class="candidatures-publiées">
+                    {% for student in students %}
+                        <div class="candidature-item">
+                            <div>
+                                <h4>{{ student.lastName }}</h4>
+                                <p>🧑‍🎓 {{ student.firstName }}</p>
+                                <p>📄 {{ student.promotion }}</p>
+                                <p>📍 {{ student.location }}</p>
+                            </div>
+                            <div>
+                                <a href="modifier_etudiant.php" class="modifier">Modifier</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

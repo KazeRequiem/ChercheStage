@@ -1,0 +1,84 @@
+{# filepath: templates/accueil_admin.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Accueil Admin</title>
+    <meta name="description" content="Tableau de bord administrateur">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/Accueil-pilote.css">
+    <link rel="stylesheet" href="src/header-footer.css">
+    <link rel="stylesheet" href="src/Page-gestion.css">
+</head>
+
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main class="dashboard">
+        {# Section Bienvenue #}
+        <div class="dashboard-header">
+            <h1>Bienvenue dans votre espace, {{ app.user.prenom ?? 'Admin' }}.</h1>
+        </div>
+
+        {# Section Statistiques #}
+        <section class="stats-container">
+            {% include 'partials/stat_card.html.twig' with {
+                icon: 'assets/User.png',
+                color: 'orange',
+                doubleIcon: true,
+                value: 26,
+                label: 'Taux de réponse entreprises',
+                changeValue: '+4',
+                changePercent: '+15% cette semaine',
+                changeType: 'positive'
+            } %}
+
+            {% include 'partials/stat_card.html.twig' with {
+                icon: 'assets/Fichier.png',
+                color: 'vert',
+                value: 4,
+                label: 'Nombres d\'offres sur le site',
+                changeValue: '-',
+                changePercent: '0% cette semaine',
+                changeType: 'neutral'
+            } %}
+
+            {% include 'partials/stat_card.html.twig' with {
+                icon: 'assets/Enveloppe.png',
+                color: 'rouge',
+                value: 36,
+                label: 'Nombre d\'étudiants placés',
+                changeValue: '-23',
+                changePercent: '-39% cette semaine',
+                changeType: 'negative'
+            } %}
+        </section>
+
+        {# Section Boutons de navigation #}
+        <section class="admin-navigation">
+            <h2 class="visually-hidden">Navigation administrateur</h2>
+            <div class="activity-grid-admin">
+                    <a href="ticket.php" class="sidebar-button bleu-normal">Gestion-Tickets</a>
+                    <a href="gestion_offre.php" class="sidebar-button bleu-normal">Gestion-Offres</a>
+                    <a href="gestion_entreprise.php" class="sidebar-button bleu-normal">Gestion-Entreprises</a>
+                    <a href="gestion_etudiant.php" class="sidebar-button bleu-normal">Gestion-Etudiants</a>
+                    <a href="gestion_pilote.php" class="sidebar-button bleu-normal">Gestion-Pilotes</a>
+                    <a href="candidatures_favoris.php" class="sidebar-button bleu-normal">Mes favoris</a>
+                    <a href="profil_admin.php" class="sidebar-button bleu-normal">Mon Profil</a>
+                    <a href="candidatures_envoyees.php" class="sidebar-button bleu-normal">Mes candidatures</a>
+                    <a href="statistique_global.php" class="sidebar-button bleu-normal">Statistiques globales</a>
+                {% for button in admin_buttons %}
+                    <a href="{{ button.link }}" class="admin-button" title="{{ button.label }}">
+                        {% if button.icon %}
+                            <img src="{{ button.icon }}" alt="" class="button-icon">
+                        {% endif %}
+                        {{ button.label }}
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+</body>
+</html>

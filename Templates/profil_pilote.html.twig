@@ -1,0 +1,42 @@
+{# filepath: templates/profil_pilote.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil Pilote</title>
+        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <h2>Votre profil pilote</h2>
+            <section class="contenu">
+                <div class="info-section">
+                    <h3>Vos informations:</h3>
+                    <p><strong>Nom</strong><br>{{ pilot.lastName }}</p>
+                    <p><strong>Prénom</strong><br>{{ pilot.firstName }}</p>
+                    <p><strong>Email</strong><br>{{ pilot.email }}</p>
+                    <p><strong>Établissement</strong><br>{{ pilot.school }}</p>
+                    <p><strong>Vos promotions</strong><br>{{ pilot.promotions | join(' / ') }}</p>
+                </div>
+                <div class="help-section">
+                    <h3>Besoin d’aide? écrivez-nous!</h3>
+                    <form>
+                        <label for="objet">Objet</label>
+                        <input type="text" id="objet" name="objet" placeholder="Objet" required>
+                        <label for="corp">Corp</label>
+                        <textarea id="corp" name="corp" placeholder="Votre message" required></textarea>
+                        <button type="submit" class="bouton">Envoyer le ticket</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

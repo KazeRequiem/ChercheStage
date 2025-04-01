@@ -1,0 +1,13 @@
+{# filepath: templates/partials/company_card.html.twig #}
+<div class="candidature-item">
+    <div>
+        <h4>{{ company.name }}</h4>
+        <p>📍 {{ company.location }}</p>
+        <p>✉️ {{ company.email }}</p>
+        <p>☎️ {{ company.phone }}</p>
+    </div>
+    <div class="candidature-actions">
+        <a href="modifier_entreprise.php" class="modifier">Modifier</a>
+        <img src="assets/{{ company.logo }}" alt="{{ company.name }} Logo" class="company-logo">
+    </div>
+</div>

@@ -1,0 +1,37 @@
+{# filepath: templates/ajouter_pilote.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajouter pilote</title>
+        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <h2>Ajouter un pilote</h2>
+            <section class="contenu">
+                <div class="info-section">
+                    <h4>Nom du pilote</h4>
+                    <input type="text">
+                    <h4>Prénom du pilote</h4>
+                    <input type="text">
+                    <h4>Etablissement</h4>
+                    <input type="text">
+                    <h4>Email</h4>
+                    <input type="text">
+                    <h4>Promotion</h4>
+                    <input type="text">
+                    <button class="bouton">Ajouter le pilote</button>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{# filepath: templates/profil_admin.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Admin</title>
+    <link rel="stylesheet" href="src/Profil-etudiant.css">
+    <link rel="stylesheet" href="src/header-footer.css">
+</head>
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main>
+        <h2>Votre profil admin</h2>
+        <section class="contenu">
+            <div class="info-section">
+                <h3>Vos informations:</h3>
+                <p><strong>Nom</strong><br>{{ admin.lastName }}</p>
+                <p><strong>Prénom</strong><br>{{ admin.firstName }}</p>
+                <p><strong>Email</strong><br>{{ admin.email }}</p>
+                <p><strong>Établissement</strong><br>{{ admin.school }}</p>
+                <p><strong>Vos promotions</strong><br>{{ admin.promotions | join(' / ') }}</p>
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+</body>
+</html>

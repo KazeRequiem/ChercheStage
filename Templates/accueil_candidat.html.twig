@@ -1,0 +1,81 @@
+{# filepath: templates/accueil_candidat.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Accueil Candidat</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/Accueil-pilote.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-gestion.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+
+    <body>
+        {% include 'partials/header.html.twig' %}
+
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h1>Bienvenue dans votre espace, {{ user.firstName }}.</h1>
+                <div class="notifications">
+                    <span>Mes Notifications</span>
+                    <img src="assets/Ring.png" alt="Notifications">
+                </div>
+            </div>
+
+            <section class="stats-container">
+                <div class="stat-card">
+                    <img src="assets/User.png" alt="Icon" class="stat-icon orange">
+                    <h2>26</h2>
+                    <p>Vues sur votre profil</p>
+                    <span class="stat-change positive">+4 <small>+jsp% cette semaine</small></span>
+                </div>
+                <div class="stat-card">
+                    <img src="assets/Fichier.png" alt="Icon" class="stat-icon vert">
+                    <h2>4</h2>
+                    <p>Réponses à vos candidatures</p>
+                    <span class="stat-change neutral">- <small>0% cette semaine</small></span>
+                </div>
+                <div class="stat-card">
+                    <img src="assets/Enveloppe.png" alt="Icon" class="stat-icon rouge">
+                    <h2>36</h2>
+                    <p>Candidatures envoyées</p>
+                    <span class="stat-change negative">-23 <small>-jsp% cette semaine</small></span>
+                </div>
+            </section>
+            
+            <section class="activity">
+                <div class="activity-grid">
+                    <div class="chart-section">
+                    <h2>Statistiques des candidats</h2>
+                        {% include 'partials/chart.html.twig' with {
+                            canvasId: 'barCanvasCandidat',
+                            type: 'doughnut',
+                            data: chartDataCandidat,
+                            options: chartOptions
+                        } %}
+                    </div>
+            
+                    <div class="button-section">
+                        <a href="profil_etudiant.php" class="sidebar-button bleu-fonce">Mon profil étudiant</a>
+                        <a href="candidatures_envoyees.php" class="sidebar-button bleu-normal">Mes demandes</a>
+                        <a href="candidatures_favoris.php" class="sidebar-button bleu-clair">Mes favoris</a>
+                        <a href="recherche_entreprise.php" class="sidebar-button bleu-tres-clair">Recherche d'entreprises</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Voici des offres qui pourraient vous intéresser</h2>
+                <div class="candidatures-publiées">
+                    {% for offer in offers %}
+                        {% include 'partials/offer_card.html.twig' with { offer: offer } %}
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

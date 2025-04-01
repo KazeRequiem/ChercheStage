@@ -1,0 +1,55 @@
+{# filepath: templates/candidatures_envoyees.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatures envoyées</title>
+    <link rel="stylesheet" href="src/favoris-envoyer.css">
+    <link rel="stylesheet" href="src/header-footer.css">
+</head>
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main>
+        <section class="candidatures">
+            <div class="candidatures-favoris">
+                <h2>Candidatures envoyées</h2>
+                {% for candidature in candidatures_envoyees %}
+                    <div class="candidature-item">
+                        <div>
+                            <h1>{{ candidature.company }}</h1>
+                            <p>📍 {{ candidature.location }}</p>
+                            <p>📅 {{ candidature.date }}</p>
+                            <p>📅 {{ candidature.position }}</p>
+                        </div>
+                        <div class="statut-buttons">
+                            <span class="statut {{ candidature.status_class }}">{{ candidature.status }}</span>
+                            <button class="voir-candidature">Voir ma candidature</button>
+                            <button class="supprimer">Supprimer</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="recherches-enregistrees">
+                <h2>Candidatures reçues</h2>
+                {% for candidature in candidatures_recues %}
+                    <div class="candidature-item">
+                        <div>
+                            <h1>{{ candidature.company }}</h1>
+                            <p>📍 {{ candidature.location }}</p>
+                            <p>📅 {{ candidature.date }}</p>
+                        </div>
+                        <div class="statut-buttons">
+                            <button class="voir-candidature">Voir ma candidature</button>
+                            <button class="supprimer">Supprimer</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+</body>
+</html>

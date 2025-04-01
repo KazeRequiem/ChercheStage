@@ -1,0 +1,14 @@
+{# filepath: templates/partials/card_offre.html.twig #}
+<div class="candidature-item">
+    <div>
+        <h4>{{ offre.title }}</h4>
+        <p>🏢 {{ offre.company }}</p>
+        <p>📄 {{ offre.contractType }}</p>
+        <p>💰 {{ offre.salary }}</p>
+        <p>📍 {{ offre.location }}</p>
+    </div>
+    <div class="candidature-actions">
+        <a href="{{ offre.editLink }}" class="modifier">Modifier</a>
+        <img src="{{ offre.logo }}" alt="{{ offre.company }} Logo" class="company-logo">
+    </div>
+</div>

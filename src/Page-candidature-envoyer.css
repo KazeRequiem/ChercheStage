@@ -1,0 +1,102 @@
+.candidatures {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    width: 70vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.candidatures-envoyees, .candidatures-recues {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.candidatures-envoyees h2, .candidatures-recues h2 {
+    text-align: center;
+    background-color: #DBEAFE;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.candidatures-envoyees h1, .candidatures-recues h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    line-height: 0px;
+}
+
+.candidature-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFF6FF;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 30vw;
+}
+
+.candidature-item p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.statut-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;    
+}
+
+.statut {
+    font-family: "Poppins", sans-serif;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.statut.en-attente {
+    border: 1px solid var(--Orange, #FF9500);
+}
+
+.statut.accepte {
+    border: 1px solid var(--Vert, #34C759);
+}
+
+.statut.refuse {
+    border: 1px solid var(--Rouge, #FF3B30);
+}
+
+.voir-candidature {
+    background: none;
+    border-radius: 15px;
+    border: 1px solid var(--Vert, #34C759);
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+
+.supprimer {
+    background: none;
+    border-radius: 15px;
+    border: 1px solid var(--Rouge, #FF3B30);
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-line img {
+    width: 1.5vw;
+    height: auto;
+}

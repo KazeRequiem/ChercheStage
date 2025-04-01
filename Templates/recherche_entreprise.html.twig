@@ -1,0 +1,44 @@
+{# filepath: templates/recherche_entreprise.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Entreprises</title>
+    <link rel="stylesheet" href="src/header-footer.css">
+    <link rel="stylesheet" href="src/Page-gestion.css">
+</head>
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main>
+        <section class="candidatures">
+            <section class="candidats-header">
+                <div class="candidats-header-content">
+                    <h2>Liste des entreprises</h2>
+                    <div class="candidats-header-actions">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Rechercher une entreprise">
+                            <button class="search-icon">🔍</button>
+                        </div>
+                        <select id="filter-select" class="trier-button">
+                            <option value="default">Trier ▼</option>
+                            <option value="Nom">Nom</option>
+                            <option value="candidatures">Nombre de candidatures</option>
+                            <option value="location">Localisation</option>
+                            <option value="note">Avis</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <div class="candidatures-publiées">
+                {% for entreprise in entreprises %}
+                    {% include 'partials/entreprise_card.html.twig' with { entreprise: entreprise } %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+</body>
+</html>

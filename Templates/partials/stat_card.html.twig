@@ -1,0 +1,10 @@
+{# filepath: templates/partials/stat_card.html.twig #}
+<div class="stat-card">
+    <img src="{{ icon }}" alt="Icon" class="stat-icon {{ color }}">
+    {% if doubleIcon %}
+        <img src="{{ icon }}" alt="Icon" class="stat-icon {{ color }}">
+    {% endif %}
+    <h2>{{ value }}</h2>
+    <p>{{ label }}</p>
+    <span class="stat-change {{ changeType }}">{{ changeValue }} <small>{{ changePercent }}</small></span>
+</div>

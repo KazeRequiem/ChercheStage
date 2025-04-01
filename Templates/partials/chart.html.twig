@@ -1,0 +1,15 @@
+{# filepath: templates/partials/chart.html.twig #}
+<div class="chart-container">
+    <div class="chart-header">
+        <h3>{{ title }}</h3>
+    </div>
+    <canvas id="{{ canvasId }}" aria-label="chart" role="img"></canvas>
+</div>
+<script>
+    const ctx{{ canvasId }} = document.getElementById('{{ canvasId }}').getContext('2d');
+    const chart{{ canvasId }} = new Chart(ctx{{ canvasId }}, {
+        type: '{{ type }}', // Type de graphique : 'bar', 'line', 'pie', etc.
+        data: {{ data | json_encode | raw }}, // Données du graphique
+        options: {{ options | json_encode | raw }} // Options du graphique
+    });
+</script>

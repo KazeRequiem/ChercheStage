@@ -1,0 +1,32 @@
+# Ignorer les fichiers et dossiers générés par l'environnement
+/vendor/
+node_modules/
+.env
+*.log
+*.cache
+
+# Ignorer les fichiers temporaires du système
+.DS_Store
+Thumbs.db
+
+# Ignorer les fichiers de configuration spécifiques à l'IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Ignorer les fichiers de compilation ou temporaires
+*.bak
+*.tmp
+*.swp
+*.swo
+
+# Ignorer les fichiers de cache Twig
+/var/cache/twig/
+
+# Ignorer les fichiers d'uploads ou de données sensibles
+/uploads/
+assets/uploads/
+
+# Ignorer les fichiers de déploiement ou de build
+/build/
+dist/

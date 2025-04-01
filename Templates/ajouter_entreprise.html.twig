@@ -1,0 +1,45 @@
+{# filepath: templates/ajouter_entreprise.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter entreprise</title>
+    <link rel="stylesheet" href="src/Profil-etudiant.css">
+    <link rel="stylesheet" href="src/header-footer.css">
+</head>
+<body>
+    {% include 'partials/header.html.twig' %}
+
+    <main>
+        <h2>Ajouter une entreprise</h2>
+        <section class="contenu">
+            <div class="info-section">
+                <h4>Nom de l'entreprise</h4>
+                <input type="text" name="nom" placeholder="Nom de l'entreprise" required>
+                <h4>Localisation</h4>
+                <input type="text" name="localisation" placeholder="Localisation" required>
+                <h4>Email</h4>
+                <input type="email" name="email" placeholder="Email" required>
+                <h4>Logo</h4>
+                <input type="file" name="logo" accept=".png, .jpg, .jpeg" required>
+                <p>Le logo doit respecter un ratio de 1:1 et faire moins de 2 Mo</p>
+                <button class="bouton">Ajouter l'entreprise</button>
+            </div>
+            <div class="help-section">
+                <form>
+                    <label for="telephone">Téléphone</label>
+                    <input type="text" name="telephone" placeholder="Téléphone" required>
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Description" required></textarea>
+                    <label for="photos">Photos</label>
+                    <input type="file" name="photos" accept=".png, .jpg, .jpeg">
+                    <p>Taille du fichier limitée à 2 Mo</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html.twig' %}
+</body>
+</html>

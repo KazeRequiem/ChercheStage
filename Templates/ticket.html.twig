@@ -1,0 +1,53 @@
+{# filepath: templates/ticket.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestion Tickets</title>
+        <link rel="stylesheet" href="src/Gestion-tickets.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="tickets">
+                <h2>Gestion des Tickets</h2>
+                <table class="tickets-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Demandeur</th>
+                            <th>Titre</th>
+                            <th>Date de création</th>
+                            <th>État</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in tickets %}
+                            <tr>
+                                <td>{{ ticket.id }}</td>
+                                <td>{{ ticket.demandeur }}</td>
+                                <td>{{ ticket.titre }}</td>
+                                <td>{{ ticket.dateCreation }}</td>
+                                <td class="etat">{{ ticket.etat }}</td>
+                                <td>
+                                    <button class="resolve-button">
+                                        {{ ticket.action }}
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+        <script src="Gestion-tickets.js"></script>
+    </body>
+</html>
