@@ -5,7 +5,7 @@ main {
     background-color: #f5f5f5;
 }
 
-/* Titre de la page */
+
 .titre h1 {
     font-size: 3.5rem;
     color: #000;
@@ -17,7 +17,7 @@ main {
     color: #1447E6;
 }
 
-/* Conteneur de la grille pour les boîtes d'information */
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -25,7 +25,7 @@ main {
     margin: 20px 0;
 }
 
-/* Style des boîtes */
+
 .box {
     background-color: #fff;
     padding: 30px;
@@ -61,11 +61,48 @@ main {
     color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .grid-container {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     .titre h1 {
+        font-size: 3rem;
+    }
+    .box {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .titre h1 {
         font-size: 2.5rem;
+    }
+    .box {
+        padding: 20px;
+    }
+    .box-title p {
+        font-size: 1.5rem;
+    }
+    .box-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titre h1 {
+        font-size: 2rem;
+    }
+    .grid-container {
+        gap: 10px;
+    }
+    .box {
+        padding: 15px;
+    }
+    .box-title p {
+        font-size: 1.3rem;
+    }
+    .box-content p {
+        font-size: 0.9rem;
     }
 }
