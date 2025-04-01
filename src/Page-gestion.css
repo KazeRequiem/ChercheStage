@@ -10,18 +10,24 @@
     justify-content: space-between; 
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .candidats-header-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .search-bar {
     background-color: #DBEAFE;
     border-radius: 6px;
-    padding: 5px 10px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    flex: 1;
 }
 
 .search-bar input {
@@ -30,6 +36,7 @@
     outline: none;
     font-size: 14px;
     padding: 5px;
+    width: 100%;
 }
 
 .search-bar .search-icon {
@@ -39,20 +46,7 @@
     cursor: pointer;
 }
 
-.trier-recherche{
-    background-color: #DBEAFE;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    align-items: center;
-}
-
-.trier-button, .create-button {
+.trier-recherche, .trier-button, .create-button {
     background-color: #DBEAFE;
     border: none;
     padding: 10px 15px;
@@ -69,16 +63,19 @@
     color: white;
 }
 
-.candidatures-publiées{
+
+.candidatures-publiées {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes sur grand écran */
     gap: 20px;
 }
 
-.candidatures-publiées a{
+
+.candidatures-publiées a {
     text-decoration: none;
     color: inherit;
 }
+
 
 .candidature-item {
     background-color: #EFF6FF;
@@ -88,11 +85,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.candidature-item p , h4{
+.candidature-item p, h4 {
     margin: 5px 0;
 }
+
 
 .candidature-actions {
     display: flex;
@@ -101,10 +100,13 @@
     gap: 10px;
 }
 
+
 .company-logo {
     height: auto;
     border-radius: 4px;
+    max-width: 80px;
 }
+
 
 .modifier {
     background-color: orange;
@@ -119,3 +121,75 @@
     text-decoration: none;
 }
 
+
+@media (max-width: 1024px) {
+    .candidatures-publiées {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .candidats-header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .candidats-header-actions {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .trier-button, .create-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .candidatures-publiées {
+        grid-template-columns: 1fr;
+    }
+
+    .candidature-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .candidature-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .modifier {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .candidats-header-actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .search-bar {
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .trier-recherche, .trier-button, .create-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .candidature-item {
+        padding: 10px;
+    }
+
+    .modifier {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
