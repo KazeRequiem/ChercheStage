@@ -254,13 +254,13 @@ header {
     
     /* Boxes responsive */
     .box {
-        padding: 0.8em;
+        padding: 0.5em;
         height: auto;
-        min-height: 40vh;
+        min-height: 30vh;
     }
     
     .box-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
     
     .box-content {
@@ -269,13 +269,14 @@ header {
     
     .box-content p {
         margin-right: 0;
-        margin-bottom: 1em;
-        font-size: 1.2rem;
+        margin-bottom: 0.8em;
+        font-size: 1rem;
     }
     
     .box-content img {
         margin-left: 0;
-        width: 80%;
+        width: 70%;
+        max-width: 200px;
         margin: 0 auto;
     }
     
@@ -287,16 +288,16 @@ header {
     }
     
     .logo-container img {
-        width: 30%;
+        width: 25%;
         margin: 5px;
     }
     
     /* Autres ajustements */
     .text-titre {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .confiance-entreprises h3 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
