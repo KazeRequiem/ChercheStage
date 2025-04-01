@@ -1,0 +1,43 @@
+{# filepath: templates/gestion_entreprise.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Gestion Entreprise</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-gestion.css">
+    </head>
+
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="candidatures">
+                {# Inclure la barre de recherche et les actions dynamiques #}
+                {% include 'partials/header_actions.html.twig' with {
+                    title: 'Liste des entreprises',
+                    searchPlaceholder: 'Rechercher une entreprise',
+                    filterOptions: [
+                        { value: 'name', label: 'Nom' },
+                        { value: 'phone', label: 'Numéro' },
+                        { value: 'location', label: 'Localisation' }
+                    ],
+                    addLink: 'Ajouter-entreprise.html',
+                    addButtonText: 'Ajouter une entreprise'
+                } %}
+
+                <div class="candidatures-publiées">
+                    {% for company in companies %}
+                        {% include 'partials/company_card.html.twig' with { company: company } %}
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

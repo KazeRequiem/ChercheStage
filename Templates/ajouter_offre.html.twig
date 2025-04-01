@@ -1,0 +1,47 @@
+{# filepath: templates/ajouter_offre.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajouter offre</title>
+        <link rel="stylesheet" href="src/Offre-emploi.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="offre-details">
+                <!-- Détails de l'offre à gauche -->
+                <div class="offre-description">
+                    <h2><img src="assets/thales-logo.png" alt="Logo"> Nom de l'offre</h2>
+                    <p><strong>Entreprise :</strong> CESI</p>
+                    <p><strong>Localisation :</strong> Arras</p>
+                    <p><strong>Type de contrat :</strong> CDI</p>
+                    <p><strong>Salaire :</strong> ~35k</p>
+                    <p><strong>Date de début / fin :</strong></p>
+
+                    <h3>Détail du poste</h3>
+                    <p>Décrivez l’offre de stage ici</p>
+                    <a class="postuler-button">Ajouter l'offre</a>
+                </div>
+        
+                <!-- Profil recherché et entreprise à droite -->
+                <div class="offre-sidebar">
+                    <div class="profil-recherche">
+                        <h3>Profil recherché</h3>
+                        <ul>
+                            <li>Décrivez le profil recherché ici</li>
+                        </ul>
+                        <button class="postuler-button">Sélectionner une entreprise</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

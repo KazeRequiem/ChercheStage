@@ -1,0 +1,37 @@
+{# filepath: templates/ajouter_etudiant.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajouter un étudiant</title>
+        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <h2>Ajouter un étudiant</h2>
+            <section class="contenu">
+                <div class="info-section">
+                    <h4>Nom de l'étudiant</h4>
+                    <input type="text" placeholder="Nom de l'étudiant">
+                    <h4>Prénom de l'étudiant</h4>
+                    <input type="text" placeholder="Prénom de l'étudiant">
+                    <h4>Établissement</h4>
+                    <input type="text" placeholder="Établissement">
+                    <h4>Email</h4>
+                    <input type="email" placeholder="Email">
+                    <h4>Promotion</h4>
+                    <input type="text" placeholder="Promotion">
+                    <button class="bouton">Ajouter l'étudiant</button>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

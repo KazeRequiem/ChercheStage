@@ -1,0 +1,35 @@
+{# filepath: templates/candidatures_favoris.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Candidatures favoris</title>
+        <link rel="stylesheet" href="src/Page-candidature-favoris.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="candidatures">
+                <div class="candidatures-favoris">
+                    <h2>Mes candidatures favoris</h2>
+                    {% for candidature in favoris %}
+                        {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
+                    {% endfor %}
+                </div>
+                <div class="recherches-enregistrees">
+                    <h2>Mes recherches enregistrées</h2>
+                    {% for recherche in recherches %}
+                        {% include 'partials/candidature_card.html.twig' with { candidature: recherche } %}
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

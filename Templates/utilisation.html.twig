@@ -1,0 +1,40 @@
+{# filepath: templates/utilisation.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Politique d'Utilisation - Web4All</title>
+        <meta name="description" content="Politique d'Utilisation de Web4All">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/utilisation.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="titre">
+                <h1>Politique d'<span class="bleu">Utilisation</span></h1>
+                <p style="margin-top: 1em; font-size: 1.2rem;">
+                    Découvrez nos règles et conditions d'utilisation pour garantir une expérience optimale.
+                </p>
+            </section>
+            <div class="grid-container">
+                {% for section in policy.sections %}
+                    <article class="box">
+                        <div class="box-title">
+                            <p>{{ section.title }}</p>
+                        </div>
+                        <div class="box-content">
+                            <p>{{ section.content }}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

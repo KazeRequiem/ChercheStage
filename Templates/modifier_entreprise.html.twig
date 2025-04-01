@@ -1,0 +1,50 @@
+{# filepath: templates/modifier_entreprise.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modifier entreprise</title>
+        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <h2>Modifier une entreprise</h2>
+            <section class="contenu">
+                <div class="info-section">
+                    <h4>Nom de l'entreprise</h4>
+                    <p>{{ company.name }}</p>
+                    <input type="text" placeholder="Modifier le nom">
+                    <h4>Localisation</h4>
+                    <p>{{ company.location }}</p>
+                    <input type="text" placeholder="Modifier la localisation">
+                    <h4>Email</h4>
+                    <p>{{ company.email }}</p>
+                    <input type="text" placeholder="Modifier le mail">
+                    <h4>Logo</h4>
+                    <input type="file">
+                    <p>Le logo doit respecter un ratio de 1:1 et faire moins de 2 Mo</p>
+                    <button class="bouton">Appliquer les modifications</button>
+                </div>
+                <div class="help-section">
+                    <form>
+                        <label for="Telephone">Téléphone</label>
+                        <input type="text" placeholder="Modifier le téléphone">
+                        <label for="Description">Description</label>
+                        <textarea id="corp" name="corp" placeholder="Modifier la description" required></textarea>
+                        <label for="photos">Photos</label>
+                        <input type="file">
+                        <p>Taille du fichier limitée à 2 Mo</p>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{# filepath: templates/candidatures_envoyees.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Candidatures envoyées</title>
+        <link rel="stylesheet" href="src/Page-candidature-favoris.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="candidatures">
+                <div class="candidatures-envoyees">
+                    <h2>Candidatures envoyées</h2>
+                    {% for candidature in candidaturesEnvoyees %}
+                        {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
+                    {% endfor %}
+                </div>
+                <div class="candidatures-recues">
+                    <h2>Candidatures reçues</h2>
+                    {% for candidature in candidaturesRecues %}
+                        {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

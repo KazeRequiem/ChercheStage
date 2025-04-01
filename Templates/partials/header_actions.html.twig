@@ -1,0 +1,17 @@
+{# filepath: templates/partials/header_actions.html.twig #}
+<div class="candidats-header-content">
+    <h2>{{ title }}</h2>
+    <div class="candidats-header-actions">
+        <div class="search-bar">
+            <input type="text" placeholder="{{ searchPlaceholder }}">
+            <button class="search-icon">🔍</button>
+        </div>
+        <select id="filter-select" class="trier-button">
+            <option value="default">Trier ▼</option>
+            {% for option in filterOptions %}
+                <option value="{{ option.value }}">{{ option.label }}</option>
+            {% endfor %}
+        </select>
+        <a href="{{ addLink }}" class="create-button">+ {{ addButtonText }}</a>
+    </div>
+</div>

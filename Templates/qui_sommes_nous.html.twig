@@ -1,0 +1,57 @@
+{# filepath: templates/qui_sommes_nous.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Qui sommes-nous</title>
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Qui-sommes-nous.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <h1>Qui sommes-nous</h1>
+
+            <section class="company-story">
+                <h2>Notre histoire</h2>
+                <p>{{ company.story }}</p>
+            </section>
+
+            <section class="values">
+                <h2>Nos valeurs</h2>
+                <div class="values-container">
+                    {% for value in company.values %}
+                        <article class="value-card">
+                            <h3>{{ value.title }}</h3>
+                            <p>{{ value.description }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="expertise">
+                <h2>Notre expertise</h2>
+                <p>{{ company.expertiseDescription }}</p>
+                <div class="expertise-areas">
+                    {% for area in company.expertiseAreas %}
+                        <article>
+                            <h3>{{ area.title }}</h3>
+                            <p>{{ area.description }}</p>
+                        </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="clients-partners">
+                <h2>Ils nous font confiance</h2>
+                <p>{{ company.clientsDescription }}</p>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>
