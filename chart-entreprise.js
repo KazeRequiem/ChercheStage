@@ -6,14 +6,14 @@ const data = {
         label: 'stages',
         data: [30, 50, 70],
         backgroundColor: [
-            'rgba(75, 192, 192, 0.7)',
-            'rgba(255, 159, 64, 0.7)',
-            'rgba(54, 162, 235, 0.7)'
+            'rgba(0, 102, 204, 0.7)',
+            'rgba(255, 102, 102, 0.7)',
+            'rgba(0, 204, 153, 0.7)'
         ],
         hoverBackgroundColor: [
-            'rgba(75, 192, 192, 1)',
-            'rgba(255, 159, 64, 1)',
-            'rgba(54, 162, 235, 1)'
+            'rgba(0, 102, 204, 1)',
+            'rgba(255, 102, 102, 1)',
+            'rgba(0, 204, 153, 1)'
         ],
         borderWidth: 2
     }]
