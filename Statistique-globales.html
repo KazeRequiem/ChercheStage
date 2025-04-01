@@ -23,9 +23,20 @@
 
     <main>
         <div class="chart-section">
-            <h2>Statistiques des candidats</h2>
-            <div class="chart-container">
-                <canvas id="barCanvas" aria-label="chart" role="img"></canvas>
+            <h2>Statistiques globales</h2>
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <h3>Statistiques des candidats</h3>
+                    <canvas id="barCanvasCandidat" aria-label="chart" role="img"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Statistiques des entreprises</h3>
+                    <canvas id="barCanvasEntreprise" aria-label="chart" role="img"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Statistiques des pilotes</h3>
+                    <canvas id="barCanvasPilote" aria-label="chart" role="img"></canvas>
+                </div>
             </div>
         </div>
     </main>

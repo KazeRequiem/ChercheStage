@@ -1,4 +1,4 @@
-const chart = document.getElementById('barCanvas');
+const chartPilote = document.getElementById('barCanvasPilote');
 
 const data = {
     labels: ['Réponses reçues', 'Nombre étudiants', 'CV envoyés'],
@@ -37,7 +37,7 @@ const options = {
     cutout: '70%'
 };
 
-new Chart(chart, {
+new Chart(chartPilote, {
     type: 'doughnut',
     data: data,
     options: options

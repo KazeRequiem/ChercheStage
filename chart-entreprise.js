@@ -1,9 +1,9 @@
-const chart = document.getElementById('barCanvas');
+const chartEntreprise = document.getElementById('barCanvasEntreprise');
 
 const data = {
     labels: ['Réponses envoyées', 'Candidatures consulté', 'Candidatures reçus'],
     datasets: [{
-        label: 'Candidatures',
+        label: 'stages',
         data: [30, 50, 70],
         backgroundColor: [
             'rgba(75, 192, 192, 0.7)',
@@ -37,7 +37,7 @@ const options = {
     cutout: '70%'
 };
 
-new Chart(chart, {
+new Chart(chartEntreprise, {
     type: 'doughnut',
     data: data,
     options: options
