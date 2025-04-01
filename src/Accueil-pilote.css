@@ -12,7 +12,6 @@
     margin-bottom: 20px;
 }
 
-
 .stats-container {
     display: flex;
     justify-content: space-between;
@@ -131,12 +130,10 @@
 
 .sidebar-button.bleu-clair {
     background: var(--Bleu---100, #DBEAFE);
-
 }
 
 .sidebar-button.bleu-tres-clair {
     background: var(--Bleu---50, #EFF6FF);
-
 }
 
 .button-section {
@@ -159,4 +156,39 @@
 .sidebar-button:hover {
     background-color: #375BFF;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        width: 100%;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-button {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+
+    .chart-container {
+        max-width: 100%;
+    }
+
+    .activity-grid-admin {
+        grid-template-columns: 1fr;
+    }
 }
