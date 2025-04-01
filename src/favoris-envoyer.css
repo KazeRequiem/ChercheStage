@@ -1,0 +1,204 @@
+.favoris-envoyer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2vw;
+    padding: 2vh 5vw;
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+/* Sections Favoris et Envoyés */
+.favoris, .envoyes {
+    flex: 1;
+    padding: 2vh;
+    min-width: 30vw;
+}
+
+
+.favoris h1, .envoyes h1 {
+    text-align: start;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-size: 2rem;
+}
+
+.favoris h2, .envoyes h2 {
+    text-align: center;
+    background-color: #DBEAFE;
+    padding: 1vh 2vw;
+    border-radius: 0.5rem;
+    margin-bottom: 2vh;
+    font-size: 1.5rem;
+}
+
+.favoris-item, .envoyes-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EFF6FF;
+    border-radius: 0.5rem;
+    padding: 2vh 2vw;
+    margin-bottom: 2vh;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+
+.favoris-item p, .envoyes-item p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+
+.favoris-actions, .envoyes-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.company-logo {
+    height: auto;
+    border-radius: 0.3rem;
+    max-width: 6vw;
+}
+
+
+.supprimer {
+    background: none;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--Rouge, #FF3B30);
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: 0.8vh 1vw;
+    cursor: pointer;
+}
+
+.supprimer:hover {
+    background-color: #FCA5A5;
+}
+
+
+.statut-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+}
+
+.statut {
+    font-family: "Poppins", sans-serif;
+    padding: 0.8vh 1.2vw;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.statut.en-attente {
+    border: 0.1rem solid var(--Orange, #FF9500);
+}
+
+.statut.accepte {
+    border: 0.1rem solid var(--Vert, #34C759);
+}
+
+.statut.refuse {
+    border: 0.1rem solid var(--Rouge, #FF3B30);
+}
+
+
+.voir-candidature {
+    background: none;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--Vert, #34C759);
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.8vh 1vw;
+    cursor: pointer;
+    text-align: center;
+}
+
+.voir-candidature:hover {
+    background-color: #A7F3D0;
+}
+
+
+@media (max-width: 64em) {
+    .favoris-envoyer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .favoris, .envoyes {
+        width: 100%;
+        text-align: center;
+    }
+
+    .favoris-item, .envoyes-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .favoris-actions, .envoyes-actions {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 48em) {
+    .favoris-envoyer {
+        flex-direction: column;
+        align-items: center;
+        padding: 2vh 3vw;
+    }
+
+    .favoris, .envoyes {
+        width: 100%;
+    }
+
+    .favoris-item, .envoyes-item {
+        flex-direction: column;
+        padding: 2vh;
+    }
+
+    .favoris-actions, .envoyes-actions {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .voir-candidature, .supprimer {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 30em) {
+    .favoris-envoyer {
+        width: 95%;
+    }
+
+    .favoris h1, .envoyes h1 {
+        font-size: 1.5rem;
+    }
+
+    .favoris h2, .envoyes h2 {
+        font-size: 1.2rem;
+        padding: 0.8vh 1vw;
+    }
+
+    .favoris-item, .envoyes-item {
+        padding: 1vh;
+    }
+
+    .voir-candidature, .supprimer {
+        font-size: 0.875rem;
+        padding: 1vh 1.5vw;
+    }
+}

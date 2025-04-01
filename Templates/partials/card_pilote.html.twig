@@ -1,0 +1,12 @@
+{# filepath: templates/partials/card_pilote.html.twig #}
+<div class="candidature-item">
+    <div>
+        <h4>{{ pilote.title }}</h4>
+        <p>🧑‍🎓 {{ pilote.firstName }}</p>
+        <p>📄 {{ pilote.promotion }}</p>
+        <p>📍 {{ pilote.location }}</p>
+    </div>
+    <div>
+        <a href="{{ pilote.editLink }}" class="modifier">Modifier</a>
+    </div>
+</div>

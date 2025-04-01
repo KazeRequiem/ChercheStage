@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="src/Accueil-pilote.css">
         <link rel="stylesheet" href="src/header-footer.css">
         <link rel="stylesheet" href="src/Page-recherche.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
 
     <body>
@@ -48,10 +49,13 @@
             <section class="activity">
                 <div class="activity-grid">
                     <div class="chart-section">
-                        <h2>Statistiques des candidats</h2>
-                        <div class="chart-container">
-                            <canvas id="barCanvas" aria-label="chart" role="img"></canvas>
-                        </div>
+                        <h2>Statistiques des pilotes</h2>
+                        {% include 'partials/chart.html.twig' with {
+                            canvasId: 'barCanvasPilote',
+                            type: 'doughnut',
+                            data: chartDataPilote,
+                            options: chartOptions
+                        } %}
                     </div>
             
                     <div class="button-section">
@@ -66,8 +70,5 @@
 
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
-
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="script.js"></script>
     </body>
 </html>

@@ -1,0 +1,46 @@
+{# filepath: templates/gestion_pilote.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Gestion Pilote</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="src/header-footer.css">
+        <link rel="stylesheet" href="src/Page-gestion.css">
+    </head>
+
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <section class="candidatures">
+                <div class="candidats-header-content">
+                    <h2>Liste des pilotes</h2>
+                    <div class="candidats-header-actions">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Rechercher un pilote">
+                            <button class="search-icon">🔍</button>
+                        </div>
+                        <select id="filter-select" class="trier-button">
+                            <option value="default">Trier ▼</option>
+                            <option value="price-asc">Nom</option>
+                            <option value="price-desc">Promotion</option>
+                            <option value="location">Localisation</option>
+                        </select>
+                        <a href="Ajouter-pilote.html" class="create-button">+ Ajouter un compte pilote</a>
+                    </div>
+                </div>
+            <div class="candidatures-publiées">
+                {% for pilote in pilotes %}
+                    {% include 'partials/card_pilote.html.twig' with { pilote: pilote } %}
+                {% endfor %}
+            </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>

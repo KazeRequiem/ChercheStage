@@ -1,0 +1,46 @@
+{# filepath: templates/modifier_etudiant.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modifier étudiant</title>
+        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/header-footer.css">
+    </head>
+    <body>
+        {# Inclure le header réutilisable #}
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            <h2>Modifier un étudiant</h2>
+            <section class="contenu">
+                <div class="info-section">
+                    <h4>Nom de l'étudiant</h4>
+                    <p>{{ etudiant.nom }}</p>
+                    <input type="text" placeholder="Modifier le nom">
+                    
+                    <h4>Prénom de l'étudiant</h4>
+                    <p>{{ etudiant.prenom }}</p>
+                    <input type="text" placeholder="Modifier le prénom">
+                    
+                    <h4>Etablissement</h4>
+                    <p>{{ etudiant.etablissement }}</p>
+                    <input type="text" placeholder="Modifier l'établissement">
+                    
+                    <h4>Email</h4>
+                    <p>{{ etudiant.email }}</p>
+                    <input type="text" placeholder="Modifier le mail">
+                    
+                    <h4>Promotion</h4>
+                    <input type="text" placeholder="Modifier les promotions">
+                    
+                    <button class="bouton">Modifier l'étudiant</button>
+                </div>
+            </section>
+        </main>
+
+        {# Inclure le footer réutilisable #}
+        {% include 'partials/footer.html.twig' %}
+    </body>
+</html>
