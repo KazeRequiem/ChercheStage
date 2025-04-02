@@ -1,4 +1,6 @@
 <?php
+require_once 'check_session.php';
+checkPermission(1); // Nécessite permission admin (2)
 require_once 'init.php';
 
 // Données des offres
@@ -55,4 +57,5 @@ echo $twig->render('gestion_offre.html.twig', [
     'offres' => $offres,
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
+    'user' => getUserInfo(),
 ]);

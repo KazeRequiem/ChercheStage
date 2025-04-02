@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(0); // Nécessite permission admin (2)
 
 // Données pour les candidatures envoyées
 $candidatures_envoyees = [
@@ -31,4 +33,5 @@ $candidatures_recues = [
 echo $twig->render('candidatures_envoyees.html.twig', [
     'candidatures_envoyees' => $candidatures_envoyees,
     'candidatures_recues' => $candidatures_recues,
+        'user' => getUserInfo(),
 ]);

@@ -1,5 +1,9 @@
 <?php
+require_once 'check_session.php';
+checkRole(1); // Nécessite au moins pilote (1)
 require_once 'init.php';
+
+
 
 // Données pour le graphique des pilotes
 $chartDataPilote = [
@@ -36,7 +40,7 @@ $user = [
 
 // Rendre le template avec Twig
 echo $twig->render('accueil_pilote.html.twig', [
-    'user' => $user,
     'chartDataPilote' => $chartDataPilote,
     'chartOptions' => $chartOptions,
+    'user' => getUserInfo(),
 ]);

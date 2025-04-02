@@ -1,8 +1,11 @@
 <?php
+require_once 'check_session.php';
+checkRole(0); // Nécessite au moins candidat (0)
 require_once 'init.php';
 
+
 // Données pour le graphique des pilotes
-$chartDataPilote = [
+$chartDataCandidat = [
     'labels' => ['Actifs', 'Inactifs'],
     'datasets' => [
         [
@@ -24,19 +27,14 @@ $chartDataPilote = [
 $chartOptions = [
     'responsive' => true,
     'plugins' => [
-        'legend' => ['position' => 'top'],
+        'legend' => ['position' => 'bottom'],
         'title' => ['display' => false], // Pas de titre dans le graphique
     ],
 ];
 
-// Données utilisateur
-$user = [
-    'firstName' => 'Lukas',
-];
-
 // Rendre le template avec Twig
-echo $twig->render('accueil_pilote.html.twig', [
-    'user' => $user,
-    'chartDataPilote' => $chartDataPilote,
+echo $twig->render('accueil_candidat.html.twig', [
+    'user' => getUserInfo(),
+    'chartDataCandidat' => $chartDataCandidat,
     'chartOptions' => $chartOptions,
 ]);

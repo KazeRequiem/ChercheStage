@@ -1,4 +1,6 @@
 <?php
+require_once 'check_session.php';
+checkPermission(1); // Nécessite permission admin (2)
 require_once 'init.php';
 
 // Données dynamiques pour les étudiants
@@ -41,6 +43,8 @@ if (empty($students)) {
 // Rendre le template avec Twig
 echo $twig->render('gestion_etudiant.html.twig', [
     'students' => $students,
+    'user' => getUserInfo(),
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
+    'user' => getUserInfo(),
 ]);

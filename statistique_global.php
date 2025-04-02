@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(2); // Nécessite permission admin (2)
 
 // Données pour les graphiques circulaires
 $chartDataCandidat = [
@@ -75,4 +77,5 @@ echo $twig->render('statistique_global.html.twig', [
     'chartDataEntreprise' => $chartDataEntreprise,
     'chartDataPilote' => $chartDataPilote,
     'chartOptions' => $chartOptions,
+    'user' => getUserInfo(),
 ]);

@@ -1,7 +1,12 @@
 <?php
+// 1. Vérification des permissions (DOIT être en tout premier)
+require_once 'check_session.php';
+checkPermission(2); // Permission admin requise
+
+// 2. Initialisation Twig et autres require
 require_once 'init.php';
 
-// Données dynamiques des tickets
+// 3. Données dynamiques
 $tickets = [
     [
         'id' => 1,
@@ -11,18 +16,11 @@ $tickets = [
         'etat' => 'Non résolu',
         'action' => 'Marquer comme résolu',
     ],
-    [
-        'id' => 2,
-        'demandeur' => 'Marie Curie',
-        'titre' => 'Erreur sur le profil',
-        'dateCreation' => '2025-03-29',
-        'etat' => 'Résolu',
-        'action' => 'Marquer comme non résolu',
-    ],
-    // Ajoutez d'autres tickets ici
+    // ...
 ];
 
-// Rendre le template avec Twig
+// 4. Rendu (en dernier)
 echo $twig->render('ticket.html.twig', [
     'tickets' => $tickets,
+    'user' => getUserInfo() // Utilise la fonction du check_session
 ]);

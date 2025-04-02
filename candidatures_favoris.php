@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(0); // Nécessite permission admin (2)
 
 // Données dynamiques pour les favoris et les recherches enregistrées
 $favoris = [
@@ -25,4 +27,5 @@ $recherches = [
 echo $twig->render('candidatures_favoris.html.twig', [
     'favoris' => $favoris,
     'recherches' => $recherches,
+        'user' => getUserInfo(),
 ]);

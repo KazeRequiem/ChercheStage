@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(2); // Nécessite permission admin (2)
 
 // Données dynamiques à passer au template
 $user = [
@@ -38,7 +40,7 @@ if (!empty($search)) {
 
 // Rendre le template avec Twig
 echo $twig->render('gestion_pilote.html.twig', [
-    'user' => $user,
+        'user' => getUserInfo(),
     'pilotes' => $pilotes,
     'search' => $search,
 ]);
