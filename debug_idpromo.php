@@ -35,6 +35,11 @@ if (curl_errno($ch)) {
     // Traitement de la réponse
     $apiData = json_decode($response, true);
 
+    // Debug: afficher les données brutes de l'utilisateur
+    echo "<pre>Données Utilisateur: ";
+    print_r($apiData);
+    echo "</pre>";
+
     // Récupérer les IDs des promotions
     $promotionIds = $apiData['promotions'] ?? [];
     $promotionNames = [];
@@ -51,10 +56,16 @@ if (curl_errno($ch)) {
 
         // Vérification des erreurs
         if (curl_errno($ch)) {
-            echo 'Erreur cURL : ' . curl_error($ch);
+            echo 'Erreur cURL pour la promotion ID ' . $promotionId . ' : ' . curl_error($ch);
         } else {
             // Traitement de la réponse
             $promotionData = json_decode($promotionResponse, true);
+
+            // Debug: afficher les données brutes de la promotion
+            echo "<pre>Données Promotion ID $promotionId: ";
+            print_r($promotionData);
+            echo "</pre>";
+
             $promotionNames[] = $promotionData['nom'] ?? 'Nom non défini';
         }
     }
