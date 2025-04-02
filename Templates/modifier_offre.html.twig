@@ -50,6 +50,10 @@
             </div>
             <button type="submit" class="bouton-ajouter">Modifier l'offre</button>
         </form>
+        <form method="POST" action="/gestion_offre.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?');">
+            <input type="hidden" name="offer_id" value="{{ offer.id }}">
+            <button type="submit" class="bouton-supprimer">Supprimer l'offre</button>
+        </form>
         </main>
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}

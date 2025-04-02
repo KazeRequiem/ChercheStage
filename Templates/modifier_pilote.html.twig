@@ -46,6 +46,10 @@
             </div>
             <button type="submit" class="bouton-ajouter">Modifier le pilote</button>
         </form>
+        <form method="POST" action="/gestion_pilote.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce pilote ?');">
+            <input type="hidden" name="pilote_id" value="{{ pilote.id }}">
+            <button type="submit" class="bouton-supprimer">Supprimer le pilote</button>
+        </form>
         </main>
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}

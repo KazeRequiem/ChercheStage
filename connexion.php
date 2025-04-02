@@ -88,6 +88,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
             default => 'candidat'
         };
 
+        $homePage = match($response['user']['permission']) {
+            1 => 'accueil_pilote.php',
+            2 => 'accueil_admin.php',
+            default => 'accueil_candidat.php'
+        };
+
         $_SESSION['user'] = [
             'id' => $response['user']['id'],
             'email' => $response['user']['email'],
@@ -95,9 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
             'nom' => $response['user']['nom'],
             'role' => $role,
             'permission' => $response['user']['permission'],
+            'homePage' => $homePage,
         ];
 
-        header("Location: accueil_$role.php");
+        header("Location: $homePage");
         exit();
     } else {
         $_SESSION['login_error'] = $response['message'] ?? "Identifiants incorrects";
