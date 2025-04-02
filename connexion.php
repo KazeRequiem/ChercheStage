@@ -43,19 +43,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
     foreach ($response_headers as $header) {
         if (preg_match('/^Set-Cookie:\s*PHPSESSID=([^;]+)/', $header, $matches)) {
             // Ajoutez Secure, HttpOnly et SameSite=None si cross-domain
-            setcookie(
-                "PHPSESSID", 
-                $matches[1], 
-                [
-                    'expires' => time() + 3600,
-                    'path' => '/',
-                    'domain' => '.web4all-api.alwaysdata.net', // ou votre domaine parent commun
-                    'secure' => true, // Si HTTPS
-                    'httponly' => true,
-                    'samesite' => 'None' // Nécessaire pour les requêtes cross-origin
-                ]
-            );
-            $_COOKIE['PHPSESSID'] = $matches[1];
+
+        setcookie(
+            "PHPSESSID",
+            'c9d94a35dec5a54eada0c8566c47476e', // Votre cookie forcé
+            [
+                'expires'  => time() + 3600,
+                'path'     => '/',
+                'domain'   => '.web4all-api.alwaysdata.net',
+                'secure'   => true,    // Nécessaire si HTTPS
+                'httponly' => true,   // Empêche l'accès via JavaScript
+                'samesite' => 'None', // Autorise les requêtes cross-origin
+            ]
+        );
+        // Force également la variable $_COOKIE (pour prise en compte immédiate)
+        $_COOKIE['PHPSESSID'] = 'c9d94a35dec5a54eada0c8566c47476e';
             break;
         }
     }
