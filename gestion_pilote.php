@@ -1,48 +1,46 @@
 <?php
-require_once 'init.php';
 require_once 'check_session.php';
-checkPermission(2); // Nécessite permission admin (2)
+checkPermission(1); // Nécessite permission admin (2)
+require_once 'init.php';
+require_once 'api_client.php'; // Inclure le fichier centralisé
 
-// Données dynamiques à passer au template
-$user = [
-    'firstName' => 'Admin',
-];
+// URL de l'API pour récupérer les utilisateurs
+$apiUrl = 'https://web4all-api.alwaysdata.net/api/controller/user.php/users';
 
-$pilotes = [
-    [
-        'id' => 1,
-        'title' => 'Castagnette bob',
-        'location' => 'Arras',
-        'promotion' => 'AR4JPO1',
-        'firstName' => 'Baptiste',
-        'editLink' => 'modifier_pilote.php',
-    ],
-    [
-        'id' => 2,
-        'title' => 'Castagnette bob',
-        'location' => 'Arras',
-        'promotion' => 'AR4JPO1',
-        'firstName' => 'Melih',
-        'editLink' => 'modifier_pilote.php',
-    ],
-    // Ajoutez d'autres pilotes ici
-];
+try {
+    // Récupérer les données de l'API
+    $users = fetchApiData($apiUrl);
 
-// Récupérer le paramètre de recherche
-$search = $_GET['search'] ?? '';
-
-// Filtrer les pilotes si une recherche est effectuée
-if (!empty($search)) {
-    $pilotes = array_filter($pilotes, function ($pilote) use ($search) {
-        return stripos($pilote['firstName'], $search) !== false || stripos($pilote['promotion'], $search) !== false;
+    // Filtrer pour ne garder que les pilotes (permission: 1)
+    $pilotes = array_filter($users, function ($user) {
+        return isset($user['permission']) && $user['permission'] === 1;
     });
-}
 
-// Rendre le template avec Twig
-echo $twig->render('gestion_pilote.html.twig', [
+    // Récupérer le paramètre de recherche
+    $search = $_GET['search'] ?? '';
+
+    // Filtrer les pilotes si une recherche est effectuée
+    if (!empty($search)) {
+        $pilotes = array_filter($pilotes, function ($pilote) use ($search) {
+            return stripos($pilote['prenom'], $search) !== false ||
+                   stripos($pilote['nom'], $search) !== false;
+        });
+    }
+
+    // Vérifier si aucun pilote n'est trouvé
+    $noResultsMessage = '';
+    if (empty($pilotes)) {
+        $noResultsMessage = 'Aucun pilote trouvé.';
+    }
+
+    // Rendre le template avec Twig
+    echo $twig->render('gestion_pilote.html.twig', [
+        'pilotes' => $pilotes,
         'user' => getUserInfo(),
-    'pilotes' => $pilotes,
-    'search' => $search,
-    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
-
-]);
+        'search' => $search,
+        'noResultsMessage' => $noResultsMessage,
+    ]);
+} catch (Exception $e) {
+    // Gérer les erreurs et afficher un message
+    die('Erreur : ' . $e->getMessage());
+}

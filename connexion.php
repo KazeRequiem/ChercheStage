@@ -4,14 +4,15 @@ require_once 'init.php';
 // Désactivation de la session auto pour pouvoir forcer le cookie
 ini_set('session.auto_start', '0');
 
+$numero_interdis = '7768ec9a65738a85455d7b62d1757075';
 // Force l'ID de session avant de démarrer la session
-session_id('6ccbe552eb1dbabae49ba23ab35226e4');
+session_id($numero_interdis);
 session_start();
 
 // Force le cookie manuellement (identique à l'ID de session)
 setcookie(
     "PHPSESSID",
-    '6ccbe552eb1dbabae49ba23ab35226e4',
+    $numero_interdis,
     [
         'expires' => time() + 3600,
         'path' => '/',
@@ -21,7 +22,7 @@ setcookie(
         'samesite' => 'None'
     ]
 );
-$_COOKIE['PHPSESSID'] = '6ccbe552eb1dbabae49ba23ab35226e4';
+$_COOKIE['PHPSESSID'] = $numero_interdis;
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
@@ -63,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
             // On réapplique notre cookie forcé même si l'API en envoie un différent
             setcookie(
                 "PHPSESSID",
-                'c9d94a35dec5a54eada0c8566c47476e',
+                $numero_interdis,
                 [
                     'expires' => time() + 3600,
                     'path' => '/',
@@ -73,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
                     'samesite' => 'None'
                 ]
             );
-            $_COOKIE['PHPSESSID'] = 'c9d94a35dec5a54eada0c8566c47476e';
+            $_COOKIE['PHPSESSID'] = $numero_interdis;
             break;
         }
     }

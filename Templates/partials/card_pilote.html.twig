@@ -1,12 +1,12 @@
 {# filepath: templates/partials/card_pilote.html.twig #}
 <div class="candidature-item">
     <div>
-        <h4>{{ pilote.title }}</h4>
-        <p>🧑‍🎓 {{ pilote.firstName }}</p>
-        <p>📄 {{ pilote.promotion }}</p>
-        <p>📍 {{ pilote.location }}</p>
+        <h4>{{ pilote.nom }}</h4> {# Nom du pilote #}
+        <p>🧑‍✈️ {{ pilote.prenom }}</p> {# Prénom du pilote #}
+        <p>📧 Email : {{ pilote.email }}</p> {# Email du pilote #}
+        <p>📞 Téléphone : {{ pilote.tel }}</p> {# Téléphone du pilote #}
     </div>
     <div>
-        <a href="{{ pilote.editLink }}" class="modifier">Modifier</a>
+        <a href="/modifier_pilote.php?id={{ pilote.id_user }}" class="modifier">Modifier</a> {# Lien pour modifier le pilote #}
     </div>
 </div>

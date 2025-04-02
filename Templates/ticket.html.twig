@@ -19,28 +19,30 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Demandeur</th>
                             <th>Titre</th>
                             <th>Date de création</th>
                             <th>État</th>
-                            <th>Action</th>
+                            <th>Description</th>
+                            <th>ID Utilisateur</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for ticket in tickets %}
+                        {% if noResultsMessage %}
                             <tr>
-                                <td>{{ ticket.id }}</td>
-                                <td>{{ ticket.demandeur }}</td>
-                                <td>{{ ticket.titre }}</td>
-                                <td>{{ ticket.dateCreation }}</td>
-                                <td class="etat">{{ ticket.etat }}</td>
-                                <td>
-                                    <button class="resolve-button">
-                                        {{ ticket.action }}
-                                    </button>
-                                </td>
+                                <td colspan="6">{{ noResultsMessage }}</td>
                             </tr>
-                        {% endfor %}
+                        {% else %}
+                            {% for ticket in tickets %}
+                                <tr>
+                                    <td>{{ ticket.id_ticket }}</td>
+                                    <td>{{ ticket.titre }}</td>
+                                    <td>{{ ticket.date_creation }}</td>
+                                    <td class="etat">{{ ticket.etat }}</td>
+                                    <td>{{ ticket.description }}</td>
+                                    <td>{{ ticket.id_user }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
                     </tbody>
                 </table>
             </section>
