@@ -65,9 +65,48 @@
             <section>
                 <h2>Voici des offres qui pourraient vous intéresser</h2>
                 <div class="candidatures-publiées">
-                    {% for offer in offers %}
-                        {% include 'partials/offer_card.html.twig' with { offer: offer } %}
-                    {% endfor %}
+                    <a href="offre_emploi.php">
+                        <div class="candidature-item">
+                            <div>
+                                <h4>Thales</h4>
+                                <p>🏢 couscous</p>
+                                <p>📄 CDI</p>
+                                <p>💰 34€</p>
+                                <p>📍 Maubeuge</p>
+                            </div>
+                            <div class="candidature-actions">
+                                <img src="assets/thales-logo.png" alt="{{ offer.company }} Logo" class="company-logo">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="offre_emploi.php">
+                        <div class="candidature-item">
+                            <div>
+                                <h4>Thales</h4>
+                                <p>🏢 couscous</p>
+                                <p>📄 CDI</p>
+                                <p>💰 34€</p>
+                                <p>📍 Maubeuge</p>
+                            </div>
+                            <div class="candidature-actions">
+                                <img src="assets/thales-logo.png" alt="{{ offer.company }} Logo" class="company-logo">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="offre_emploi.php">
+                        <div class="candidature-item">
+                            <div>
+                                <h4>Thales</h4>
+                                <p>🏢 couscous</p>
+                                <p>📄 CDI</p>
+                                <p>💰 34€</p>
+                                <p>📍 Maubeuge</p>
+                            </div>
+                            <div class="candidature-actions">
+                                <img src="assets/thales-logo.png" alt="{{ offer.company }} Logo" class="company-logo">
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </section>
         </main>

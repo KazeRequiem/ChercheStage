@@ -18,52 +18,54 @@
                 <p>Postuler à cette offre</p>
             </div>
         
-            <div class="identity">
-                <label for="votre-nom">
-                    Nom<br>
-                    <input type="text" name="votre-nom" id="votre-nom" placeholder="Votre nom" required><br>
-                </label>
-                <label for="votre-prenom">
-                    Prénom<br>
-                    <input type="text" name="votre-prenom" id="votre-prenom" placeholder="Votre prénom" required><br>
-                </label>
-            </div>
-            <div class="formulaire">
-                <label for="votre-email">
-                    Email<br>
-                    <input type="email" name="votre-email" id="votre-email" placeholder="Votre email" required><br>
-                </label>
-                <label for="votre-numero">
-                    Numéro de téléphone<br>
-                    <input type="text" name="votre-numero" id="votre-numero" placeholder="Votre numéro" required><br>
-                </label>
-                <label for="votre-linkedin">
-                    Lien Profil Linkedin (optionnel)<br>
-                    <input type="text" name="votre-linkedin" id="votre-linkedin" placeholder="Votre lien Linkedin"><br>
-                </label>
-    
-                <div class="upload-zone">
-                    <label class="upload-box">
-                        <input type="file" name="votre-CV" id="votre-CV" accept=".pdf, .docx, .png, .jpg" hidden required><br>
-                        <img src="assets/upload-icon.png" alt="upload" width="40">
-                        <p>Importer un CV</p>
-                        <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
-                        <small>Taille maximale : 5 Mo</small>
+            <form action="/recherche_entreprise.php" method="POST" enctype="multipart/form-data">
+                <div class="identity">
+                    <label for="votre-nom">
+                        Nom<br>
+                        <input type="text" name="votre-nom" id="votre-nom" placeholder="Votre nom" required><br>
                     </label>
-    
-                    <label class="upload-box">
-                        <input type="file" name="votre-lettre" id="votre-lettre" accept=".pdf, .docx, .png, .jpg" hidden required><br>
-                        <img src="assets/upload-icon.png" alt="upload" width="40">
-                        <p>Importer une lettre de motivation</p>
-                        <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
-                        <small>Taille maximale : 5 Mo</small>
+                    <label for="votre-prenom">
+                        Prénom<br>
+                        <input type="text" name="votre-prenom" id="votre-prenom" placeholder="Votre prénom" required><br>
                     </label>
                 </div>
-            </div>
-            <label>
-                <p><input type="checkbox"> J'ai lu et j'accepte les conditions d'utilisation</p>
+                <div class="formulaire">
+                    <label for="votre-email">
+                        Email<br>
+                        <input type="email" name="votre-email" id="votre-email" placeholder="Votre email" required><br>
+                    </label>
+                    <label for="votre-numero">
+                        Numéro de téléphone<br>
+                        <input type="text" name="votre-numero" id="votre-numero" placeholder="Votre numéro" required><br>
+                    </label>
+                    <label for="votre-linkedin">
+                        Lien Profil Linkedin (optionnel)<br>
+                        <input type="text" name="votre-linkedin" id="votre-linkedin" placeholder="Votre lien Linkedin"><br>
+                    </label>
+        
+                    <div class="upload-zone">
+                        <label class="upload-box">
+                            <input type="file" name="votre-CV" id="votre-CV" accept=".pdf, .docx, .png, .jpg" hidden required><br>
+                            <img src="assets/upload-icon.png" alt="upload" width="40">
+                            <p>Importer un CV</p>
+                            <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
+                            <small>Taille maximale : 5 Mo</small>
+                        </label>
+        
+                        <label class="upload-box">
+                            <input type="file" name="votre-lettre" id="votre-lettre" accept=".pdf, .docx, .png, .jpg" hidden required><br>
+                            <img src="assets/upload-icon.png" alt="upload" width="40">
+                            <p>Importer une lettre de motivation</p>
+                            <small>Format autorisé : .pdf, .docx, .png, .jpg</small><br>
+                            <small>Taille maximale : 5 Mo</small>
+                        </label>
+                    </div>
+                </div>
+                <label>
+                    <p><input type="checkbox" name="conditions" required> J'ai lu et j'accepte les conditions d'utilisation</p>
+                </label>
                 <center><input type="submit" value="Envoyer ma candidature"></center> 
-            </label>
+            </form>
         </section>
     </main>
 

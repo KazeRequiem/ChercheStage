@@ -7,8 +7,10 @@ checkPermission(1); // Nécessite permission admin (2)
 $etudiant = [
     'nom' => 'Jack',
     'prenom' => 'Bob',
-    'etablissement' => 'Maubeuge',
+    'promotion' => 'CPIA1',
     'email' => 'poulet@maillot.com',
+    'telephone' => '07 89 88 88 88',
+    '07/89/2333' => '08/99/2929',
 ];
 
 // Rendre le template avec Twig

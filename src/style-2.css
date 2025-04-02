@@ -142,21 +142,18 @@ header {
 }
 
 .box-content p{
-    flex: 1;
-    margin-right: 1em;
-    font-size: 1.5rem;
-    text-align: justify;
-    line-height: 1.5;
-    font-family: "Poppins", sans-serif;
+    font-size: clamp(0.9rem, 1.0vw, 1.rem); /* Réduit la taille maximale du texte */
+    line-height: 1.5; /* Améliore la lisibilité */
+    margin: 0.5em 0; /* Espacement autour du texte */
+    text-align: justify; /* Justifie le texte */
+    max-width: 90%;
 }
 
 .box-content img {
-    flex-shrink: 0;
-    margin-left: 1em;
-    width: 30%;
-    pointer-events: none;
-    user-select: none;
-    max-width: 100%;
+    width: 80%; /* Réduit la largeur de l'image */
+    max-width: 200px; /* Limite la taille maximale de l'image */
+    height: auto; /* Maintient les proportions de l'image */
+    margin: 0 auto;
 }
 
 .box-2 .box-content {
@@ -171,7 +168,8 @@ header {
 }
 
 .box-2 .box-content img {
-    margin-left: 0;
+    margin-left: auto;
+    max-width: 150px;
 }
 
 .text-titre {

@@ -1,47 +1,52 @@
-{# filepath: templates/modifier_entreprise.html.twig #}
+{# filepath: templates/modifier_pilote.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modifier entreprise</title>
-        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/ajouter-entreprise.css">
         <link rel="stylesheet" href="src/header-footer.css">
     </head>
     <body>
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
-
         <main>
-            <h2>Modifier une entreprise</h2>
-            <section class="contenu">
-                <div class="info-section">
-                    <h3>Les infos de l'entreprise</h3>
-                    <p><strong>Nom : </strong>{{ company.name }}</p>
-                    <input type="text" placeholder="Modifier le nom">
-                    <p><strong>Localisation : </strong>{{ company.location }}</p>
-                    <input type="text" placeholder="Modifier la localisation">
-                    <p><strong>Email : </strong>{{ company.email }}</p>
-                    <input type="email" placeholder="Modifier le mail">
-                    <p><strong>Logo</strong></p>
-                    <input type="file">
-                    <p>Le logo doit respecter un ratio de 1:1 et faire moins de 2 Mo</p>
-                    <button class="bouton">Appliquer les modifications</button>
+        <h2>Modifier une entreprise</h2>
+        <form class="formulaire-ajout" method="POST" action="/ajouter_etudiant.php">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nom">Nom de l'entreprise : {{ company.name }}</label>
+                    <input type="text" id="nom" name="nom" placeholder="Nom de l'entreprise" required>
                 </div>
-                <div class="help-section">
-                    <form>
-                        <label for="Telephone">Téléphone : {{ company.number}}</label>
-                        <input type="text" placeholder="Modifier le téléphone">
-                        <label for="Description">Description</label>
-                        <textarea id="corp" name="corp" placeholder="Modifier la description" required></textarea>
-                        <label for="photos">Photos</label>
-                        <input type="file">
-                        <p>Taille du fichier limitée à 2 Mo</p>
-                    </form>
+                <div class="form-group">
+                    <label for="email">Email : {{ company.email }}</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
-            </section>
+                <div class="form-group">
+                    <label for="telephone">Téléphone : {{company.number}}</label>
+                    <input type="text" id="telephone" name="telephone" placeholder="Téléphone" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville : {{company.ville}}</label>
+                    <input type="text" id="ville" name="ville" placeholder="Ville" required>
+                </div>
+                <div class="form-group">
+                    <label for="code_postal">Code Postal : {{company.codePostal}}</label>
+                    <input type="text" id="code_postal" name="code_postal" placeholder="Code Postal" required>
+                </div>
+                <div class="form-group">
+                    <label for="pays">Pays : {{company.pays}}</label>
+                    <input type="text" id="pays" name="pays" placeholder="Pays" required>
+                </div>
+            </div>
+            <button type="submit" class="bouton-ajouter">Modifier l'étudiant</button>
+        </form>
         </main>
-
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
     </body>

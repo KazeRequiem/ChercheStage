@@ -1,35 +1,52 @@
-{# filepath: templates/modifier_etudiant.html.twig #}
+{# filepath: templates/modifier_pilote.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Modifier étudiant</title>
-        <link rel="stylesheet" href="src/Profil-etudiant.css">
+        <link rel="stylesheet" href="src/ajouter-entreprise.css">
         <link rel="stylesheet" href="src/header-footer.css">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
-
         <main>
-            <h2>Modifier un étudiant</h2>
-            <section class="contenu">
-                <div class="info-section">
-                    <p><strong>Nom : </strong>{{ etudiant.nom }}</p>
-                    <input type="text" placeholder="Modifier le nom">
-                    <p><strong>Prénom : </strong>{{ student.prenom }}</p>
-                    <input type="text" placeholder="Modifier le prénom">
-                    <p><strong>Email : </strong>{{ student.email }}</p>
-                    <input type="email" placeholder="Modifier le mail">
-                    <p><strong>Promotion : </strong>{{ student.promotion }}</p>
-                    <input type="text" placeholder="Modifier les promotions">
-                    <button class="bouton">Modifier l'étudiant</button>
+        <h2>Modifier un étudiant</h2>
+        <form class="formulaire-ajout" method="POST" action="/ajouter_etudiant.php">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="prenom">Prénom de l'étudiant : {{ etudiant.prenom }}</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom de l'étudiant" required>
                 </div>
-            </section>
+                <div class="form-group">
+                    <label for="nom">Nom de l'étudiant : {{ etudiant.nom }}</label>
+                    <input type="text" id="nom" name="nom" placeholder="Nom de l'étudiant" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email : {{ etudiant.email }}</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="motdepasse">Mot de passe</label>
+                    <input type="text" id="motdepasse" name="motdepasse" placeholder="Mot de passe" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone : {{etudiant.telephone}}</label>
+                    <input type="text" id="telephone" name="telephone" placeholder="Téléphone" required>
+                </div>
+                <div class="form-group">
+                    <label for="datenaissance">Date naissance : {{etudiant.datenaissance}}</label>
+                    <input type="date" id="datenaissance" name="datenaissance" placeholder="Date de naissance" required>
+                </div>
+                <div class="form-group">
+                    <label for="promotion">Promotion : {{ etudiant.promotion }}</label>
+                    <input type="text" id="promotion" name="promotion" placeholder="Promotion" required>
+                </div>
+            </div>
+            <button type="submit" class="bouton-ajouter">Modifier l'étudiant</button>
+        </form>
         </main>
-
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
     </body>

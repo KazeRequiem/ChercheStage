@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ajouter offre</title>
-        <link rel="stylesheet" href="src/Offre-emploi.css">
+        <link rel="stylesheet" href="src/ajouter-entreprise.css">
         <link rel="stylesheet" href="src/header-footer.css">
     </head>
     <body>
@@ -13,34 +13,37 @@
         {% include 'partials/header.html.twig' %}
 
         <main>
-            <section class="offre-details">
-                <!-- Détails de l'offre à gauche -->
-                <div class="offre-description">
-                    <h2><img src="assets/thales-logo.png" alt="Logo"> Nom de l'offre</h2>
-                    <p><strong>Entreprise :</strong> CESI</p>
-                    <p><strong>Localisation :</strong> Arras</p>
-                    <p><strong>Type de contrat :</strong> CDI</p>
-                    <p><strong>Salaire :</strong> ~35k</p>
-                    <p><strong>Date de début / fin :</strong></p>
-
-                    <h3>Détail du poste</h3>
-                    <p>Décrivez l’offre de stage ici</p>
-                    <a class="postuler-button">Ajouter l'offre</a>
+        <h2>Ajouter une offre</h2>
+        <form class="formulaire-ajout" method="POST" action="/ajouter_offre.php">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nom">Nom de l'offre</label>
+                    <input type="text" id="nom" name="nom" placeholder="Nom de l'offre" required>
                 </div>
-        
-                <!-- Profil recherché et entreprise à droite -->
-                <div class="offre-sidebar">
-                    <div class="profil-recherche">
-                        <h3>Profil recherché</h3>
-                        <ul>
-                            <li>Décrivez le profil recherché ici</li>
-                        </ul>
-                        <button class="postuler-button">Sélectionner une entreprise</button>
-                    </div>
+                <div class="form-group">
+                    <label for="ville">Entreprise</label>
+                    <input type="text" id="ville" name="ville" placeholder="Entreprise" required>
                 </div>
-            </section>
+                <div class="form-group">
+                    <label for="email">Date de début</label>
+                    <input type="date" id="email" name="email" placeholder="Da" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Date de fin</label>
+                    <input type="date" id="telephone" name="telephone" placeholder="Téléphone" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ville">Type de contrat</label>
+                    <input type="text" id="ville" name="ville" placeholder="Type de contrat" required>
+                </div>
+            </div>
+            <button type="submit" class="bouton-ajouter">Ajouter l'offre</button>
+        </form>
         </main>
-
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
     </body>

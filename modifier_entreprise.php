@@ -6,10 +6,12 @@ checkPermission(1); // Nécessite permission admin (2)
 // Données dynamiques pour l'entreprise
 $company = [
     'name' => 'Thales',
-    'location' => 'Maubeuge',
     'email' => 'poulet@maillot.com',
     'number' => '07 34 54 23 43',
     'description' => 'Le cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliquéLe cesi est tres impliqué',
+    'ville' => 'somain',
+    'codePostal'=> '59890',
+    'pays' => 'France',
 ];
 
 // Rendre le template avec Twig
