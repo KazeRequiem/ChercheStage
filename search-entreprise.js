@@ -1,7 +1,7 @@
 const searchInput = document.querySelector("#search");
 const searchResults = document.querySelector(".candidatures-publiées");
 
-function createUserList(data) {
+function createCompanyList(data) {
     searchResults.innerHTML = ""; // Réinitialisez le contenu du conteneur
 
     if (data.length === 0) {
@@ -36,9 +36,12 @@ function createUserList(data) {
 searchInput.addEventListener("input", function () {
     const searchValue = this.value.toLowerCase();
     const filteredCompanies = companies.filter(company =>
-        company.name.toLowerCase().includes(searchValue)
+        company.name.toLowerCase().includes(searchValue) ||
+        company.location.toLowerCase().includes(searchValue) ||
+        company.email.toLowerCase().includes(searchValue)
     );
-    createUserList(filteredCompanies);
+    createCompanyList(filteredCompanies);
 });
 
-createUserList(companies);
+// Initialiser la liste des entreprises
+createCompanyList(companies);

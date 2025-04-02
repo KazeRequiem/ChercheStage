@@ -13,35 +13,51 @@
     <body>
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
-
         <main>
             <section class="candidatures">
-                {# Inclure la barre de recherche et les actions dynamiques #}
-                {% include 'partials/header_actions.html.twig' with {
-                    title: 'Liste des entreprises',
-                    searchPlaceholder: 'Rechercher une entreprise',
-                    filterOptions: [
-                        { value: 'name', label: 'Nom' },
-                        { value: 'phone', label: 'Numéro' },
-                        { value: 'location', label: 'Localisation' }
-                    ],
-                    addLink: 'ajouter_entreprise.php',
-                    addButtonText: 'Ajouter une entreprise'
-                } %}
-
-                <div class="candidatures-publiées">
-                    {% for company in companies %}
-                        {% include 'partials/company_card.html.twig' with { company: company } %}
-                    {% endfor %}
+                <section>
+                <div class="candidats-header-content">
+                    <h2>Liste des entreprises</h2>
+                    <div class="candidats-header-actions">
+                        <form method="GET" action="/gestion_entreprise.php">
+                            <div class="search-bar">
+                                <input type="text" name="search" id="search" placeholder="Rechercher une entreprise" value="{{ search|default('') }}">
+                                <button type="submit" class="search-icon">🔍</button>
+                            </div>
+                        </form>
+                        <select id="filter-select" class="trier-button">
+                            <option value="default">Trier ▼</option>
+                            <option value="nom">Nom</option>
+                            <option value="location">Localisation</option>
+                        </select>
+                        <a href="ajouter_entreprise.php" class="create-button">+ Ajouter une entreprise</a>
+                    </div>
                 </div>
+                </section>  
+                <div class="candidatures-publiées">
+                {% if noResultsMessage %}
+                    <p>{{ noResultsMessage }}</p>
+                {% else %}
+                    {% for company in companies %}
+                        <div class="candidature-item">
+                            <div>
+                                <h4>{{ company.name }}</h4>
+                                <p>📍 {{ company.location }}</p>
+                                <p>✉️ {{ company.email }}</p>
+                                <p>☎️ {{ company.phone }}</p>
+                            </div>
+                            <div class="candidature-actions">
+                                <a href="modifier_entreprise.php" class="modifier">Modifier</a>
+                                <img src="assets/{{ company.logo }}" alt="{{ company.name }} Logo" class="company-logo">
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
             </section>
         </main>
 
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
-        <script>
-            const companies = {{ companies|json_encode|raw }};
-        </script>
-        <script src="search-bar.js"></script>
     </body>
 </html>

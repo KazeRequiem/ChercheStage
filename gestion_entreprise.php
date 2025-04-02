@@ -26,7 +26,25 @@ $companies = [
     ],
 ];
 
+// Récupérer le paramètre de recherche
+$search = $_GET['search'] ?? '';
+
+// Filtrer les entreprises si une recherche est effectuée
+if (!empty($search)) {
+    $companies = array_filter($companies, function ($company) use ($search) {
+        return stripos($company['name'], $search) !== false;
+    });
+}
+
+// Vérifier si aucune entreprise n'est trouvée
+$noResultsMessage = '';
+if (empty($companies)) {
+    $noResultsMessage = 'Aucune entreprise trouvée.';
+}
+
 // Rendre le template avec Twig
 echo $twig->render('gestion_entreprise.html.twig', [
     'companies' => $companies,
+    'search' => $search,
+    'noResultsMessage' => $noResultsMessage,
 ]);

@@ -32,7 +32,27 @@ $offres = [
     ],
 ];
 
+// Récupérer le paramètre de recherche
+$search = $_GET['search'] ?? '';
+
+// Filtrer les offres si une recherche est effectuée
+if (!empty($search)) {
+    $offres = array_filter($offres, function ($offre) use ($search) {
+        return stripos($offre['title'], $search) !== false ||
+               stripos($offre['company'], $search) !== false ||
+               stripos($offre['location'], $search) !== false;
+    });
+}
+
+// Vérifier si aucune offre n'est trouvée
+$noResultsMessage = '';
+if (empty($offres)) {
+    $noResultsMessage = 'Aucune offre trouvée.';
+}
+
 // Rendre le template avec Twig
 echo $twig->render('gestion_offre.html.twig', [
     'offres' => $offres,
+    'search' => $search,
+    'noResultsMessage' => $noResultsMessage,
 ]);

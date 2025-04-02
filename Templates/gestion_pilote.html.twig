@@ -15,14 +15,25 @@
 
         <main>
             <section class="candidatures">
-                {# Inclure la barre de recherche et les actions dynamiques #}
-                <form method="GET" action="/gestion_pilote.php">
-                    <div class="search-bar">
-                        <input type="text" name="search" id="search" placeholder="Rechercher un pilote" value="{{ search|default('') }}">
-                        <button type="submit" class="search-icon">🔍</button>
+                <section>
+                <div class="candidats-header-content">
+                    <h2>Liste des pilotes</h2>
+                    <div class="candidats-header-actions">
+                        <form method="GET" action="/gestion_pilote.php">
+                            <div class="search-bar">
+                                <input type="text" name="search" id="search" placeholder="Rechercher un pilote" value="{{ search|default('') }}">
+                                <button type="submit" class="search-icon">🔍</button>
+                            </div>
+                        </form>
+                        <select id="filter-select" class="trier-button">
+                            <option value="default">Trier ▼</option>
+                            <option value="nom">Nom</option>
+                            <option value="location">Localisation</option>
+                        </select>
+                        <a href="ajouter_pilote.php" class="create-button">+ Ajouter un pilote</a>
                     </div>
-                </form>
-
+                </div>
+                </section>  
                 <div class="candidatures-publiées">
                     {% for pilote in pilotes %}
                         {% include 'partials/card_pilote.html.twig' with { pilote: pilote } %}

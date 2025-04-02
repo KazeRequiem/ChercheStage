@@ -18,26 +18,42 @@
                 <div class="candidats-header-content">
                     <h2>Liste des offres</h2>
                     <div class="candidats-header-actions">
-                        <div class="search-bar">
-                            <input type="text" placeholder="Rechercher une offre">
-                            <button class="search-icon">🔍</button>
-                        </div>
+                        <form method="GET" action="/gestion_offre.php">
+                            <div class="search-bar">
+                                <input type="text" name="search" id="search" placeholder="Rechercher une offre" value="{{ search|default('') }}">
+                                <button type="submit" class="search-icon">🔍</button>
+                            </div>
+                        </form>
                         <select id="filter-select" class="trier-button">
                             <option value="default">Trier ▼</option>
                             <option value="nom">Nom</option>
-                            <option value="price-asc">Prix croissant</option>
-                            <option value="price-desc">Prix décroissant</option>
                             <option value="location">Localisation</option>
                         </select>
                         <a href="ajouter_offre.php" class="create-button">+ Ajouter une offre</a>
                     </div>
                 </div>
-            </section>
+                </section>  
             <div class="candidatures-publiées">
-                {% for offre in offres %}
-                    {% include 'partials/card_offre.html.twig' with { offre: offre } %}
-                {% endfor %}
+    {% if noResultsMessage %}
+        <p>{{ noResultsMessage }}</p>
+    {% else %}
+        {% for offre in offres %}
+            <div class="candidature-item">
+                <div>
+                    <h4>{{ offre.title }}</h4>
+                    <p>🏢 {{ offre.company }}</p>
+                    <p>📍 {{ offre.location }}</p>
+                    <p>💼 {{ offre.contractType }}</p>
+                    <p>💰 {{ offre.salary }}</p>
+                </div>
+                <div class="candidature-actions">
+                    <a href="{{ offre.editLink }}" class="modifier">Modifier</a>
+                    <img src="{{ offre.logo }}" alt="{{ offre.company }} Logo" class="company-logo">
+                </div>
             </div>
+        {% endfor %}
+    {% endif %}
+</div>
         </section>
     </main>
 
