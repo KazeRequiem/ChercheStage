@@ -1,4 +1,4 @@
-{# templates/profil_admin.html.twig #}
+{# filepath: templates/profil_admin.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,36 +13,17 @@
 
     <main>
         <h2>Votre profil admin</h2>
-        
-        {# Affichage des messages d'erreur #}
-        {% if error is defined %}
-            <div class="alert alert-danger">{{ error }}</div>
-        {% endif %}
-
         <section class="contenu">
             <div class="info-section">
-                <h3>Informations personnelles</h3>
-                <p><strong>Nom :</strong> {{ user.nom }}</p>
-                <p><strong>Prénom :</strong> {{ user.prenom }}</p>
-                <p><strong>Email :</strong> {{ user.email }}</p>
-                <p><strong>Téléphone :</strong> {{ user.tel }}</p>
-
-                <h3>Localisation</h3>
-                <p><strong>Ville :</strong> {{ user.ville }}</p>
-                <p><strong>Code Postal :</strong> {{ user.code_postal }}</p>
-                <p><strong>Région :</strong> {{ user.region }}</p>
-                <p><strong>Pays :</strong> {{ user.pays }}</p>
-
-                <h3>Informations administratives</h3>
-                <p><strong>Rôle :</strong> {{ user.role }}</p>
-                <p><strong>Permissions :</strong> {{ user.permissions }}</p>
+                <h3>Vos informations:</h3>
+                <p><strong>Nom</strong><br>{{ admin.nom }}</p>
+                <p><strong>Prénom</strong><br>{{ admin.prenom }}</p>
+                <p><strong>Email</strong><br>{{ admin.email }}</p>
+                <p><strong>Téléphone</strong><br>{{ admin.tel }}</p>
+                <p><strong>Date de naissance</strong><br>{{ admin.date_naissance }}</p>
+                <p><strong>Permissions</strong><br>{{ admin.permission }}</p>
+                <p><strong>ID Promotion</strong><br>{{ admin.id_promotion }}</p>
             </div>
-
-            {% if user.logo %}
-                <div class="logo-section">
-                    <img src="{{ user.logo }}" alt="Logo de l'administrateur" class="profile-logo">
-                </div>
-            {% endif %}
         </section>
     </main>
 
