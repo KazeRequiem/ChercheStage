@@ -1,0 +1,77 @@
+/* Conteneur principal */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #EFF6FF;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulaire-ajout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.bouton-ajouter {
+    align-self: flex-start;
+    border: none;
+    background: linear-gradient(135deg, #4a7cff, #375bff);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.bouton-ajouter:hover {
+    background: linear-gradient(135deg, #007aff, #4a90e2);
+}
