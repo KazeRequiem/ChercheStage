@@ -39,5 +39,9 @@
 
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
+        <script>
+            const companies = {{ companies|json_encode|raw }};
+        </script>
+        <script src="search-bar.js"></script>
     </body>
 </html>
