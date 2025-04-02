@@ -7,14 +7,12 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
-
 .candidatures-envoyees, .candidatures-recues {
     flex: 1;
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
-
 .candidatures-envoyees h2, .candidatures-recues h2 {
     text-align: center;
     background-color: #DBEAFE;
@@ -22,13 +20,11 @@
     border-radius: 6px;
     margin-bottom: 20px;
 }
-
 .candidatures-envoyees h1, .candidatures-recues h1 {
     text-align: center;
     margin-bottom: 1em;
     line-height: 0px;
 }
-
 .candidature-item {
     display: flex;
     justify-content: space-between;
@@ -39,19 +35,16 @@
     margin-bottom: 15px;
     width: 30vw;
 }
-
 .candidature-item p {
     margin: 5px 0;
     font-size: 14px;
 }
-
 .statut-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 0;    
 }
-
 .statut {
     font-family: "Poppins", sans-serif;
     padding: 5px 10px;
@@ -59,19 +52,15 @@
     font-size: 0.875rem;
     font-weight: 400;
 }
-
 .statut.en-attente {
     border: 1px solid var(--Orange, #FF9500);
 }
-
 .statut.accepte {
     border: 1px solid var(--Vert, #34C759);
 }
-
 .statut.refuse {
     border: 1px solid var(--Rouge, #FF3B30);
 }
-
 .voir-candidature {
     background: none;
     border-radius: 15px;
@@ -80,7 +69,6 @@
     font-weight: 400;
     padding: 5px 10px;
 }
-
 .supprimer {
     background: none;
     border-radius: 15px;
@@ -89,14 +77,57 @@
     font-weight: 400;
     padding: 5px 10px;
 }
-
 .info-line {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-
 .info-line img {
     width: 1.5vw;
     height: auto;
+}
+@media only screen and (max-width: 767px) {
+    .candidatures {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        gap: 30px;
+        margin: 0;
+    }
+    .candidatures-envoyees, .candidatures-recues {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .candidature-item {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        box-sizing: border-box;
+    }
+    .statut-buttons {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 15px;
+        gap: 8px;
+    }
+    .info-line {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .info-line img {
+        width: 15px;
+        height: auto;
+    }
+    .candidatures-envoyees h1, .candidatures-recues h1 {
+        line-height: normal;
+        margin-bottom: 0.5em;
+    }
+    .voir-candidature, .supprimer, .statut {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
 }
