@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
     $email = $_POST['Adresse-Mail'];
     $password = $_POST['MDP'];
 
-    // Appel à l'API
+    // Appel à l'API pour la connexion
     $apiUrl = 'https://web4all-api.alwaysdata.net/api/auth/login.php';
     $data = [
         'email' => $email,
@@ -17,25 +17,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
 
     $options = [
         'http' => [
-            'header'  => "Content-type: application/json\r\n",
+            'header' => [
+                "Content-Type: application/json",
+            ],
             'method'  => 'POST',
             'content' => json_encode($data),
             'ignore_errors' => true
         ]
     ];
-
+    
     $context = stream_context_create($options);
     $result = file_get_contents($apiUrl, false, $context);
 
+    // Vérifier si l'API renvoie un cookie PHPSESSID
     if ($result === false) {
         $_SESSION['login_error'] = "Erreur de connexion au serveur";
         header("Location: connexion.php");
         exit();
     }
 
+    // Récupérer les en-têtes de réponse
+    $response_headers = $http_response_header ?? [];
+
+    // Vérification du cookie PHPSESSID
+    foreach ($response_headers as $header) {
+        if (preg_match('/^Set-Cookie:\s*PHPSESSID=([^;]+)/', $header, $matches)) {
+            // Stocker le PHPSESSID dans la superglobale $_COOKIE
+            setcookie("PHPSESSID", $matches[1], time() + 3600, "/"); // Le cookie dure 1 heure
+            $_COOKIE['PHPSESSID'] = $matches[1]; // Mise à jour de la superglobale $_COOKIE
+            break;
+        }
+    }
+
     $response = json_decode($result, true);
 
-    // Vérification de la réponse
+    // Vérification de la réponse de l'API
     if ($response && isset($response['user'])) {
         // Déterminer le rôle selon permission
         $role = match($response['user']['permission']) {
@@ -51,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
             'prenom' => $response['user']['prenom'],
             'nom' => $response['user']['nom'],
             'role' => $role,
-            'permission' => $response['user']['permission']
+            'permission' => $response['user']['permission'],
         ];
 
         // Redirection selon le rôle

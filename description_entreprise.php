@@ -1,7 +1,8 @@
 <?php
-require_once 'init.php';
 require_once 'check_session.php';
 checkPermission(0); // Nécessite permission admin (2)
+require_once 'init.php';
+
 
 // Données dynamiques de l'entreprise
 $entreprise = [

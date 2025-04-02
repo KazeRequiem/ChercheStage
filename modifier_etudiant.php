@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(1); // Nécessite permission admin (2)
 
 // Données dynamiques de l'étudiant
 $etudiant = [
