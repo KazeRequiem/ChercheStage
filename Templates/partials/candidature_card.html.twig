@@ -26,7 +26,10 @@
         {% if candidature.viewLink %}
             <button class="voir-candidature">Voir ma candidature</button>
         {% endif %}
-        <button class="supprimer">Supprimer</button>
+        <form method="POST" action="/candidatures_favoris.php" style="display: inline;">
+            <button type="submit" class="supprimer">Supprimer</button>
+        </form>
+            <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
         {% if candidature.logo %}
             <img src="assets/{{ candidature.logo }}" alt="{{ candidature.title }} Logo" class="company-logo">
         {% endif %}

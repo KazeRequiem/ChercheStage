@@ -46,7 +46,7 @@
             </div>
             <button type="submit" class="bouton-ajouter">Modifier l'étudiant</button>
         </form>
-        <form method="POST" action="/gestion_entreprise.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette entreprise ?');">
+        <form method="DELETE" action="/gestion_entreprise.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette entreprise ?');">
             <input type="hidden" name="entreprise_id" value="{{ company.id }}">
             <button type="submit" class="bouton-supprimer">Supprimer l'entreprise</button>
         </form>

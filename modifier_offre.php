@@ -1,4 +1,6 @@
 <?php
+require_once 'check_session.php';
+checkRole(1); // Nécessite au moins pilote (1)
 require_once 'init.php';
 
 // Données dynamiques pour l'offre

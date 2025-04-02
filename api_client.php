@@ -58,3 +58,42 @@ function fetchApiData(string $url, array $headers = []): array
 
     return $data;
 }
+
+function updateApiData(string $url, array $data): void
+{
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_CUSTOMREQUEST => "PUT",
+        CURLOPT_POSTFIELDS => json_encode($data),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            "Content-Type: application/json"
+        ]
+    ]);
+
+    $response = curl_exec($ch);
+    if (curl_errno($ch)) {
+        throw new Exception('Erreur cURL : ' . curl_error($ch));
+    }
+
+    curl_close($ch);
+}
+
+function deleteApiData(string $url): void
+{
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_CUSTOMREQUEST => "DELETE",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            "Content-Type: application/json"
+        ]
+    ]);
+
+    $response = curl_exec($ch);
+    if (curl_errno($ch)) {
+        throw new Exception('Erreur cURL : ' . curl_error($ch));
+    }
+
+    curl_close($ch);
+}

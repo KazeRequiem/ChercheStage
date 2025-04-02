@@ -28,7 +28,7 @@ $chartDataPilote = [
 $chartOptions = [
     'responsive' => true,
     'plugins' => [
-        'legend' => ['position' => 'top'],
+        'legend' => ['position' => 'bottom'],
         'title' => ['display' => false], // Pas de titre dans le graphique
     ],
 ];

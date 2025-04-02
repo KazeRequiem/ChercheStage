@@ -25,8 +25,14 @@
                         </div>
                         <div class="statut-buttons">
                             <span class="statut {{ candidature.status_class }}">{{ candidature.status }}</span>
-                            <button class="voir-candidature">Voir ma candidature</button>
-                            <button class="supprimer">Supprimer</button>
+                            <form method="GET" action="/candidatures_envoyees.php" style="display: inline;">
+                                <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
+                                <button type="submit" class="voir-candidature">Voir l'offre</button>
+                            </form>
+                            <form method="POST" action="/candidatures_envoyees.php" style="display: inline;">
+                                <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
+                                <button type="submit" class="supprimer">Supprimer</button>
+                            </form>
                         </div>
                     </div>
                 {% endfor %}
@@ -41,8 +47,14 @@
                             <p>📅 {{ candidature.date }}</p>
                         </div>
                         <div class="statut-buttons">
-                            <button class="voir-candidature">Voir ma candidature</button>
-                            <button class="supprimer">Supprimer</button>
+                            <form method="GET" action="/candidatures_envoyees.php" style="display: inline;">
+                                <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
+                                <button type="submit" class="voir-candidature">Voir l'offre</button>
+                            </form>
+                            <form method="POST" action="/candidatures_envoyees.php" style="display: inline;">
+                                <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
+                                <button type="submit" class="supprimer">Supprimer</button>
+                            </form>
                         </div>
                     </div>
                 {% endfor %}

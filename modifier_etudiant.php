@@ -1,21 +1,54 @@
 <?php
-require_once 'init.php';
 require_once 'check_session.php';
-checkPermission(1); // Nécessite permission admin (2)
+checkPermission(1); // Nécessite permission admin
+require_once 'init.php';
+require_once 'api_client.php'; // Inclure le fichier centralisé
 
-// Données dynamiques de l'étudiant
-$etudiant = [
-    'nom' => 'Jack',
-    'prenom' => 'Bob',
-    'promotion' => 'CPIA1',
-    'email' => 'poulet@maillot.com',
-    'telephone' => '07 89 88 88 88',
-    '07/89/2333' => '08/99/2929',
-];
+// Vérifier si l'ID de l'étudiant est passé dans l'URL
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    die('Erreur : ID étudiant manquant.');
+}
 
-// Rendre le template avec Twig
-echo $twig->render('modifier_etudiant.html.twig', [
-    'etudiant' => $etudiant,
-    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+$etudiantId = $_GET['id'];
+$apiUrl = "https://web4all-api.alwaysdata.net/api/controller/user.php/user/$etudiantId";
 
-]);
+try {
+    $etudiant = fetchApiData($apiUrl);
+    echo $twig->render('modifier_etudiant.html.twig', ['etudiant' => $etudiant]);
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $updatedData = [
+        'prenom' => $_POST['prenom'],
+        'nom' => $_POST['nom'],
+        'email' => $_POST['email'],
+        'telephone' => $_POST['telephone'],
+        'datenaissance' => $_POST['datenaissance'],
+        'promotion' => $_POST['promotion']
+    ];
+
+    $apiUrlUpdate = "https://web4all-api.alwaysdata.net/api/controller/user.php/user/$etudiantId";
+    
+    try {
+        updateApiData($apiUrlUpdate, $updatedData);
+        header("Location: gestion_etudiant.php?success=1");
+        exit;
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
+if (isset($_POST['delete'])) {
+    $apiUrlDelete = "https://web4all-api.alwaysdata.net/api/controller/user.php/user/$etudiantId";
+    
+    try {
+        deleteApiData($apiUrlDelete);
+        header("Location: gestion_etudiant.php?deleted=1");
+        exit;
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
