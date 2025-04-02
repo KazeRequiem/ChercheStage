@@ -11,25 +11,28 @@
     <body>
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
-
         <main>
             <section class="candidatures">
-                <div class="candidatures-favoris">
-                    <h2>Mes candidatures favoris</h2>
+            <div class="candidatures-favoris">
+                <h2>Mes candidatures favoris</h2>
+                {% if favoris is empty %}
+                    <p>{{ noResultsMessageFavoris }}</p>
+                {% else %}
                     {% for candidature in favoris %}
-                        {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
+                        {% if candidature.error is defined %}
+                            <p class="error">{{ candidature.error }}</p>
+                        {% else %}
+                            {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
+                        {% endif %}
                     {% endfor %}
-                </div>
-                <div class="recherches-enregistrees">
-                    <h2>Mes recherches enregistrées</h2>
-                    {% for recherche in recherches %}
-                        {% include 'partials/candidature_card.html.twig' with { candidature: recherche } %}
-                    {% endfor %}
-                </div>
+                {% endif %}
+            </div>
             </section>
         </main>
-
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
+        
+        {# Inclure le script JavaScript pour gérer les favoris #}
+        <script src="src/favoris.js"></script>
     </body>
 </html>
