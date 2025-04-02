@@ -1,22 +1,20 @@
 <?php
 require_once 'init.php';
 
-// Données pour le graphique
-$chartDataCandidat = [
-    'labels' => ['Admis', 'En attente', 'Refusés'],
+// Données pour le graphique des pilotes
+$chartDataPilote = [
+    'labels' => ['Actifs', 'Inactifs'],
     'datasets' => [
         [
-            'label' => 'Répartition des candidats',
-            'data' => [50, 30, 20], // Exemple : 50 admis, 30 en attente, 20 refusés
+            'label' => 'Répartition des pilotes',
+            'data' => [70, 30], // Exemple : 70 actifs, 30 inactifs
             'backgroundColor' => [
-                'rgba(75, 192, 192, 0.6)',
-                'rgba(255, 206, 86, 0.6)',
-                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 159, 64, 0.6)',
             ],
             'borderColor' => [
-                'rgba(75, 192, 192, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 159, 64, 1)',
             ],
             'borderWidth' => 1,
         ],
@@ -26,48 +24,19 @@ $chartDataCandidat = [
 $chartOptions = [
     'responsive' => true,
     'plugins' => [
-        'legend' => ['position' => 'bottom'],
+        'legend' => ['position' => 'top'],
+        'title' => ['display' => false], // Pas de titre dans le graphique
     ],
 ];
 
 // Données utilisateur
 $user = [
-    'firstName' => 'Jean',
-];
-
-// Données des offres
-$offers = [
-    [
-        'title' => 'Administrateur Systèmes & Réseaux',
-        'company' => 'Thalès',
-        'contractType' => 'CDI',
-        'salary' => '~35k',
-        'location' => 'Hénin-Beaumont',
-        'logo' => 'thales-logo.png',
-    ],
-    [
-        'title' => 'Administrateur Systèmes & Réseaux',
-        'company' => 'Thalès',
-        'contractType' => 'CDI',
-        'salary' => '~35k',
-        'location' => 'Hénin-Beaumont',
-        'logo' => 'thales-logo.png',
-    ],
-    [
-        'title' => 'Administrateur Systèmes & Réseaux',
-        'company' => 'Thalès',
-        'contractType' => 'CDI',
-        'salary' => '~35k',
-        'location' => 'Hénin-Beaumont',
-        'logo' => 'thales-logo.png',
-    ],
-    // Ajoutez d'autres offres ici
+    'firstName' => 'Lukas',
 ];
 
 // Rendre le template avec Twig
-echo $twig->render('accueil_candidat.html.twig', [
+echo $twig->render('accueil_pilote.html.twig', [
     'user' => $user,
-    'chartDataCandidat' => $chartDataCandidat,
+    'chartDataPilote' => $chartDataPilote,
     'chartOptions' => $chartOptions,
-    'offers' => $offers,
 ]);
