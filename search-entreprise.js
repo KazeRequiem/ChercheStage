@@ -1,7 +1,7 @@
 const searchInput = document.querySelector("#search");
 const searchResults = document.querySelector(".candidatures-publiées");
 
-function createCompanyList(data) {
+function createEntrepriseList(data) {
     searchResults.innerHTML = ""; // Réinitialisez le contenu du conteneur
 
     if (data.length === 0) {
@@ -12,20 +12,22 @@ function createCompanyList(data) {
         return;
     }
 
-    data.forEach(company => {
+    data.forEach(entreprise => {
         const listItem = document.createElement("div");
         listItem.setAttribute("class", "candidature-item");
 
         listItem.innerHTML = `
             <div>
-                <h4>${company.name}</h4>
-                <p>📍 ${company.location}</p>
-                <p>✉️ ${company.email}</p>
-                <p>☎️ ${company.phone}</p>
+                <h4>${entreprise.name}</h4>
+                <p>📍 ${entreprise.location}</p>
+                <p>✉️ ${entreprise.email}</p>
+                <p>☎️ ${entreprise.phone}</p>
+                <p>⭐ ${entreprise.rating}</p>
+                <p>👥 ${entreprise.candidates} candidatures</p>
             </div>
             <div class="candidature-actions">
-                <a href="modifier_entreprise.php" class="modifier">Modifier</a>
-                <img src="assets/${company.logo}" alt="${company.name} Logo" class="company-logo">
+                <a href="${entreprise.link}" class="voir-plus">Voir plus</a>
+                <img src="${entreprise.logo}" alt="${entreprise.name} Logo" class="company-logo">
             </div>
         `;
 
@@ -35,13 +37,13 @@ function createCompanyList(data) {
 
 searchInput.addEventListener("input", function () {
     const searchValue = this.value.toLowerCase();
-    const filteredCompanies = companies.filter(company =>
-        company.name.toLowerCase().includes(searchValue) ||
-        company.location.toLowerCase().includes(searchValue) ||
-        company.email.toLowerCase().includes(searchValue)
+    const filteredEntreprises = entreprises.filter(entreprise =>
+        entreprise.name.toLowerCase().includes(searchValue) ||
+        entreprise.location.toLowerCase().includes(searchValue) ||
+        entreprise.email.toLowerCase().includes(searchValue)
     );
-    createCompanyList(filteredCompanies);
+    createEntrepriseList(filteredEntreprises);
 });
 
 // Initialiser la liste des entreprises
-createCompanyList(companies);
+createEntrepriseList(entreprises);

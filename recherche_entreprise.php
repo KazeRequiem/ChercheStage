@@ -35,7 +35,27 @@ $entreprises = [
     ],
 ];
 
+// Récupérer le paramètre de recherche
+$search = $_GET['search'] ?? '';
+
+// Filtrer les entreprises si une recherche est effectuée
+if (!empty($search)) {
+    $entreprises = array_filter($entreprises, function ($entreprise) use ($search) {
+        return stripos($entreprise['name'], $search) !== false ||
+               stripos($entreprise['location'], $search) !== false ||
+               stripos($entreprise['email'], $search) !== false;
+    });
+}
+
+// Vérifier si aucune entreprise n'est trouvée
+$noResultsMessage = '';
+if (empty($entreprises)) {
+    $noResultsMessage = 'Aucune entreprise trouvée.';
+}
+
 // Rendre le template avec Twig
 echo $twig->render('recherche_entreprise.html.twig', [
     'entreprises' => $entreprises,
+    'search' => $search,
+    'noResultsMessage' => $noResultsMessage,
 ]);

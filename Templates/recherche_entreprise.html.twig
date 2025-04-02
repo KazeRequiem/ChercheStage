@@ -13,28 +13,46 @@
 
     <main>
         <section class="candidatures">
-            <section class="candidats-header">
+            <section>
                 <div class="candidats-header-content">
                     <h2>Liste des entreprises</h2>
                     <div class="candidats-header-actions">
-                        <div class="search-bar">
-                            <input type="text" placeholder="Rechercher une entreprise">
-                            <button class="search-icon">🔍</button>
-                        </div>
+                        <form method="GET" action="/recherche_entreprise.php">
+                            <div class="search-bar">
+                                <input type="text" name="search" id="search" placeholder="Rechercher une entreprise" value="{{ search|default('') }}">
+                                <button type="submit" class="search-icon">🔍</button>
+                            </div>
+                        </form>
                         <select id="filter-select" class="trier-button">
                             <option value="default">Trier ▼</option>
-                            <option value="Nom">Nom</option>
-                            <option value="candidatures">Nombre de candidatures</option>
+                            <option value="nom">Nom</option>
                             <option value="location">Localisation</option>
-                            <option value="note">Avis</option>
                         </select>
                     </div>
                 </div>
-            </section>
+                </section>  
             <div class="candidatures-publiées">
-                {% for entreprise in entreprises %}
-                    {% include 'partials/entreprise_card.html.twig' with { entreprise: entreprise } %}
-                {% endfor %}
+                {% if noResultsMessage %}
+                    <p>{{ noResultsMessage }}</p>
+                {% else %}
+                    {% for entreprise in entreprises %}
+                        <a href="{{ entreprise.link }}">
+    <div class="candidature-item">
+        <div>
+            <h4>{{ entreprise.name }}</h4>
+            <p>📧 {{ entreprise.email }}</p>
+            <p>⭐ {{ entreprise.rating }}/5</p>
+            <p>☎️ {{ entreprise.phone }}</p>
+            <p>👨‍🎓 {{ entreprise.candidates }} candidats ont déjà postulé</p>
+            <p>📍 {{ entreprise.location }}</p>
+        </div>
+        <div class="candidature-actions">
+            <img src="{{ entreprise.logo }}" alt="{{ entreprise.name }} Logo" class="company-logo">
+        </div>
+    </div>
+</a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </section>
     </main>
