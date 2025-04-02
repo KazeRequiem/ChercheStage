@@ -75,3 +75,21 @@ textarea {
 .bouton-ajouter:hover {
     background: linear-gradient(135deg, #007aff, #4a90e2);
 }
+
+.bouton-supprimer {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    align-self: flex-start;
+    border: none;
+}
+
+.bouton-supprimer:hover {
+    background-color: #c0392b;
+}

@@ -46,6 +46,10 @@
             </div>
             <button type="submit" class="bouton-ajouter">Modifier l'étudiant</button>
         </form>
+        <form method="POST" action="/gestion_etudiant.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">
+            <input type="hidden" name="etudiant_id" value="{{ etudiant.id }}">
+            <button type="submit" class="bouton-supprimer">Supprimer l'étudiant</button>
+        </form>
         </main>
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
