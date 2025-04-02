@@ -1,5 +1,5 @@
 {# filepath: templates/partials/candidature_card.html.twig #}
-<div class="candidature-item">
+<div class="candidature-item" data-offre-id="{{ candidature.id }}">
     <div>
         <h1>{{ candidature.title }}</h1>
         <p>📍 {{ candidature.location }}</p>
@@ -15,17 +15,11 @@
         {% if candidature.remote %}
             <p>🏠 {{ candidature.remote }}</p>
         {% endif %}
-                {% if candidature.position %}
+        {% if candidature.position %}
             <p>💻 {{ candidature.position }}</p>
         {% endif %}
     </div>
     <div class="candidature-actions">
-        {% if candidature.status %}
-            <span class="statut {{ candidature.statusClass }}">{{ candidature.status }}</span>
-        {% endif %}
-        {% if candidature.viewLink %}
-            <button class="voir-candidature">Voir ma candidature</button>
-        {% endif %}
         <button class="supprimer">Supprimer</button>
         {% if candidature.logo %}
             <img src="assets/{{ candidature.logo }}" alt="{{ candidature.title }} Logo" class="company-logo">
