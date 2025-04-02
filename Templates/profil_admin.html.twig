@@ -16,11 +16,13 @@
         <section class="contenu">
             <div class="info-section">
                 <h3>Vos informations:</h3>
-                <p><strong>Nom</strong><br>{{ admin.lastName }}</p>
-                <p><strong>Prénom</strong><br>{{ admin.firstName }}</p>
+                <p><strong>Nom</strong><br>{{ admin.nom }}</p>
+                <p><strong>Prénom</strong><br>{{ admin.prenom }}</p>
                 <p><strong>Email</strong><br>{{ admin.email }}</p>
-                <p><strong>Établissement</strong><br>{{ admin.school }}</p>
-                <p><strong>Vos promotions</strong><br>{{ admin.promotions | join(' / ') }}</p>
+                <p><strong>Téléphone</strong><br>{{ admin.tel }}</p>
+                <p><strong>Date de naissance</strong><br>{{ admin.date_naissance }}</p>
+                <p><strong>Permissions</strong><br>{{ admin.permission }}</p>
+                <p><strong>ID Promotion</strong><br>{{ admin.id_promotion }}</p>
             </div>
         </section>
     </main>
