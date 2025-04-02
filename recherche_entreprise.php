@@ -44,8 +44,8 @@ $search = $_GET['search'] ?? '';
 if (!empty($search)) {
     $entreprises = array_filter($entreprises, function ($entreprise) use ($search) {
         return stripos($entreprise['name'], $search) !== false ||
-               stripos($entreprise['location'], $search) !== false ||
-               stripos($entreprise['email'], $search) !== false;
+            stripos($entreprise['location'], $search) !== false ||
+            stripos($entreprise['email'], $search) !== false;
     });
 }
 
