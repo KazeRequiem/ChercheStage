@@ -1,19 +1,19 @@
 <?php
-require_once 'init.php';
 require_once 'check_session.php';
-checkPermission(2); // Nécessite permission admin (2)
+checkPermission(2); // Seulement pour admin (permission 2)
+require_once 'init.php';
 
-// Données de l'admin
+$userInfo = getUserInfo();
+
 $admin = [
-    'lastName' => 'Castagnette',
-    'firstName' => 'Bob',
-    'email' => 'bob.castagnette@viacesi.fr',
-    'school' => 'Arras',
-    'promotions' => ['CPA2 Informatique', 'CPA1 Informatique', 'CPA3 Informatique'],
+    'lastName' => $userInfo['nom'] ?? 'Nom admin',
+    'firstName' => $userInfo['prenom'] ?? 'Prénom admin',
+    'email' => $userInfo['email'] ?? 'Email admin',
+    'school' => 'Toutes écoles', // Spécifique admin
+    'permissions' => 'Completes' // Champ spécifique
 ];
 
-// Rendre le template avec Twig
 echo $twig->render('profil_admin.html.twig', [
     'admin' => $admin,
-        'user' => getUserInfo(),
+    'user' => $userInfo
 ]);
