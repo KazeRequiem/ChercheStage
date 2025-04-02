@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(0); // Nécessite permission admin (2)
 
 // Données dynamiques de l'entreprise
 $entreprise = [
@@ -26,4 +28,5 @@ $entreprise = [
 // Rendre le template avec Twig
 echo $twig->render('description_entreprise.html.twig', [
     'entreprise' => $entreprise,
+        'user' => getUserInfo(),
 ]);

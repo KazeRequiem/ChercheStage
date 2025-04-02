@@ -1,5 +1,9 @@
 <?php
+require_once 'check_session.php';
+checkRole(2); // Nécessite permission admin (2)
+
 require_once 'init.php';
+
 
 // Données utilisateur
 $user = [
@@ -40,6 +44,6 @@ $stats = [
 
 // Rendre le template avec Twig
 echo $twig->render('accueil_admin.html.twig', [
-    'user' => $user,
     'stats' => $stats,
+    'user' => getUserInfo(),
 ]);

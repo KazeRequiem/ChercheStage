@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(0); // Nécessite permission admin (2)
 
 // Données dynamiques pour l'offre
 $offer = [
@@ -34,4 +36,5 @@ $offer = [
 // Rendre le template avec Twig
 echo $twig->render('offre_emploi.html.twig', [
     'offer' => $offer,
+        'user' => getUserInfo(),
 ]);

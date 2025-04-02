@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(2); // Nécessite permission admin (2)
 
 // Données dynamiques du pilote
 $pilote = [
@@ -12,4 +14,5 @@ $pilote = [
 // Rendre le template avec Twig
 echo $twig->render('modifier_pilote.html.twig', [
     'pilote' => $pilote,
+        'user' => getUserInfo(),
 ]);

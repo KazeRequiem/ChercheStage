@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(0); // Nécessite permission admin (2)
 
 // Données des entreprises
 $entreprises = [
@@ -56,6 +58,7 @@ if (empty($entreprises)) {
 // Rendre le template avec Twig
 echo $twig->render('recherche_entreprise.html.twig', [
     'entreprises' => $entreprises,
+    'user' => getUserInfo(),
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
 ]);

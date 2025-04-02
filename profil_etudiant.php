@@ -1,5 +1,7 @@
 <?php
 require_once 'init.php';
+require_once 'check_session.php';
+checkPermission(0); // Nécessite permission admin (2)
 
 // Données dynamiques pour le profil étudiant
 $student = [
@@ -13,4 +15,5 @@ $student = [
 // Rendre le template avec Twig
 echo $twig->render('profil_etudiant.html.twig', [
     'student' => $student,
+    'user' => getUserInfo(),
 ]);
