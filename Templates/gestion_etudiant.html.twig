@@ -42,13 +42,14 @@
                 {% for student in students %}
                     <div class="candidature-item">
                         <div>
-                            <h4>{{ student.lastName }}</h4>
-                            <p>🧑‍🎓 {{ student.firstName }}</p>
-                            <p>📄 {{ student.promotion }}</p>
-                            <p>📍 {{ student.location }}</p>
+                            <h4>{{ student.nom }}</h4> {# Utilise la clé 'nom' pour le nom de famille #}
+                            <p>🧑‍🎓 {{ student.prenom }}</p> {# Utilise la clé 'prenom' pour le prénom #}
+                            <p>📄 Promotion : {{ student.id_promotion }}</p> {# Utilise la clé 'id_promotion' pour la promotion #}
+                            <p>📧 Email : {{ student.email }}</p> {# Utilise la clé 'email' pour l'email #}
+                            <p>📞 Téléphone : {{ student.tel }}</p> {# Utilise la clé 'tel' pour le téléphone #}
                         </div>
                         <div>
-                            <a href="{{ student.editLink }}" class="modifier">Modifier</a>
+                            <a href="/modifier_etudiant.php?id={{ student.id_user }}" class="modifier">Modifier</a> {# Lien pour modifier l'étudiant #}
                         </div>
                     </div>
                 {% endfor %}
