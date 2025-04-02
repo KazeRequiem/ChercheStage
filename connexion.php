@@ -42,9 +42,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Adresse-Mail'])) {
     // Vérification du cookie PHPSESSID
     foreach ($response_headers as $header) {
         if (preg_match('/^Set-Cookie:\s*PHPSESSID=([^;]+)/', $header, $matches)) {
-            // Stocker le PHPSESSID dans la superglobale $_COOKIE
-            setcookie("PHPSESSID", $matches[1], time() + 3600, "/"); // Le cookie dure 1 heure
-            $_COOKIE['PHPSESSID'] = $matches[1]; // Mise à jour de la superglobale $_COOKIE
+            // Ajoutez Secure, HttpOnly et SameSite=None si cross-domain
+            setcookie(
+                "PHPSESSID", 
+                $matches[1], 
+                [
+                    'expires' => time() + 3600,
+                    'path' => '/',
+                    'domain' => '.web4all-api.alwaysdata.net', // ou votre domaine parent commun
+                    'secure' => true, // Si HTTPS
+                    'httponly' => true,
+                    'samesite' => 'None' // Nécessaire pour les requêtes cross-origin
+                ]
+            );
+            $_COOKIE['PHPSESSID'] = $matches[1];
             break;
         }
     }
