@@ -67,5 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Rendu du template Twig
-echo $twig->render('ajouter_entreprise.html.twig', []);
+echo $twig->render('ajouter_entreprise.html.twig', [
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
+]);
 ?>

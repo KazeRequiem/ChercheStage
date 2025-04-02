@@ -37,4 +37,6 @@ $offer = [
 echo $twig->render('offre_emploi.html.twig', [
     'offer' => $offer,
         'user' => getUserInfo(),
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

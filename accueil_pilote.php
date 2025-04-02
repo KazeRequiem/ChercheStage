@@ -43,4 +43,6 @@ echo $twig->render('accueil_pilote.html.twig', [
     'chartDataPilote' => $chartDataPilote,
     'chartOptions' => $chartOptions,
     'user' => getUserInfo(),
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

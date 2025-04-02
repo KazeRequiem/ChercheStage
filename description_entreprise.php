@@ -30,4 +30,6 @@ $entreprise = [
 echo $twig->render('description_entreprise.html.twig', [
     'entreprise' => $entreprise,
         'user' => getUserInfo(),
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

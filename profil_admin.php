@@ -48,7 +48,9 @@ if (curl_errno($ch)) {
     ];
 
     echo $twig->render('profil_admin.html.twig', [
-        'admin' => $profile
+        'admin' => $profile,
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
     ]);
 }
 

@@ -17,4 +17,6 @@ $company = [
 // Rendre le template avec Twig
 echo $twig->render('modifier_entreprise.html.twig', [
     'company' => $company,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

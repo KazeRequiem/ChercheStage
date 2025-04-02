@@ -61,4 +61,6 @@ echo $twig->render('recherche_entreprise.html.twig', [
     'user' => getUserInfo(),
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

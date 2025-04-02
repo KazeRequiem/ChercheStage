@@ -11,4 +11,6 @@ $user = [
 // Rendre le template avec Twig
 echo $twig->render('ajouter_pilote.html.twig', [
         'user' => getUserInfo(),
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

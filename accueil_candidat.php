@@ -37,4 +37,6 @@ echo $twig->render('accueil_candidat.html.twig', [
     'user' => getUserInfo(),
     'chartDataCandidat' => $chartDataCandidat,
     'chartOptions' => $chartOptions,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

@@ -18,5 +18,7 @@ $student = [
 
 echo $twig->render('profil_etudiant.html.twig', [
     'student' => $student,
-    'user' => $userInfo // Toutes les données de session
+    'user' => $userInfo,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

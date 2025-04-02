@@ -1,4 +1,6 @@
 <?php
+require_once 'check_session.php';
+checkPermission(1); // Nécessite permission admin (2)
 require_once 'init.php';
 
 // Données dynamiques pour les entreprises
@@ -47,4 +49,6 @@ echo $twig->render('gestion_entreprise.html.twig', [
     'companies' => $companies,
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

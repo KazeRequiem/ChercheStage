@@ -16,4 +16,6 @@ $etudiant = [
 // Rendre le template avec Twig
 echo $twig->render('modifier_etudiant.html.twig', [
     'etudiant' => $etudiant,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

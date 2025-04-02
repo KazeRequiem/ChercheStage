@@ -58,4 +58,6 @@ echo $twig->render('gestion_offre.html.twig', [
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
     'user' => getUserInfo(),
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

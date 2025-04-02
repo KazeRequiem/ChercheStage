@@ -34,4 +34,6 @@ echo $twig->render('candidatures_envoyees.html.twig', [
     'candidatures_envoyees' => $candidatures_envoyees,
     'candidatures_recues' => $candidatures_recues,
         'user' => getUserInfo(),
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

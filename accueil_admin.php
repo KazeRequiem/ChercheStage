@@ -46,4 +46,5 @@ $stats = [
 echo $twig->render('accueil_admin.html.twig', [
     'stats' => $stats,
     'user' => getUserInfo(),
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php',
 ]);

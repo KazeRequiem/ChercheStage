@@ -1,4 +1,5 @@
 <?php
+require_once 'check_session.php';
 require_once 'init.php';
 
 // URL de votre API
@@ -65,4 +66,6 @@ echo $twig->render('page_recherche.html.twig', [
     'searchName' => $searchName,
     'searchLocation' => $searchLocation,
     'noResultsMessage' => $noResultsMessage,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

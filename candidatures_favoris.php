@@ -28,4 +28,6 @@ echo $twig->render('candidatures_favoris.html.twig', [
     'favoris' => $favoris,
     'recherches' => $recherches,
         'user' => getUserInfo(),
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

@@ -17,4 +17,6 @@ $pilote = [
 echo $twig->render('modifier_pilote.html.twig', [
     'pilote' => $pilote,
         'user' => getUserInfo(),
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

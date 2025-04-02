@@ -15,4 +15,6 @@ $policy = [
 // Rendre le template avec Twig
 echo $twig->render('utilisation.html.twig', [
     'policy' => $policy,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

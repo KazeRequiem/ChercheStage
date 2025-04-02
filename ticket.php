@@ -22,5 +22,7 @@ $tickets = [
 // 4. Rendu (en dernier)
 echo $twig->render('ticket.html.twig', [
     'tickets' => $tickets,
-    'user' => getUserInfo() // Utilise la fonction du check_session
+    'user' => getUserInfo(),
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

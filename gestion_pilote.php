@@ -43,4 +43,6 @@ echo $twig->render('gestion_pilote.html.twig', [
         'user' => getUserInfo(),
     'pilotes' => $pilotes,
     'search' => $search,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
 ]);

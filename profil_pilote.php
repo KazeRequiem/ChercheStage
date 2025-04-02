@@ -70,7 +70,9 @@ if (curl_errno($ch)) {
 
     echo $twig->render('profil_pilote.html.twig', [
         'pilot' => $pilot,
-        'user' => $_SESSION['user'] // Passer les données de session au template
+        'user' => $_SESSION['user'],
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
     ]);
 }
 
