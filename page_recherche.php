@@ -27,6 +27,19 @@ if (json_last_error() !== JSON_ERROR_NONE) {
     die('Erreur de décodage JSON : ' . json_last_error_msg());
 }
 
+// Récupérer les paramètres de recherche
+$searchName = $_GET['searchName'] ?? '';
+$searchLocation = $_GET['searchLocation'] ?? '';
+
+// Filtrer les entreprises si une recherche est effectuée
+if (!empty($searchName) || !empty($searchLocation)) {
+    $entreprises = array_filter($entreprises, function ($entreprise) use ($searchName, $searchLocation) {
+        $matchesName = empty($searchName) || (isset($entreprise['nom']) && stripos($entreprise['nom'], $searchName) !== false);
+        $matchesLocation = empty($searchLocation) || (isset($entreprise['localisation']) && stripos($entreprise['localisation'], $searchLocation) !== false);
+        return $matchesName && $matchesLocation;
+    });
+}
+
 // Formatage des données pour Twig
 $offers = [];
 foreach ($entreprises as $entreprise) {
@@ -40,7 +53,16 @@ foreach ($entreprises as $entreprise) {
     ];
 }
 
+// Vérifier si aucune offre n'est trouvée
+$noResultsMessage = '';
+if (empty($offers)) {
+    $noResultsMessage = 'Aucune offre trouvée.';
+}
+
 // Rendre le template avec Twig
 echo $twig->render('page_recherche.html.twig', [
     'offers' => $offers,
+    'searchName' => $searchName,
+    'searchLocation' => $searchLocation,
+    'noResultsMessage' => $noResultsMessage,
 ]);

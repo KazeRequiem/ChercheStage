@@ -1,6 +1,14 @@
 const searchInput = document.querySelector("#search");
 const searchResults = document.querySelector(".candidatures-publiées");
 
+window.addEventListener("load", function () {
+    const searchNameInput = document.getElementById("search");
+
+    if (searchNameInput) {
+        searchNameInput.value = "";
+    }
+});
+
 function createOfferList(data) {
     searchResults.innerHTML = ""; // Réinitialisez le contenu du conteneur
 

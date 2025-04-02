@@ -1,15 +1,14 @@
-{# filepath: templates/partials/header.html.twig #}
 <header class="header">
     <div class="logo">
         <a href="accueil_candidat.php"><img src="assets/logo.png" alt="logo"></a>
     </div>
     
-    <div class="search-container">
-        <input type="text" placeholder="Intitulé de poste, mots-clés...">
+    <form method="GET" action="/page_recherche.php" class="search-container">
+        <input type="text" name="searchName" id="searchName" placeholder="Intitulé de poste, mots-clés..." value="{{ searchName|default('') }}">
         <div class="divider"></div>
-        <input type="text" placeholder="Valenciennes (59) 50km">
-    </div>
+        <input type="text" name="searchLocation" id="searchLocation" placeholder="Localisation" value="{{ searchLocation|default('') }}">
+        <button type="submit" class="search-button">Rechercher</button>
+    </form>
 
-    <a href="page_recherche.php" class="search-button">Rechercher</a>
     <a href="deconnexion.php" class="deconnexion-button">Se déconnecter</a>
 </header>

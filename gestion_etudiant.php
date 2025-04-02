@@ -46,5 +46,4 @@ echo $twig->render('gestion_etudiant.html.twig', [
     'user' => getUserInfo(),
     'search' => $search,
     'noResultsMessage' => $noResultsMessage,
-    'user' => getUserInfo(),
 ]);
