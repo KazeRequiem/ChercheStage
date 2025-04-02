@@ -16,23 +16,21 @@
             <h2>Modifier une entreprise</h2>
             <section class="contenu">
                 <div class="info-section">
-                    <h4>Nom de l'entreprise</h4>
-                    <p>{{ company.name }}</p>
+                    <h3>Les infos de l'entreprise</h3>
+                    <p><strong>Nom : </strong>{{ company.name }}</p>
                     <input type="text" placeholder="Modifier le nom">
-                    <h4>Localisation</h4>
-                    <p>{{ company.location }}</p>
+                    <p><strong>Localisation : </strong>{{ company.location }}</p>
                     <input type="text" placeholder="Modifier la localisation">
-                    <h4>Email</h4>
-                    <p>{{ company.email }}</p>
-                    <input type="text" placeholder="Modifier le mail">
-                    <h4>Logo</h4>
+                    <p><strong>Email : </strong>{{ company.email }}</p>
+                    <input type="email" placeholder="Modifier le mail">
+                    <p><strong>Logo</strong></p>
                     <input type="file">
                     <p>Le logo doit respecter un ratio de 1:1 et faire moins de 2 Mo</p>
                     <button class="bouton">Appliquer les modifications</button>
                 </div>
                 <div class="help-section">
                     <form>
-                        <label for="Telephone">Téléphone</label>
+                        <label for="Telephone">Téléphone : {{ company.number}}</label>
                         <input type="text" placeholder="Modifier le téléphone">
                         <label for="Description">Description</label>
                         <textarea id="corp" name="corp" placeholder="Modifier la description" required></textarea>

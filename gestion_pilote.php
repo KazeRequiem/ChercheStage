@@ -20,14 +20,25 @@ $pilotes = [
         'title' => 'Castagnette bob',
         'location' => 'Arras',
         'promotion' => 'AR4JPO1',
-        'firstName' => 'Baptiste',
+        'firstName' => 'Melih',
         'editLink' => 'modifier_pilote.php',
     ],
     // Ajoutez d'autres pilotes ici
 ];
 
+// Récupérer le paramètre de recherche
+$search = $_GET['search'] ?? '';
+
+// Filtrer les pilotes si une recherche est effectuée
+if (!empty($search)) {
+    $pilotes = array_filter($pilotes, function ($pilote) use ($search) {
+        return stripos($pilote['firstName'], $search) !== false || stripos($pilote['promotion'], $search) !== false;
+    });
+}
+
 // Rendre le template avec Twig
 echo $twig->render('gestion_pilote.html.twig', [
     'user' => $user,
     'pilotes' => $pilotes,
+    'search' => $search,
 ]);

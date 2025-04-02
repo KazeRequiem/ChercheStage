@@ -95,6 +95,7 @@
     width: 1.5rem;
     height: 1.5rem;
     transition: transform 0.2s ease;
+    margin-top: 1em;
 }
 
 .favorite-icon-img:hover {

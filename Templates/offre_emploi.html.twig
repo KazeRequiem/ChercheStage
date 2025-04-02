@@ -15,7 +15,13 @@
         <main>
             <section class="offre-details">
                 <div class="offre-description">
-                    <h2><img src="assets/{{ offer.logo }}" alt="{{ offer.company }} Logo"> {{ offer.title }}</h2>
+                    <h2>
+                        <img src="assets/{{ offer.logo }}" alt="{{ offer.company }} Logo"> {{ offer.title }}
+                        <span class="favorite-icon" onclick="toggleFavorite(this)">
+                            <img src="assets/coeur.png" alt="Ajouter aux favoris" class="favorite-icon-img">
+                            <span class="explosion"></span>
+                        </span>
+                    </h2>
                     <p><strong>Entreprise :</strong> {{ offer.company }}</p>
                     <p><strong>Localisation :</strong> {{ offer.location }}</p>
                     <p><strong>Type de contrat :</strong> {{ offer.contractType }}</p>
@@ -60,5 +66,6 @@
 
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
+        <script src="Coeur.js"></script>
     </body>
 </html>
