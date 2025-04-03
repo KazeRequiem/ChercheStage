@@ -30,7 +30,6 @@
             <button type="submit" class="supprimer">Supprimer</button>
         </form>
             <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
-        <button class="supprimer">Supprimer</button>
         {% if candidature.logo %}
             <img src="assets/{{ candidature.logo }}" alt="{{ candidature.title }} Logo" class="company-logo">
         {% endif %}

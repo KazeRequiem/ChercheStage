@@ -3,14 +3,18 @@
     <div class="candidature-item">
         <div>
             <h4>{{ entreprise.name }}</h4>
-            <p>📧 {{ entreprise.email }}</p>
-            <p>⭐ {{ entreprise.rating }}/5</p>
-            <p>☎️ {{ entreprise.phone }}</p>
+            <p>📧 Email : {{ entreprise.email }}</p>
+            {% if entreprise.rating != 'N/A' %}
+                <p>⭐ Note : {{ entreprise.rating }}/5</p>
+            {% endif %}
+            <p>☎️ Téléphone : {{ entreprise.phone }}</p>
             <p>👨‍🎓 {{ entreprise.candidates }} candidats ont déjà postulé</p>
-            <p>📍 {{ entreprise.location }}</p>
+            <p>📍 Localisation : {{ entreprise.location }}</p>
         </div>
         <div class="candidature-actions">
-            <img src="{{ entreprise.logo }}" alt="{{ entreprise.name }} Logo" class="company-logo">
+            {% if entreprise.logo %}
+                <img src="{{ entreprise.logo }}" alt="{{ entreprise.name }} Logo" class="company-logo">
+            {% endif %}
         </div>
     </div>
 </a>

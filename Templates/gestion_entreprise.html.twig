@@ -3,8 +3,8 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Gestion Entreprise</title>
-        <meta name="description" content="">
+        <title>Gestion des Entreprises</title>
+        <meta name="description" content="Page de gestion des entreprises">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/header-footer.css">
         <link rel="stylesheet" href="src/Page-gestion.css">
@@ -13,52 +13,50 @@
     <body>
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
+
         <main>
             <section class="candidatures">
-                <section>
                 <div class="candidats-header-content">
                     <h2>Liste des entreprises</h2>
                     <div class="candidats-header-actions">
                         <form method="GET" action="/gestion_entreprise.php">
                             <div class="search-bar">
-                                <input type="text" name="search" id="searchName" placeholder="Rechercher une entreprise">
+                                <input type="text" name="search" id="searchName" placeholder="Rechercher une entreprise" value="{{ search|default('') }}">
                                 <button type="submit" class="search-icon">🔍</button>
                             </div>
                         </form>
-                        <select id="filter-select" class="trier-button">
-                            <option value="default">Trier ▼</option>
-                            <option value="nom">Nom</option>
-                            <option value="location">Localisation</option>
-                        </select>
                         <a href="ajouter_entreprise.php" class="create-button">+ Ajouter une entreprise</a>
                     </div>
                 </div>
-                </section>  
+
                 <div class="candidatures-publiées">
-                {% if noResultsMessage %}
-                    <p>{{ noResultsMessage }}</p>
-                {% else %}
-                    {% for company in companies %}
-                        <div class="candidature-item">
-                            <div>
-                                <h4>{{ company.name }}</h4>
-                                <p>📍 {{ company.location }}</p>
-                                <p>✉️ {{ company.email }}</p>
-                                <p>☎️ {{ company.phone }}</p>
+                    {% if noResultsMessage %}
+                        <p class="no-results">{{ noResultsMessage }}</p>
+                    {% else %}
+                        {% for entreprise in entreprises %}
+                            <div class="candidature-item">
+                                <div>
+                                    <h4>{{ entreprise.nom }}</h4>
+                                    <p>📧 Email : {{ entreprise.email }}</p>
+                                    <p>📍 Localisation : {{ entreprise.ville }}, {{ entreprise.code_postal }}, {{ entreprise.pays }}</p>
+                                    <p>☎️ Téléphone : {{ entreprise.tel }}</p>
+                                    <p>📝 Description : {{ entreprise.description }}</p>
+                                </div>
+                                <div class="candidature-actions">
+                                    {% if entreprise.logo %}
+                                        <img src="{{ entreprise.logo }}" alt="{{ entreprise.nom }} Logo" class="company-logo">
+                                    {% endif %}
+                                </div>
                             </div>
-                            <div class="candidature-actions">
-                                <a href="modifier_entreprise.php" class="modifier">Modifier</a>
-                                <img src="assets/{{ company.logo }}" alt="{{ company.name }} Logo" class="company-logo">
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </section>
         </main>
 
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
+
         <script src="search-entreprise.js"></script>
     </body>
 </html>
