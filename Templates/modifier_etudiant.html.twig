@@ -1,4 +1,4 @@
-{# filepath: templates/modifier_pilote.html.twig #}
+{# filepath: templates/modifier_etudiant.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -12,45 +12,56 @@
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
         <main>
-        <h2>Modifier un étudiant</h2>
-        <form class="formulaire-ajout" method="POST" action="/gestion_etudiant.php">
-             <div class="form-grid">
-                 <div class="form-group">
-                     <label for="prenom">Prénom de l'étudiant : {{ etudiant.prenom }}</label>
-                     <input type="text" id="prenom" name="prenom" placeholder="Prénom de l'étudiant" required>
-                 </div>
-                 <div class="form-group">
-                     <label for="nom">Nom de l'étudiant : {{ etudiant.nom }}</label>
-                     <input type="text" id="nom" name="nom" placeholder="Nom de l'étudiant" required>
-                 </div>
-                 <div class="form-group">
-                     <label for="email">Email : {{ etudiant.email }}</label>
-                     <input type="email" id="email" name="email" placeholder="Email" required>
-                 </div>
-                 <div class="form-group">
-                     <label for="motdepasse">Mot de passe</label>
-                     <input type="text" id="motdepasse" name="motdepasse" placeholder="Mot de passe" required>
-                 </div>
-                 <div class="form-group">
-                     <label for="telephone">Téléphone : {{etudiant.telephone}}</label>
-                     <input type="text" id="telephone" name="telephone" placeholder="Téléphone" required>
-                 </div>
-                 <div class="form-group">
-                     <label for="datenaissance">Date naissance : {{etudiant.datenaissance}}</label>
-                     <input type="date" id="datenaissance" name="datenaissance" placeholder="Date de naissance" required>
-                 </div>
-                 <div class="form-group">
-                     <label for="promotion">Promotion : {{ etudiant.promotion }}</label>
-                     <input type="text" id="promotion" name="promotion" placeholder="Promotion" required>
-                 </div>
-             </div>
-             <button type="submit" class="bouton-ajouter">Modifier l'étudiant</button>
-         </form>
-         <form method="POST" action="/gestion_etudiant.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">
-             <input type="hidden" name="etudiant_id" value="{{ etudiant.id }}">
-             <button type="submit" class="bouton-supprimer">Supprimer l'étudiant</button>
-         </form>
-
+            <h2>Modifier un étudiant</h2>
+            
+            
+            {# Afficher les messages d'erreur si présents #}
+            {% if app.request.query.get('error') is defined and app.request.query.get('error') is not empty %}
+                <div class="alert alert-danger">
+                    {{ app.request.query.get('error') }}
+                </div>
+            {% endif %}
+            
+            <form class="formulaire-ajout" method="POST" action="/modifier_etudiant.php?id={{ etudiant.id_user }}">
+                <div class="form-group">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" id="prenom" name="prenom" value="{{ etudiant.prenom }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom" value="{{ etudiant.nom }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="{{ etudiant.email }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telephone">Téléphone:</label>
+                    <input type="text" id="telephone" name="telephone" value="{{ etudiant.telephone }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="datenaissance">Date de naissance:</label>
+                    <input type="date" id="datenaissance" name="datenaissance" value="{{ etudiant.datenaissance }}">
+                </div>
+                
+                <div class="form-group">
+                    <label for="promotion">Promotion:</label>
+                    <input type="text" id="promotion" name="promotion" value="{{ etudiant.promotion }}">
+                </div>
+                
+                <input type="hidden" name="etudiant_id" value="{{ etudiant.id_user }}">
+                <button type="submit" class="btn-submit">Modifier</button>
+            </form>
+            
+            <form method="POST" action="/modifier_etudiant.php?id={{ etudiant.id_user }}" class="delete-form" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">
+                <input type="hidden" name="_method" value="DELETE"> <!-- Indique que c'est une suppression -->
+                <input type="hidden" name="etudiant_id" value="{{ etudiant.id_user }}">
+                <button type="submit" class="bouton-supprimer">Supprimer</button>
+            </form>
         </main>
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}

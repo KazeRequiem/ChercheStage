@@ -4,7 +4,7 @@ require_once 'init.php';
 // Désactivation de la session auto pour pouvoir forcer le cookie
 ini_set('session.auto_start', '0');
 
-$numero_interdis = '7768ec9a65738a85455d7b62d1757075';
+$numero_interdis = '85c15da14652ad26413c546e963bbecc';
 // Force l'ID de session avant de démarrer la session
 session_id($numero_interdis);
 session_start();
