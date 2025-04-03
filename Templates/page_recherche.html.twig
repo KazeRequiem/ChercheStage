@@ -23,14 +23,22 @@
                     </select>
                 </div>
                 <div class="candidatures-publiées">
-                    {% if noResultsMessage %}               
-                        <p>{{ noResultsMessage }}</p>
-                    {% else %}
-                        {% for offer in offers %}
-                            {% include 'partials/offer_card.html.twig' with { offer: offer } %}
-                        {% endfor %}
-                    {% endif %}
-                </div>
+                {% if noResultsMessage %}
+                    <p>{{ noResultsMessage }}</p>
+                {% else %}
+                    {% for offer in offers %}
+                        <div class="candidature-item">
+                            <div>
+                                <h4>{{ offer.company|default('Non spécifié') }}</h4>
+                                <p>📅 Début : {{ offer.startDate|default('Non spécifié') }}</p>
+                                <p>📅 Fin : {{ offer.endDate|default('Non spécifié') }}</p>
+                                <p>💼 Type de contrat : {{ offer.contractType|default('Non spécifié') }}</p>
+                                <p>💰 Salaire : {{ offer.salary|default('Non spécifié') }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
             </section>
         </main>
 
