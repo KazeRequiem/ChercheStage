@@ -1,10 +1,9 @@
-{# filepath: templates/offre_emploi.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Offre d'emploi</title>
+        <title>{{ offer.title }}</title>
         <link rel="stylesheet" href="src/Offre-emploi.css">
         <link rel="stylesheet" href="src/header-footer.css">
     </head>
@@ -16,17 +15,18 @@
             <section class="offre-details">
                 <div class="offre-description">
                     <h2>
-                        <img src="assets/{{ offer.logo }}" alt="{{ offer.company }} Logo"> {{ offer.title }}
                         <span class="favorite-icon" onclick="toggleFavorite(this)">
+                            <h2>{{ offer.title }}</h2>
                             <img src="assets/coeur.png" alt="Ajouter aux favoris" class="favorite-icon-img">
                             <span class="explosion"></span>
                         </span>
                     </h2>
-                    <p><strong>Entreprise :</strong> {{ offer.company }}</p>
-                    <p><strong>Localisation :</strong> {{ offer.location }}</p>
-                    <p><strong>Type de contrat :</strong> {{ offer.contractType }}</p>
-                    <p><strong>Salaire :</strong> {{ offer.salary }}</p>
-                    <p><strong>Date de début / fin :</strong> {{ offer.startDate }} / {{ offer.endDate }}</p>
+                    <p><strong>Entreprise :</strong> {{ offer.company|default('Non spécifié') }}</p>
+                    <p><strong>Localisation :</strong> {{ offer.location|default('Non spécifié') }}</p>
+                    <p><strong>Type de contrat :</strong> {{ offer.contractType|default('Non spécifié') }}</p>
+                    <p><strong>Salaire :</strong> {{ offer.salary|default('Non spécifié') }}</p>
+                    <p><strong>Date de début / fin :</strong> {{ offer.startDate|default('Non spécifié') }} / {{ offer.endDate|default('Non spécifié') }}</p>
+                    <p><strong>Détail du poste :</strong> {{ offer.details|default('Non spécifié') }}</p>
 
                     <h3>Détail du poste</h3>
                     <p>{{ offer.details }}</p>

@@ -27,20 +27,22 @@
                     <p>{{ noResultsMessage }}</p>
                 {% else %}
                     {% for offer in offers %}
-                        <div class="candidature-item">
-                            <div>
-                                <h4>{{ offer.title|default('Non spécifié') }}</h4>
-                                <p>📄 {{ offer.description|default('Non spécifié') }}</p>
-                                <p>📅 Début : {{ offer.startDate|default('Non spécifié') }}</p>
-                                <p>📅 Fin : {{ offer.endDate|default('Non spécifié') }}</p>
-                                <p>🏢 {{ offer.company|default('Non spécifié') }}</p>
-                                <p>💼 {{ offer.contractType|default('Non spécifié') }}</p>
-                                <p>💰 {{ offer.salary|default('Non spécifié') }}</p>
+                        <a href="/offre_emploi.php?id={{ offer.id }}" class="candidature-item-link">
+                            <div class="candidature-item">
+                                <div>
+                                    <h4>{{ offer.title|default('Non spécifié') }}</h4>
+                                    <p>📄 {{ offer.description|default('Non spécifié') }}</p>
+                                    <p>📅 Début : {{ offer.startDate|default('Non spécifié') }}</p>
+                                    <p>📅 Fin : {{ offer.endDate|default('Non spécifié') }}</p>
+                                    <p>🏢 {{ offer.company|default('Non spécifié') }}</p>
+                                    <p>💼 {{ offer.contractType|default('Non spécifié') }}</p>
+                                    <p>💰 {{ offer.salary|default('Non spécifié') }}</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     {% endfor %}
                 {% endif %}
-            </div>
+                </div>
             </section>
         </main>
 
