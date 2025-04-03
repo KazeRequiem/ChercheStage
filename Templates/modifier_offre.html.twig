@@ -12,40 +12,46 @@
         {% include 'partials/header.html.twig' %}
         <main>
         <h2>Modifier une offre</h2>
-        <form class="formulaire-ajout" method="POST" action="">
+        {# Afficher les messages d'erreur si présents #}
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form class="formulaire-ajout" method="POST" action="gestion_offre.php">
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="title">Titre de l'offre : {{ offre.title }}</label>
-                    <input type="text" id="titre" name="titre" value="{{ offre.titre }}" placeholder="Titre de l'offre" required>
+                    <label for="titre">Titre de l'offre : {{ offre.titre }}</label>
+                    <input type="text" id="titre" name="titre" placeholder="Titre de l'offre">
                 </div>
                 <div class="form-group">
                     <label for="description">Description : {{ offre.description }}</label>
-                    <textarea id="description" name="description" placeholder="Description" required>{{ offre.description }}</textarea>
+                    <textarea id="description" name="description" placeholder="Description">{{ offre.description }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="date_debut">Date de début : {{ offre.date_debut }}</label>
-                    <input type="date" id="date_debut" name="date_debut" value="{{ offre.date_debut }}" required>
+                    <input type="date" id="date_debut" name="date_debut">
                 </div>
                 <div class="form-group">
                     <label for="date_fin">Date de fin : {{ offre.date_fin }}</label>
-                    <input type="date" id="date_fin" name="date_fin" value="{{ offre.date_fin }}" required>
+                    <input type="date" id="date_fin" name="date_fin">
                 </div>
                 <div class="form-group">
                     <label for="id_entreprise">ID Entreprise : {{ offre.id_entreprise }}</label>
-                    <input type="number" id="id_entreprise" name="id_entreprise" value="{{ offre.id_entreprise }}" placeholder="ID Entreprise" required>
+                    <input type="number" id="id_entreprise" name="id_entreprise" placeholder="ID Entreprise">
                 </div>
                 <div class="form-group">
                     <label for="type_contrat">Type de contrat : {{ offre.type_contrat }}</label>
-                    <input type="text" id="type_contrat" name="type_contrat" value="{{ offre.type_contrat }}" placeholder="Type de contrat" required>
+                    <input type="text" id="type_contrat" name="type_contrat" placeholder="Type de contrat">
                 </div>
                 <div class="form-group">
                     <label for="salaire">Salaire : {{ offre.salaire }}</label>
-                    <input type="text" id="salaire" name="salaire" value="{{ offre.salaire }}" placeholder="Salaire" required>
+                    <input type="text" id="salaire" name="salaire"  placeholder="Salaire">
                 </div>
             </div>
             <button type="submit" class="bouton-ajouter">Modifier l'offre</button>
         </form>
-        <form method="POST" action="" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?');">
+        <form method="POST" action="gestion_offre.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?');">
             <input type="hidden" name="delete" value="1">
             <button type="submit" class="bouton-supprimer">Supprimer l'offre</button>
         </form>

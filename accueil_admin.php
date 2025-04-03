@@ -4,12 +4,6 @@ checkRole(2); // Nécessite permission admin (2)
 
 require_once 'init.php';
 
-
-// Données utilisateur
-$user = [
-    'firstName' => 'Lukas',
-];
-
 // Données pour les statistiques
 $stats = [
     [

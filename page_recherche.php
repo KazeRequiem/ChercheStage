@@ -7,6 +7,13 @@ require_once 'api_client.php'; // Inclure le fichier centralisé
 // URL de l'API pour récupérer les offres
 $apiUrl = 'https://web4all-api.alwaysdata.net/api/controller/offres.php/offres';
 
+
+function fetchCompanyName($idEntreprise) {
+    $companyApiUrl = "https://web4all-api.alwaysdata.net/api/controller/entreprise.php?id_entreprise=$idEntreprise";
+    $companyData = fetchApiData($companyApiUrl);
+    return $companyData['nom'] ?? 'Entreprise inconnue'; // Retourne le nom ou une valeur par défaut
+}
+
 try {
     // Récupérer les données de l'API
     $offres = fetchApiData($apiUrl);
