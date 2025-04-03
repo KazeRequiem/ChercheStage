@@ -112,7 +112,9 @@ switch ($method) {
         // Sinon, charger la vue Twig avec les données // Assurez-vous d'inclure votre configuration Twig
         echo $twig->render('candidatures_favoris.html.twig', [
             'favoris' => $favorisWithDetails,
-            'noResultsMessageFavoris' => $noResultsMessage
+            'noResultsMessageFavoris' => $noResultsMessage,
+            'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
         ]);
         break;
         

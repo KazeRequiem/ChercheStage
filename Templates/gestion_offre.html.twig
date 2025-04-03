@@ -32,28 +32,29 @@
                         <a href="ajouter_offre.php" class="create-button">+ Ajouter une offre</a>
                     </div>
                 </div>
-                </section>  
+            </section>  
             <div class="candidatures-publiées">
-    {% if noResultsMessage %}
-        <p>{{ noResultsMessage }}</p>
-    {% else %}
-        {% for offre in offres %}
-            <div class="candidature-item">
-                <div>
-                    <h4>{{ offre.title }}</h4>
-                    <p>🏢 {{ offre.company }}</p>
-                    <p>📍 {{ offre.location }}</p>
-                    <p>💼 {{ offre.contractType }}</p>
-                    <p>💰 {{ offre.salary }}</p>
-                </div>
-                <div class="candidature-actions">
-                    <a href="{{ offre.editLink }}" class="modifier">Modifier</a>
-                    <img src="{{ offre.logo }}" alt="{{ offre.company }} Logo" class="company-logo">
-                </div>
+                {% if noResultsMessage %}
+                    <p>{{ noResultsMessage }}</p>
+                {% else %}
+                    {% for offre in offres %}
+                        <div class="candidature-item">
+                            <div>
+            <h4>{{ offre.title|default('Non spécifié') }}</h4>
+            <p>📄 {{ offre.description|default('Non spécifié') }}</p>
+            <p>📅 Début : {{ offre.startDate|default('Non spécifié') }}</p>
+            <p>📅 Fin : {{ offre.endDate|default('Non spécifié') }}</p>
+            <p>🏢 {{ offre.company|default('Non spécifié') }}</p>
+            <p>💼 {{ offre.contractType|default('Non spécifié') }}</p>
+            <p>💰 {{ offre.salary|default('Non spécifié') }}</p>
+        </div>
+                            <div>
+                                <a href="/modifier_offre.php?id={{ offre.id }}" class="modifier">Modifier</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
-        {% endfor %}
-    {% endif %}
-</div>
         </section>
     </main>
 

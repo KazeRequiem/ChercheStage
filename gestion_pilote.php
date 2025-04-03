@@ -39,6 +39,8 @@ try {
         'user' => getUserInfo(),
         'search' => $search,
         'noResultsMessage' => $noResultsMessage,
+        'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+
     ]);
 } catch (Exception $e) {
     // Gérer les erreurs et afficher un message

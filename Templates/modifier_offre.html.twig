@@ -1,4 +1,3 @@
-{# filepath: templates/modifier_pilote.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -13,45 +12,41 @@
         {% include 'partials/header.html.twig' %}
         <main>
         <h2>Modifier une offre</h2>
-        <form class="formulaire-ajout" method="POST" action="/gestion_offre.php">
+        <form class="formulaire-ajout" method="POST" action="">
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="nom">Nom de l'offre : {{ offer.title }}</label>
-                    <input type="text" id="nom" name="nom" placeholder="Nom de l'offre" required>
+                    <label for="title">Titre de l'offre : {{ offre.title }}</label>
+                    <input type="text" id="titre" name="titre" value="{{ offre.titre }}" placeholder="Titre de l'offre" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Entreprise : {{ offer.company }}</label>
-                    <input type="text" id="email" name="email" placeholder="Entreprise" required>
+                    <label for="description">Description : {{ offre.description }}</label>
+                    <textarea id="description" name="description" placeholder="Description" required>{{ offre.description }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="email">Salaire : {{ offer.salary }}</label>
-                    <input type="text" id="email" name="email" placeholder="Salaire" required>
+                    <label for="date_debut">Date de début : {{ offre.date_debut }}</label>
+                    <input type="date" id="date_debut" name="date_debut" value="{{ offre.date_debut }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="telephone">Téléphone : {{offer.number}}</label>
-                    <input type="text" id="telephone" name="telephone" placeholder="Téléphone" required>
+                    <label for="date_fin">Date de fin : {{ offre.date_fin }}</label>
+                    <input type="date" id="date_fin" name="date_fin" value="{{ offre.date_fin }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" placeholder="Description" required></textarea>
+                    <label for="id_entreprise">ID Entreprise : {{ offre.id_entreprise }}</label>
+                    <input type="number" id="id_entreprise" name="id_entreprise" value="{{ offre.id_entreprise }}" placeholder="ID Entreprise" required>
                 </div>
                 <div class="form-group">
-                    <label for="ville">Ville : {{offer.location}}</label>
-                    <input type="text" id="ville" name="ville" placeholder="Ville" required>
+                    <label for="type_contrat">Type de contrat : {{ offre.type_contrat }}</label>
+                    <input type="text" id="type_contrat" name="type_contrat" value="{{ offre.type_contrat }}" placeholder="Type de contrat" required>
                 </div>
                 <div class="form-group">
-                    <label for="telephone">Date de début : {{offer.startDate}}</label>
-                    <input type="date" id="telephone" name="telephone"required>
-                </div>
-                <div class="form-group">
-                    <label for="description">Date de fin : {{offer.endDate}}</label>
-                    <input type="date" id="telephone" name="telephone" required>
+                    <label for="salaire">Salaire : {{ offre.salaire }}</label>
+                    <input type="text" id="salaire" name="salaire" value="{{ offre.salaire }}" placeholder="Salaire" required>
                 </div>
             </div>
             <button type="submit" class="bouton-ajouter">Modifier l'offre</button>
         </form>
-        <form method="POST" action="/gestion_offre.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?');">
-            <input type="hidden" name="offer_id" value="{{ offer.id }}">
+        <form method="POST" action="" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette offre ?');">
+            <input type="hidden" name="delete" value="1">
             <button type="submit" class="bouton-supprimer">Supprimer l'offre</button>
         </form>
         </main>

@@ -1,41 +1,54 @@
 <?php
 require_once 'check_session.php';
-checkRole(1); // Nécessite au moins pilote (1)
+checkPermission(1); // Nécessite au moins pilote (1)
 require_once 'init.php';
+require_once 'api_client.php'; // Inclure le fichier centralisé
 
-// Données dynamiques pour l'offre
-$offer = [
-    'title' => 'Développeur Full Stack H/F',
-    'company' => 'CESI',
-    'location' => 'Arras',
-    'contractType' => 'CDI',
-    'salary' => '~35k',
-    'startDate' => '01/01/2025',
-    'endDate' => '31/12/2025',
-    'details' => 'Au sein de l’un de nos clients du secteur Télécom...',
-    'objectives' => [
-        'Écriture des spécifications fonctionnelles sur la base de l’existant.',
-        'Maquettage.',
-        'Développement d’une vue consolidée de plusieurs index.',
-        'Participation à la refonte de l’interface graphique.',
-    ],
-    'reasons' => [
-        'Un cadre de travail stimulant et innovant.',
-        'Des projets impactants au service de l’éducation et de l’industrie.',
-        'Une culture d’entreprise collaborative et tournée vers l’avenir.',
-    ],
-    'skills' => [
-        'Compétences en développement d’applications web et backend.',
-        'Maîtrise des langages : C++, Python, Java.',
-        'Expérience avec Git et GitLab.',
-    ],
-    'logo' => 'thales-logo.png',
-    'companyDescription' => 'CESI, école d’ingénieurs habilitée par la CTI...',
-];
+// Vérifier si l'ID de l'offre est passé dans l'URL
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    die('Erreur : ID offre manquant.');
+}
 
-// Rendre le template avec Twig
-echo $twig->render('modifier_offre.html.twig', [
-    'offer' => $offer,
-    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php', // Par défaut, redirige vers la page de connexion
+$offreId = $_GET['id'];
+$apiUrl = "https://web4all-api.alwaysdata.net/api/controller/offres.php/offre/$offreId";
 
-]);
+try {
+    $offre = fetchApiData($apiUrl);
+    echo $twig->render('modifier_offre.html.twig', ['offer' => $offre]);
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $updatedData = [
+        'title' => $_POST['title'],
+        'description' => $_POST['description'],
+        'date_debut' => $_POST['date_debut'],
+        'date_fin' => $_POST['date_fin'],
+        'id_entreprise' => $_POST['id_entreprise'],
+        'type_contrat' => $_POST['type_contrat'],
+        'salaire' => $_POST['salaire']
+    ];
+
+    $apiUrlUpdate = "https://web4all-api.alwaysdata.net/api/controller/offres.php/offre/$offreId";
+    
+    try {
+        updateApiData($apiUrlUpdate, $updatedData);
+        header("Location: gestion_offres.php?success=1");
+        exit;
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
+if (isset($_POST['delete'])) {
+    $apiUrlDelete = "https://web4all-api.alwaysdata.net/api/controller/offres.php/offre/$offreId";
+    
+    try {
+        deleteApiData($apiUrlDelete);
+        header("Location: gestion_offres.php?deleted=1");
+        exit;
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
