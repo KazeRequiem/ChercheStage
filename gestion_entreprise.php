@@ -28,15 +28,6 @@ try {
         $noResultsMessage = 'Aucune entreprise trouvée.';
     }
 
-    // Débogage : Vérifier les données passées au template
-    var_dump([
-        'entreprises' => $entreprises,
-        'user' => getUserInfo(),
-        'search' => $search,
-        'noResultsMessage' => $noResultsMessage,
-    ]);
-    exit();
-
     // Rendre le template avec Twig
     echo $twig->render('gestion_entreprise.html.twig', [
         'entreprises' => $entreprises,
