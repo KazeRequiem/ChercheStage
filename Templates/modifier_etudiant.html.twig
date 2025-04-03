@@ -13,8 +13,6 @@
         {% include 'partials/header.html.twig' %}
         <main>
             <h2>Modifier un étudiant</h2>
-            
-            
             {# Afficher les messages d'erreur si présents #}
             {% if app.request.query.get('error') is defined and app.request.query.get('error') is not empty %}
                 <div class="alert alert-danger">
@@ -54,7 +52,7 @@
                 </div>
                 
                 <input type="hidden" name="etudiant_id" value="{{ etudiant.id_user }}">
-                <button type="submit" class="btn-submit">Modifier</button>
+                <button type="submit" class="bouton-ajouter">Modifier</button>
             </form>
             
             <form method="POST" action="/modifier_etudiant.php?id={{ etudiant.id_user }}" class="delete-form" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?');">
