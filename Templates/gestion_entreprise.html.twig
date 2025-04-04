@@ -38,9 +38,9 @@
                                 <div>
                                     <h4>{{ entreprise.nom }}</h4>
                                     <p>📧 Email : {{ entreprise.email }}</p>
-                                    <p>📍 Localisation : {{ entreprise.ville }}, {{ entreprise.code_postal }}, {{ entreprise.pays }}</p>
-                                    <p>☎️ Téléphone : {{ entreprise.tel }}</p>
-                                    <p>📝 Description : {{ entreprise.description }}</p>
+                                    <p>📍 {{ entreprise.ville }}, {{ entreprise.code_postal }}, {{ entreprise.pays }}</p>
+                                    <p>☎️ {{ entreprise.tel }}</p>
+                                    <p>📝 {{ entreprise.description }}</p>
                                 </div>
                                 <div>
                                 <a href="/modifier_entreprise.php?id={{ entreprise.id }}" class="modifier">Modifier</a>
