@@ -1,4 +1,3 @@
-{# filepath: templates/profil_etudiant.html.twig #}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -19,15 +18,23 @@
                     <p><strong>Nom</strong><br>{{ student.lastName }}</p>
                     <p><strong>Prénom</strong><br>{{ student.firstName }}</p>
                     <p><strong>Email</strong><br>{{ student.email }}</p>
-                    <p><strong>Établissement</strong><br>{{ student.school }}</p>
                     <p><strong>Promotion</strong><br>{{ student.promotion }}</p>
                 </div>
                 <div class="help-section">
                     <h3>Besoin d’aide? écrivez-nous!</h3>
-                    <form>
+
+                    {# Afficher les messages de succès ou d'erreur #}
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error }}</div>
+                    {% endif %}
+                    {% if success %}
+                        <div class="alert alert-success">{{ success }}</div>
+                    {% endif %}
+
+                    <form method="POST" action="">
                         <label for="objet">Objet</label>
                         <input type="text" id="objet" name="objet" placeholder="Objet" required>
-                        <label for="corp">Corp</label>
+                        <label for="corp">Message</label>
                         <textarea id="corp" name="corp" placeholder="Votre message" required></textarea>
                         <button type="submit" class="bouton">Envoyer le ticket</button>
                     </form>
