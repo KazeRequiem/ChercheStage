@@ -26,10 +26,12 @@
         {% if candidature.viewLink %}
             <button class="voir-candidature">Voir ma candidature</button>
         {% endif %}
-        <form method="POST" action="/candidatures_favoris.php" style="display: inline;">
-            <button type="submit" class="supprimer">Supprimer</button>
-        </form>
-            <input type="hidden" name="candidature_id" value="{{ candidature.id }}">
+<form method="POST" action="/candidatures_favoris.php" style="display: inline;">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="id_offre" value="{{ candidature.id }}">
+    <input type="hidden" name="id_user" value="{{ app.user.id }}"> <!-- Assurez-vous que ceci est la bonne variable pour l'ID utilisateur -->
+    <button type="submit" class="supprimer">Supprimer</button>
+</form>
         {% if candidature.logo %}
             <img src="assets/{{ candidature.logo }}" alt="{{ candidature.title }} Logo" class="company-logo">
         {% endif %}
