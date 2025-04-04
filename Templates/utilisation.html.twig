@@ -8,10 +8,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="src/header-footer.css">
         <link rel="stylesheet" href="src/utilisation.css">
+                <link rel="stylesheet" href="src/style-2.css">
+
     </head>
     <body>
         {# Inclure le header réutilisable #}
-        {% include 'partials/header.html.twig' %}
+        <header class="header">
+        <div class="logo">
+        <a href="{{homePage}}"><img src="assets/logo.png" alt="logo"></a>
+        </div>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="qui_sommes_nous.php">A propos</a></li>
+                    <li><a href="faq.php">Contact</a></li>
+                    <li><a href="utilisation.php">CGU</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <main>
             <section class="titre">

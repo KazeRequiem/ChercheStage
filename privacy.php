@@ -11,4 +11,8 @@ $data = [
 ];
 
 // Rendre le template Twig
-echo $twig->render('privacy.html.twig', $data);
+echo $twig->render('privacy.html.twig', [
+    $data,
+    'homePage' => $_SESSION['user']['homePage'] ?? 'connexion.php',
+]
+);
