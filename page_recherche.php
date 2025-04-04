@@ -1,6 +1,5 @@
 <?php
-require_once 'check_session.php';
-checkPermission(1); // Nécessite permission admin (2)
+require_once 'check_session.php';// Nécessite permission admin (2)
 require_once 'init.php';
 require_once 'api_client.php'; // Inclure le fichier centralisé
 

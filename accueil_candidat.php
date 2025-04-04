@@ -32,6 +32,8 @@ $chartOptions = [
     ],
 ];
 
+
+
 // Rendre le template avec Twig
 echo $twig->render('accueil_candidat.html.twig', [
     'user' => getUserInfo(),

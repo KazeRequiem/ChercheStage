@@ -42,10 +42,8 @@
                                     <p>☎️ Téléphone : {{ entreprise.tel }}</p>
                                     <p>📝 Description : {{ entreprise.description }}</p>
                                 </div>
-                                <div class="candidature-actions">
-                                    {% if entreprise.logo %}
-                                        <img src="{{ entreprise.logo }}" alt="{{ entreprise.nom }} Logo" class="company-logo">
-                                    {% endif %}
+                                <div>
+                                <a href="/modifier_entreprise.php?id={{ entreprise.id }}" class="modifier">Modifier</a>
                                 </div>
                             </div>
                         {% endfor %}

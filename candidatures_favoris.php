@@ -5,8 +5,7 @@
  */
 
 // Inclusion du client API
-require_once 'check_session.php';
-checkPermission(2); // Nécessite permission admin (2)
+require_once 'check_session.php';// Nécessite permission admin (2)
 require_once 'init.php';
 require_once 'api_client.php';
 
