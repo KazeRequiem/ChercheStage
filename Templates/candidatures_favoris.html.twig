@@ -4,35 +4,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Candidatures favoris</title>
+        <title>Mes candidatures favorites</title>
         <link rel="stylesheet" href="src/favoris-envoyer.css">
         <link rel="stylesheet" href="src/header-footer.css">
     </head>
     <body>
         {# Inclure le header réutilisable #}
         {% include 'partials/header.html.twig' %}
+
         <main>
-            <section class="candidatures">
-            <div class="candidatures-favoris">
-                <h2>Mes candidatures favoris</h2>
+            <section class="candidatures-favoris">
+                <h2>Mes candidatures favorites</h2>
+
+                {# Afficher un message si aucun favori n'est trouvé #}
                 {% if favoris is empty %}
                     <p>{{ noResultsMessageFavoris }}</p>
                 {% else %}
+                    {# Parcourir et afficher chaque candidature favorite #}
                     {% for candidature in favoris %}
-                        {% if candidature.error is defined %}
-                            <p class="error">{{ candidature.error }}</p>
-                        {% else %}
-                            {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
-                        {% endif %}
+                        {% include 'partials/candidature_card.html.twig' with { candidature: candidature } %}
                     {% endfor %}
                 {% endif %}
-            </div>
             </section>
         </main>
+
         {# Inclure le footer réutilisable #}
         {% include 'partials/footer.html.twig' %}
-        
-        {# Inclure le script JavaScript pour gérer les favoris #}
+
         <script src="src/favoris.js"></script>
     </body>
 </html>
